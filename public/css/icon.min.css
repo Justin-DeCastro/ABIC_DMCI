@@ -1,0 +1,198 @@
+.icon-home-2:before,.icon-home:before,.top-nav ul li a:before,[class*=icon-]:before {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+@font-face {
+    font-family: Glyphter;
+    src: url(/frontend/fonts/glyphter.eot);
+    src: url(/frontend/fonts/glyphter.eot?#iefix) format("embedded-opentype"),url(/frontend/fonts/glyphter.woff) format("woff"),url(/frontend/fonts/glyphter.ttf) format("truetype"),url(/frontend/fonts/glyphter.svg#Glyphter) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+.icon-home:before,.top-nav ul li a:before,[class*=icon-]:before {
+    font-family: Glyphter
+}
+
+.icon-add-filter:before,.icon-google:before {
+    content: '\0041'
+}
+
+.icon-advancefilter:before,.icon-instagram:before {
+    content: '\0042'
+}
+
+.icon-linkedin:before,.icon-new:before {
+    content: '\0043'
+}
+
+.icon-check:before,.icon-twitter:before {
+    content: '\0044'
+}
+
+.icon-community:before,.icon-youtube:before {
+    content: '\0045'
+}
+
+.icon-costumer-care:before {
+    content: '\0046'
+}
+
+.icon-doc:before,.icon-facebook:before {
+    content: '\0047'
+}
+
+.icon-dollar-sign:before {
+    content: '\0048'
+}
+
+.icon-down-arrow:before {
+    content: '\0049'
+}
+
+.icon-image-placeholder:before {
+    content: '\004a'
+}
+
+.icon-image:before {
+    content: '\004b'
+}
+
+.icon-leasing:before {
+    content: '\004c'
+}
+
+.icon-left-arrow:before {
+    content: '\004d'
+}
+
+.icon-pause-button:before {
+    content: '\004e'
+}
+
+.icon-pdf:before {
+    content: '\004f'
+}
+
+.icon-peso-sign:before {
+    content: '\0050'
+}
+
+.icon-pin-locator:before {
+    content: '\0051'
+}
+
+.icon-play-button:before {
+    content: '\0052'
+}
+
+.icon-right-arrow:before {
+    content: '\0053'
+}
+
+.icon-search:before {
+    content: '\0054'
+}
+
+.icon-share:before {
+    content: '\0055'
+}
+
+.icon-up-arrow:before {
+    content: '\0056'
+}
+
+.icon-coming-soon:before {
+    content: '\0057'
+}
+
+.icon-RFO:before {
+    content: '\0058'
+}
+
+.icon-under-construction:before {
+    content: '\0059'
+}
+
+.icon-facebook:before {
+    content: '\005a'
+}
+
+.icon-google:before {
+    content: '\0061'
+}
+
+.icon-instagram:before {
+    content: '\0062'
+}
+
+.icon-linkedin:before {
+    content: '\0063'
+}
+
+.icon-twitter:before {
+    content: '\0064'
+}
+
+.icon-youtube:before {
+    content: '\0065'
+}
+
+.icon-business:before {
+    content: '\0066'
+}
+
+.icon-church:before {
+    content: '\0067'
+}
+
+.icon-commercial:before {
+    content: '\0068'
+}
+
+.icon-fire-department:before {
+    content: '\0069'
+}
+
+.icon-market:before {
+    content: '\006a'
+}
+
+.icon-medical:before {
+    content: '\006b'
+}
+
+.icon-pin-logo:before {
+    content: '\006c'
+}
+
+.icon-Pin-user:before {
+    content: '\006d'
+}
+
+.icon-caution:before {
+    content: '\006e'
+}
+
+.icon-school:before {
+    content: '\006f'
+}
+
+@font-face {
+    font-family: Glyphters;
+    src: url(/frontend/fonts/new/glyphter.eot);
+    src: url(/frontend/fonts/new/glyphter.eot?#iefix) format("embedded-opentype"),url(/frontend/fonts/new/glyphter.woff) format("woff"),url(/frontend/fonts/new/glyphter.ttf) format("truetype"),url(/frontend/fonts/new/glyphter.svg#glyphter) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+.icon-home-2:before {
+    font-family: Glyphters
+}
