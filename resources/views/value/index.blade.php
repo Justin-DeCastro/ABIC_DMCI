@@ -144,9 +144,8 @@
   </nav>
   <!-- /.navbar -->
 
- @extends('layouts.sidebar.sidebar')
-      </nav>
-      <!-- /.sidebar-menu -->
+  <!-- Main Sidebar Container -->
+  @extends('layouts.sidebar.sidebar')
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -199,18 +198,16 @@
     <!-- Page specific script -->
 
 
-{{--
-</body>
+
+{{-- </body>
 </html> --}}
-
-
 
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Add Properties near your City</h1>
+                    <h1>Promos</h1>
                 </div>
             </div>
         </div>
@@ -222,33 +219,35 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCityModal">
-                                Add Properties
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addValueModal">
+                                Add Brand Values
                             </button>
                         </div>
                         <div class="card-body">
-                            <table id="cityTable" class="table table-bordered table-hover">
+                            <table id="valueTable" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        {{-- <th>Name</th> --}}
-                                        <th>Place</th>
-                                        {{-- <th>Bed</th>
-                                        <th>Price</th> --}}
+                                        <th>Name</th>
+                                        {{-- <th>Description</th> --}}
+                                        {{-- <th>Date</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($cityItems as $city)
+                                    @foreach($values as $value)
                                     <tr>
-                                        <td><img src="{{ asset($city->image) }}" alt="city Image" width="100"></td>
-                                        {{-- <td>{{ $subdivision->name }}</td> --}}
-                                        <td>{{ $city->place }}</td>
+                                        <td><img src="{{ asset('images/value/' . $value->image) }}" alt="Value Image" width="100"></td>
+
+
+                                        <td>{{ $value->name }}</td>
+                                        {{-- <td>{{ $promo->description }}</td> --}}
+                                        {{-- <td>{{ $promo->date }}</td> --}}
                                         <td>
-                                            <button type="button" class="btn btn-primary update-btn" data-city-id="{{ $city->id }}" data-toggle="modal" data-target="#updateCityModal{{ $city->id }}">
+                                            <button type="button" class="btn btn-primary update-btn" data-value-id="{{ $value->id }}" data-toggle="modal" data-target="#updateValueModal{{ $value->id }}">
                                                 Update
                                             </button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCityModal{{ $city->id }}">
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteValueModal{{ $value->id }}">
                                                 Delete
                                             </button>
                                         </td>
@@ -264,44 +263,34 @@
     </section>
 </div>
 
-
-
 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+    <li>{{ $error }}</li>
+@endforeach
 
-            <!-- Add Reco Modal -->
-<div class="modal fade" id="addCityModal" tabindex="-1" role="dialog" aria-labelledby="addCityModalLabel" aria-hidden="true">
+<div class="modal fade" id="addValueModal" tabindex="-1" role="dialog" aria-labelledby="addValueModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addCityModalLabel">Add New Properties</h5>
+                <h5 class="modal-title" id="addValueModalLabel">Add value</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addCityForm" action="{{ route('city.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="addValueForm" action="{{ route('value.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" class="form-control" id="image" name="image" accept="image/*">
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name">
-                    </div> --}}
-                    <div class="form-group">
-                        <label for="place">Place</label>
-                        <input type="text" class="form-control" id="place" name="place">
                     </div>
+
                     {{-- <div class="form-group">
-                        <label for="bed">Bed</label>
-                        <input type="text" class="form-control" id="bed" name="bed">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="text" class="form-control" id="price" name="price">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
                     </div> --}}
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
@@ -312,91 +301,84 @@
         </div>
     </div>
 </div>
+@foreach($values as $value)
+<div class="modal fade" id="updateValueModal{{ $value->id }}" tabindex="-1" role="dialog" aria-labelledby="updateValueModalLabel{{ $value->id }}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateValueModalLabel{{ $value->id }}">Update value</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="updateValueForm{{ $value->id }}" action="{{ route('value.update', ['id' => $value->id]) }}" method="POST" enctype="multipart/form-data">
 
-@foreach($cityItems as $city)
-    <!-- Update Card Modal for card with ID {{ $city->id }} -->
-    <div class="modal fade" id="updateCityModal{{ $city->id }}" tabindex="-1" role="dialog" aria-labelledby="updateCityModalLabel{{ $city->id }}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- Modal header -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateCityModalLabel{{ $city->id }}">Update City</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form id="updateCityForm{{ $city->id }}" action="{{ route('city.update', ['id' => $city->id]) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
+                    @csrf
+                    @method('POST')
 
-                        <!-- Hidden input to store card ID -->
-                        <input type="hidden" name="city_id" value="{{ $city->id }}">
-                        <div class="form-group">
-                            <label for="image{{ $city->id }}">Image</label>
-                            <input type="file" class="form-control" id="image{{ $city->id }}" name="image" accept="image/*">
-                        </div>
-                        <!-- Form fields for updating card details -->
-                        {{-- <div class="form-group">
-                            <label for="progress{{ $mid->id }}">Progress</label>
-                            <input type="text" class="form-control" id="progress{{ $mid->id }}" name="progress" value="{{ $mid->progress }}">
-                        </div> --}}
-                        {{-- <div class="form-group">
-                            <label for="name{{ $mid->id }}">Name</label>
-                            <input type="text" class="form-control" id="name{{ $mid->id }}" name="name" value="{{ $mid->name }}">
-                        </div> --}}
-                        <div class="form-group">
-                            <label for="place{{ $city->id }}">Place</label>
-                            <textarea class="form-control" id="place{{ $city->id }}" name="place" rows="4">{{ $city->place }}</textarea>
-                        </div>
-                        {{-- <div class="form-group">
-                            <label for="bed{{ $mid->id }}">Bed</label>
-                            <textarea class="form-control" id="bed{{ $mid->id }}" name="bed" rows="4">{{ $mid->bed }}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="price{{ $mid->id }}">Price</label>
-                            <textarea class="form-control" id="price{{ $mid->id }}" name="price" rows="4">{{ $mid->price }}</textarea>
-                        </div> --}}
-                        {{-- <div class="form-group">
-                            <label for="date{{ $mid->id }}">Date</label>
-                            <input type="date" class="form-control" id="date{{ $mid->id }}" name="date" value="{{ $mid->date }}">
-                        </div> --}}
+                    <!-- Hidden input to store promo ID -->
+                    <input type="hidden" name="value_id" value="{{ $value->id }}">
+                    <div class="form-group">
+                        <label for="image{{ $value->id }}">Image</label>
+                        <input type="file" class="form-control" id="image{{ $value->id }}" name="image" accept="image/*">
+                    </div>
 
-                    </form>
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="updateCity({{ $city->id }})">Save changes</button>
-                </div>
+                    <div class="form-group">
+                        <label for="name{{ $value->id }}">Name</label>
+                        <input type="text" class="form-control" id="name{{ $value->id }}" name="name" value="{{ $value->name }}">
+                    </div>
+
+                    <!-- Error display if any -->
+                    @if($errors->has('image') || $errors->has('name') )
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button> <!-- Move the submit button inside the form -->
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 @endforeach
 
-<!-- Delete Card Modal -->
-@foreach($cityItems as $city)
-    <!-- Delete Button -->
 
+
+<!-- Delete Card Modal -->
+@foreach($values as $value)
+    <!-- Delete Button -->
+    {{-- <button type="button" class="btn btn-danger delete-btn" data-promo-id="{{ $promo->id }}">
+
+    </button> --}}
 
     <!-- Delete Modal -->
-    <div class="modal fade" id="deleteCityModal{{ $city->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteCityModalLabel{{ $city->id }}" aria-hidden="true">
+    <div class="modal fade" id="deleteValueModal{{ $value->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteValueModalLabel{{ $value->id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel{{ $city->id }}">Confirm Deletion</h5>
+                    <h5 class="modal-title" id="deleteModalLabel{{ $value->id }}">Confirm Deletion</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this city?
+                    Are you sure you want to delete this?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <!-- Delete Form -->
-                    <form id="deleteForm{{ $city->id }}" action="{{ route('city.delete', ['city' => $city->id]) }}" method="POST">
+                    <form id="deleteForm{{ $value->id }}" action="{{ route('value.delete', ['value' => $value->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button> <!-- Change button type to submit -->
@@ -410,62 +392,51 @@
 
 <!-- JavaScript for handling delete via AJAX -->
 <script>
-    function deleteCity(cityId) {
+    function deleteValue(valueId) {
         $.ajax({
-            url: "{{ route('city.delete', ['city' => $city->id]) }}",
-
-            method: 'POST',
+            url: "{{ route('value.delete', ['value' => ':id']) }}".replace(':id', valueId), // Corrected URL
+            method: 'DELETE',
             data: {
                 _token: "{{ csrf_token() }}"
             },
             success: function(response) {
-                console.log('city deleted successfully');
-                $('#deleteModal' + cityId).modal('hide'); // Close modal after successful delete
+                console.log('Value deleted successfully');
+                $('#deleteValueModal' + valueId).modal('hide'); // Close modal after successful delete
                 location.reload(); // Reload the page
             },
             error: function(xhr, status, error) {
-                console.error('Error deleting city:', error);
+                console.error('Error deleting value:', error);
             }
         });
     }
 </script>
-
-
 <script>
-    function updateCity(cityId) {
-        var formData = new FormData($('#updateCityForm' + cityId)[0]);
+    function updateValue(valueId) {
+        console.log('Update button clicked for promo ID:', valueId);
+        var formData = new FormData($('#updateValueForm' + valueId)[0]);
 
         $.ajax({
-            url: "{{ route('city.update', ['id' => $city->id]) }}",
-            method: 'POST',
+            url: "{{ route('value.update', ':id') }}".replace(':id', valueId), // Corrected URL
+            method: 'Post',
             data: formData,
             processData: false,
             contentType: false,
             success: function(response) {
                 // Handle success response (e.g., show success message)
-                console.log('City updated successfully');
-                $('#updateCityModal' + cityId).modal('hide'); // Close modal after successful update
+                console.log('promo updated successfully');
+                $('#updateValueModal' + valueId).modal('hide'); // Close modal after successful update
                 location.reload(); // Reload the page
             },
             error: function(xhr, status, error) {
                 // Handle error response (e.g., show error message)
-                console.error('Error updating city:', error);
+                console.error('Error updating promo:', error);
             }
         });
     }
-</script>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-<!-- Initialize DataTable -->
-<script>
-    $(document).ready(function() {
-        $('#cityTable').DataTable();
+    // Submit form when Save changes button is clicked
+    $('.modal-footer .btn-primary').on('click', function() {
+        $(this).closest('.modal-content').find('form').submit();
     });
 </script>
 <style>

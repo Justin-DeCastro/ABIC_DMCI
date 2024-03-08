@@ -19,10 +19,9 @@ class CityController extends Controller
         $request->validate([
             'image' => 'required|image|max:100000',
 
-            // 'name' => 'required|string|max:255',
+
             'place' => 'required|string|max:255',
-            // 'bed' => 'required|string|max:255',
-            // 'price' => 'required|string|max:255',
+
         ]);
 
         try {
@@ -30,13 +29,12 @@ class CityController extends Controller
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('images'), $imageName);
 
-            // Create new Reco instance and save to database
+
             City::create([
                 'image' => '/images/' . $imageName,
                 // 'name' => $request->name,
                 'place' => $request->place,
-                // 'bed' => $request->bed,
-                // 'price' => $request->price,
+
             ]);
 
             return redirect()->route('city.index')->with('success', 'City item created successfully.');
@@ -54,10 +52,9 @@ class CityController extends Controller
 
     $request->validate([
 
-        // 'name' => 'required|string|max:255',
+
         'place' => 'required|string|max:255',
-        // 'bed' => 'required|string|max:255',
-        // 'price' => 'required|string|max:255',
+
     ]);
 
     try {
@@ -91,5 +88,32 @@ public function delete($city_id)
     return redirect()->back()->with('success', 'City deleted successfully.');
 }
 
+public function filterLocations(Request $request)
+{
+    // Validate the incoming request
+    $request->validate([
+        'place' => 'required|string|max:255',
+    ]);
 
+    // Retrieve the place from the request
+    $place = $request->input('place');
+
+    try {
+        // Query the City model to filter locations based on the place
+        $city = City::where('place', $place)->first();
+
+        // Check if the city exists
+        if ($city) {
+            // Return the city information
+            return response()->json($city);
+        } else {
+            // Return error message if city not found
+            return response()->json(['error' => 'Location not found.'], 404);
+        }
+    } catch (\Exception $e) {
+        // Log any database-related errors
+        Log::error('Error occurred while filtering locations: ' . $e->getMessage());
+        return response()->json(['error' => 'Failed to filter locations.'], 500);
+    }
+}
 }

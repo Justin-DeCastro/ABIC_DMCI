@@ -7508,11 +7508,11 @@
                     <li><a href="#" class="pop-up-trigger">Preferences</a></li>
                 </ul>
                 <ul class="nav-other-site">
-                    <li class="mn-green mn-btn"><a href="/contact" class="jq-section-form">Customer Care <span
+                    <li class="mn-green mn-btn"><a href="#contact-form" class="jq-section-form">Customer Care <span
                                 class="icon-home icon-costumer-care"></span></a></li>
-                    <li class="mn-blue mn-btn"><a href="/prop" target="_blank">Leasing <br>
+                    <li class="mn-blue mn-btn"><a href="../leasing.dmcihomes.com" target="_blank">Leasing <br>
                             Services<span class="icon-home icon-leasing"></span></a></li>
-                    <li class="mn-white mn-btn"><a href="/whatsNew" target="_blank">DMCI
+                    <li class="mn-white mn-btn"><a href="../communities.dmcihomes.com" target="_blank">DMCI
                             <br>Communities
                             <span class="icon-communitys">
                                 <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
@@ -7916,40 +7916,32 @@
                     </div>
                 </div>
             </section>
-
-
             <section class="sec-pad sec-default m-t-40 jq-section" id="high-condominiums">
                 <div class="container">
                     <div class="property-list folio-map">
                         <div class="sec-head">
-                            <h2 class="sec-title">High Rise Condominiums</h2>
-                            <p>Find your perfect home within striking distance of the metro’s bustling business and
-                                commercial centers at DMCI Homes’ high-rise residences.</p>
+                            <h2 class="sec-title"> Property Finder</h2>
+                            <p>Find your perfect home within striking distance of the metro’s bustling business and commercial centers at DMCI Homes’ high-rise residences.</p>
                         </div>
 
                         <ul class="flex">
-                            @foreach($highItems as $high)
-                            <li class="p-card box-card" data-id="105" data-city="Taguig" data-min="8311000.00"
-                                data-max="19570000.00" data-name="Alder Residences"><a href="#"
-                                    class="icon-share pi-share" data-url="alder-residences"><span>Share</span></a>
-                                <div class="property-item"><a href="{{ asset($high->image) }}">
-                                        <figure class="property-img"><img src="{{ asset($high->image) }}" alt="high Image" width="100">
-                                        </figure>
+                            @foreach($results as $result)
+                            <li class="p-card box-card" data-id="{{ $result->id }}" data-name="{{ $result->name }}" data-city="{{ $result->place }}" data-min="{{ $result->min_price }}" data-max="{{ $result->max_price }}">
+                                <a href="#" class="icon-share pi-share" data-url="{{ $result->url }}"><span>Share</span></a>
+                                <div class="property-item">
+                                    <a href="{{ asset($result->image) }}">
+                                        <figure class="property-img"><img src="{{ asset($result->image) }}" alt="High Image" width="100"></figure>
                                         <div class="content">
-                                            <h3>{{ $high->name }}</h3>
-                                            <p>{{ $high->place }}</p>
-                                            <p class="property-type"><span class="box-type ">{{ $high->bed }}
+                                            <h3>{{ $result->name }}</h3>
+                                            <p>{{ $result->place }}</p>
+                                            <p class="property-type"><span class="box-type">{{ $result->bed }}</span></p>
                                             <p class="price"><span class="currency-convert" data-value="8311000.00">
-                                                {{ $high->price }}</span>
-                                        {{-- <p class="property-compare"><a href="#" class="btn-compare"
-                                                data-id="105" data-name="Alder Residences" data-city="Taguig"><span
-                                                    class="icon-home icon-add-filter"></span> --}}
-
-                                            </a></p>
-                                    </a></div>
+                                                {{ $result->price }}</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </li>
                             @endforeach
-
                         </ul>
                     </div>
                 </div>
@@ -7957,7 +7949,11 @@
             </section>
 
 
-            <section class="sec-pad sec-default bg-grey jq-section" id="mid-condominiums">
+
+
+
+
+            {{-- <section class="sec-pad sec-default bg-grey jq-section" id="mid-condominiums">
                 <div class="container">
                     <div class="property-list folio-map">
                         <div class="sec-head">
@@ -8136,7 +8132,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
 
 
 

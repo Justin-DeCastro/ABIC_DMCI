@@ -56,9 +56,9 @@
                             <li><a href="privacy-policy.htm">Privacy</a></li>
                         </ul>
                         <ul>
-                            <li><a href="../communities.dmcihomes.com/index.html" target="_blank">Community</a></li>
-                            <li><a href="../leasing.dmcihomes.com/index.html" target="_blank">Leasing</a></li>
-                            <li><a href="contact-us.htm">Customer Care</a></li>
+                            <li><a href="/showabout" target="_blank">Community</a></li>
+                            <li><a href="./prop" target="_blank">Leasing</a></li>
+                            <li><a href="/contact">Customer Care</a></li>
                             <li><a href="sellers.htm">Sellers</a></li>
                             <li><a href="careers.htm">Careers</a></li>
                             <li><a href="site-map.htm">Sitemap</a></li>
