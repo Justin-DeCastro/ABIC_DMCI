@@ -108,14 +108,18 @@
                                 <img id="dynamic-banner-logo"
                                     src="{{ asset('images/Mulberry Place Header Logo-large.png') }}" alt="">
                             </figure>
-                            <div class="" data-animation="fadeInUp" data-delay="300" style="color: white;">
-                                <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City</h1>
-                                <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development found at the growing community of Acacia Estates in Taguig City. This exclusive residential retreat seamlessly blends exquisitely designed amenities with nature's grandeur.</p>
-                                <a href="{{route('mulberry')}}" class="btn btn-round" id="dynamic-banner-cta">Visit Mulberry Place</a>
+                            <div class="banner-text animated hiding" data-animation="fadeInUp" data-delay="300">
+                                <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City
+                                </h1>
+                                <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development
+                                    found at the growing community of Acacia Estates in Taguig City. This exclusive
+                                    residential retreat seamlessly blends exquisitely designed amenities with nature's
+                                    grandeur.</p>
+                                <a href="{{route('mulberry')}}" class="btn btn-round" id="dynamic-banner-cta">Visit
+                                    Mulberry Place</a>
                             </div>
-
                         </div>
-                    </div>
+
                         <div class="banner-filter-bottom animated fadeInUp visible" data-animation="fadeInUp"
                             data-delay="200">
                             <div class="container">
@@ -149,68 +153,98 @@
                                     </div>
                                     <hr>
 
-
-
-
-                                    <form action="{{ route('search') }}" method="post">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-sm-4" data-search-option="both">
-                                                <label for="location">Location</label>
-                                                <div class="input-wrap map-pin-trigger">
-                                                    <input id="header-search-location-field" type="text" readonly name="location" value="{{ old('location') }}" placeholder="Any Location" data-fancybox-loc="" data-src="#map-pin">
-                                                    <button data-fancybox-loc="" data-src="#map-pin"></button>
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-sm-4" data-search-option="both">
+                                            <label for="">Location</label>
+                                            <div class="input-wrap map-pin-trigger">
+                                                <input id="header-search-location-field" type="text"
+                                                    readonly="" name="" value=""
+                                                    placeholder="Any Location" data-fancybox-loc=""
+                                                    data-src="#map-pin">
+                                                <button data-fancybox-loc="" data-src="#map-pin"></button>
                                             </div>
-                                            <div class="col-sm-4" data-search-option="both">
-                                                <label for="unit_type">Unit Type</label>
-                                                <div class="custom-select">
-                                                    <select name="unit_type" id="header-search-unit-type">
-                                                        <option value="any">Any</option>
-                                                        <option value="1">Studio</option>
-                                                        <option value="2">1BR</option>
-                                                        <option value="3">2BR</option>
-                                                        <option value="4">3BR</option>
-                                                        <option value="5">4BR</option>
-                                                        <option value="6">Loft</option>
-                                                        <option value="7">H&L</option>
-                                                        <option value="8">Lot</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4" data-search-option="buy">
-                                                <label for="price_range">Price range
-                                                    <span class="fr">
-                                                        <span id="first-mil-label" data-value="1" class="currency-convert">PHP 1</span> Million -
-                                                        <span id="second-mil-label" class="currency-convert" data-value="20">PHP 20</span> Million
-                                                    </span>
-                                                </label>
-                                                <span id="first-mil" style="display:none;">1</span>
-                                                <span id="second-mil" style="display:none;">20</span>
-                                                <div class="bf-price-range">
-                                                    <div class="price-range">
-                                                        <div class="noUiSlider" id="noUiSlider"></div>
-                                                        <input type="hidden" id="header-min-price" name="price_fm" class="price_fm">
-                                                        <input type="hidden" id="header-max-price" name="price_to" class="price_to">
-                                                        <p class="pricing-label">
-                                                            <label class="pl-1" for=""><span data-value="1" class="currency-convert-no-symbol">1</span><span>M</span></label>
-                                                            <label class="pl-3" for=""><span data-value="3" class="currency-convert-no-symbol">3</span><span>M</span></label>
-                                                            <label class="pl-5" for=""><span data-value="5" class="currency-convert-no-symbol">5</span><span>M</span></label>
-                                                            <label class="pl-7" for=""><span data-value="7" class="currency-convert-no-symbol">7</span><span>M</span></label>
-                                                            <label class="pl-10" for=""><span data-value="10" class="currency-convert-no-symbol">10</span><span>M</span></label>
-                                                            <label class="pl-15" for=""><span data-value="15" class="currency-convert-no-symbol">15</span><span>M</span></label>
-                                                            <label class="pl-20" for=""><span data-value="20" class="currency-convert-no-symbol">20</span><span>M</span></label>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" data-search-option="lease" class="btn btn-block search-button">Search</button>
                                         </div>
-                                    </form>
+                                        <div class="col-sm-4" data-search-option="both">
+                                            <label for="header-search-unit-type">Unit Type</label>
+                                            <div class="custom-select">
+                                                <select name="header-search-unit-type" id="header-search-unit-type">
+                                                    <option value="any">Any</option>
+                                                    <option value="1">Studio</option>
+                                                    <option value="2">1 Bedroom</option>
+                                                    <option value="3">2 Bedroom</option>
+                                                    <option value="4">3 Bedroom</option>
+                                                    <option value="5">4 Bedroom</option>
+                                                    <option value="6">Loft</option>
+                                                    <option value="7">House & Lot</option>
+                                                    <option value="8">Lot</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-4" data-search-option="lease" style="display: none;">
+                                            <label>Budget per month</label>
+                                            <div class="bf-price-range bf-price-budget">
+                                                <div class="price-range">
+                                                    <div class="noUiSlider" id="noUiSlider-budget"></div>
+                                                    <input type="hidden" id="budget-min-price" name="budget_fm"
+                                                        class="price_fm">
+                                                    <input type="hidden" id="budget-max-price" name="budget_to"
+                                                        class="price_to">
+                                                    <p class="pricing-label clear">
+                                                        <label class="pl-1 fl" for=""
+                                                            style="left: -12px;"><span>P </span><span
+                                                                id="budget-min-price-label">5</span><span>,000</span></label>
+                                                        <label class="pl-3 fr" for=""
+                                                            style="left: auto; right: -18px;"><span>P </span><span
+                                                                id="budget-max-price-label">90</span><span>,000</span></label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
 
+                                        <div class="col-sm-4" data-search-option="buy">
+                                            <label for="header-min-price">Price range
+                                                <span class="fr">
+                                                    <span id="first-mil-label" data-value="1"
+                                                        class="currency-convert">PHP 1</span> Million -
+                                                    <span id="second-mil-label" class="currency-convert"
+                                                        data-value="20">PHP 20</span> Million
+                                                </span>
+                                            </label>
+                                            <span id="first-mil" style="display:none;">1</span>
+                                            <span id="second-mil" style="display:none;">20</span>
+                                            <div class="bf-price-range">
+                                                <div class="price-range">
+                                                    <div class="noUiSlider" id="noUiSlider"></div>
+                                                    <input type="hidden" id="header-min-price" name="price_fm"
+                                                        class="price_fm">
+                                                    <input type="hidden" id="header-max-price" name="price_to"
+                                                        class="price_to">
+                                                    <p class="pricing-label">
+                                                        <label class="pl-1" for=""><span data-value="1"
+                                                                class="currency-convert-no-symbol">1</span><span>M</span></label>
+                                                        <label class="pl-3" for=""><span data-value="3"
+                                                                class="currency-convert-no-symbol">3</span><span>M</span></label>
+                                                        <label class="pl-5" for=""><span data-value="5"
+                                                                class="currency-convert-no-symbol">5</span><span>M</span></label>
+                                                        <label class="pl-7" for=""><span data-value="7"
+                                                                class="currency-convert-no-symbol">7</span><span>M</span></label>
+                                                        <label class="pl-10" for=""><span data-value="10"
+                                                                class="currency-convert-no-symbol">10</span><span>M</span></label>
+                                                        <label class="pl-15" for=""><span data-value="15"
+                                                                class="currency-convert-no-symbol">15</span><span>M</span></label>
+                                                        <label class="pl-20" for=""><span data-value="20"
+                                                                class="currency-convert-no-symbol">20</span><span>M</span></label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <a href="https://www.dmcihomes.com/property-finder?search=simple&min=1&max=20&type=any&location=any" data-search-option="lease" class="btn btn-block search-button">Search for Lease</a>
+                                        <a href="https://www.dmcihomes.com/property-finder?search=simple&min=1&max=20&type=any&location=any" data-search-option="buy" class="btn btn-block search-button">Search for Buy</a>
 
                                             <style>
 
@@ -283,7 +317,137 @@
                     </ul>
                 </div>
 
-
+                        {{-- <li class="" data-animation="fadeInUp" data-delay="200">
+                            <a href="https://www.dmcihomes.com/prisma-residences">
+                                <div class="property-item box-card">
+                                    <figure class="property-img">
+                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
+                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Prisma Residences - Featured Image-small.webp"
+                                            alt="/uploads/media/generated/Prisma Residences - Featured Image-small.webp"
+                                            width="380" height="215">
+                                        <span class="property-status circle-white">
+                                            <span class="icon-home rfo icon-RFO"></span>
+                                        </span>
+                                    </figure>
+                                    <div class="content">
+                                        <h3>Prisma Residences</h3>
+                                        <p>Pasig</p>
+                                        <p class="property-type">
+                                            <span class="box-type ">1BR</span>
+                                            <span class="box-type ">2BR</span>
+                                            <span class="box-type not-available">3BR</span>
+                                        </p>
+                                        <p class="price"> ₱ 4,562,000 - ₱ 12,174,000</p>
+                                        <!-- <span href="/prisma-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="" data-animation="fadeInUp" data-delay="300">
+                            <a href="https://www.dmcihomes.com/the-crestmont">
+                                <div class="property-item box-card">
+                                    <figure class="property-img">
+                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
+                                            data-src="https://www.dmcihomes.com/uploads/media/generated/The Crestmont-featured-1650348573129-small.webp"
+                                            alt="/uploads/media/generated/The Crestmont-featured-1650348573129-small.webp"
+                                            width="380" height="215">
+                                        <span class="property-status circle-white">
+                                            <span class="icon-home uc icon-under-construction"></span>
+                                        </span>
+                                    </figure>
+                                    <div class="content">
+                                        <h3>The Crestmont</h3>
+                                        <p>Quezon City</p>
+                                        <p class="property-type">
+                                            <span class="box-type not-available">1BR</span>
+                                            <span class="box-type ">2BR</span>
+                                            <span class="box-type ">3BR</span>
+                                        </p>
+                                        <p class="price"> ₱ 6,271,000 - ₱ 15,106,000</p>
+                                        <!-- <span href="/the-crestmont" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="" data-animation="fadeInUp" data-delay="400">
+                            <a href="https://www.dmcihomes.com/allegra-garden-place">
+                                <div class="property-item box-card">
+                                    <figure class="property-img">
+                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
+                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Balcony View - Allegra Garden Place-small.webp"
+                                            alt="/uploads/media/generated/Balcony View - Allegra Garden Place-small.webp"
+                                            width="380" height="215">
+                                        <span class="property-status circle-white">
+                                            <span class="icon-home uc icon-under-construction"></span>
+                                        </span>
+                                    </figure>
+                                    <div class="content">
+                                        <h3>Allegra Garden Place</h3>
+                                        <p>Pasig</p>
+                                        <p class="property-type">
+                                            <span class="box-type ">1BR</span>
+                                            <span class="box-type ">2BR</span>
+                                            <span class="box-type ">3BR</span>
+                                            <span class="box-type ">STUDIO</span>
+                                        </p>
+                                        <p class="price"> ₱ 4,670,020 - ₱ 13,388,520</p>
+                                        <!-- <span href="/allegra-garden-place" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="" data-animation="fadeInUp" data-delay="500">
+                            <a href="https://www.dmcihomes.com/sonora-garden-residences">
+                                <div class="property-item box-card">
+                                    <figure class="property-img">
+                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
+                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Sonora Garden Residences-featured-small.webp"
+                                            alt="{{ asset('images/Sonora Garden Residences-featured-small.png') }}"
+                                            width="380" height="215">
+                                        <span class="property-status circle-white">
+                                            <span class="icon-home uc icon-under-construction"></span>
+                                        </span>
+                                    </figure>
+                                    <div class="content">
+                                        <h3>Sonora Garden Residences</h3>
+                                        <p>Las Piñas</p>
+                                        <p class="property-type">
+                                            <span class="box-type ">1BR</span>
+                                            <span class="box-type ">2BR</span>
+                                            <span class="box-type ">3BR</span>
+                                        </p>
+                                        <p class="price"> ₱ 4,314,000 - ₱ 10,615,000</p>
+                                        <!-- <span href="/sonora-garden-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="" data-animation="fadeInUp" data-delay="600">
+                            <a href="https://www.dmcihomes.com/fortis-residences">
+                                <div class="property-item box-card">
+                                    <figure class="property-img">
+                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
+                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Fortis Residences-featured-1657091424326-small.jpg"
+                                            alt="/uploads/media/generated/Fortis Residences-featured-1657091424326-small.jpg"
+                                            width="380" height="215">
+                                        <span class="property-status circle-white">
+                                            <span class="icon-home new icon-new"></span>
+                                        </span>
+                                    </figure>
+                                    <div class="content">
+                                        <h3>Fortis Residences</h3>
+                                        <p>Makati</p>
+                                        <p class="property-type">
+                                            <span class="box-type not-available">1BR</span>
+                                            <span class="box-type ">2BR</span>
+                                            <span class="box-type ">3BR</span>
+                                        </p>
+                                        <p class="price"> ₱ 13,832,000 - ₱ 38,596,000</p>
+                                        <!-- <span href="/fortis-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -293,7 +457,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
         <section class="sec-pad sec-default bg-blue">
-           <center> <h2>SITE PROGRESS</h2>
             <div class="site-progress-wrap animated fadeInUp visible" data-animation="fadeInUp">
                 <ul class="site-progress-list" id="site-progress-list">
                     <!-- Site progress items -->
@@ -1369,9 +1532,9 @@
                             <li><a href="privacy-policy.htm">Privacy</a></li>
                         </ul>
                         <ul>
-                            <li><a href="/showabout" target="_blank">Community</a></li>
-                            <li><a href="/prop" target="_blank">Leasing</a></li>
-                            <li><a href="/contact">Customer Care</a></li>
+                            <li><a href="../communities.dmcihomes.com/index.html" target="_blank">Community</a></li>
+                            <li><a href="../leasing.dmcihomes.com/index.html" target="_blank">Leasing</a></li>
+                            <li><a href="contact-us.htm">Customer Care</a></li>
                             <li><a href="sellers.htm">Sellers</a></li>
                             <li><a href="careers.htm">Careers</a></li>
                             <li><a href="site-map.htm">Sitemap</a></li>

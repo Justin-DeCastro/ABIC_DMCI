@@ -7508,11 +7508,11 @@
                     <li><a href="#" class="pop-up-trigger">Preferences</a></li>
                 </ul>
                 <ul class="nav-other-site">
-                    <li class="mn-green mn-btn"><a href="/contact" class="jq-section-form">Customer Care <span
+                    <li class="mn-green mn-btn"><a href="#contact-form" class="jq-section-form">Customer Care <span
                                 class="icon-home icon-costumer-care"></span></a></li>
-                    <li class="mn-blue mn-btn"><a href="/prop" target="_blank">Leasing <br>
+                    <li class="mn-blue mn-btn"><a href="../leasing.dmcihomes.com" target="_blank">Leasing <br>
                             Services<span class="icon-home icon-leasing"></span></a></li>
-                    <li class="mn-white mn-btn"><a href="/whatsNew" target="_blank">DMCI
+                    <li class="mn-white mn-btn"><a href="../communities.dmcihomes.com" target="_blank">DMCI
                             <br>Communities
                             <span class="icon-communitys">
                                 <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
