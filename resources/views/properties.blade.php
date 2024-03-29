@@ -7503,16 +7503,16 @@
                     <li><a href="{{ route('seller') }}">Sellers</a></li>
                     <li><a href="{{ route('career') }}">Careers</a></li>
                     <li><a href="{{ route('about') }}">About us</a>
-                        <li><a href="{{ route('contact') }}">Contact us</a>
+                        <li><a href="/contact">Contact us</a>
 
                     <li><a href="#" class="pop-up-trigger">Preferences</a></li>
                 </ul>
                 <ul class="nav-other-site">
-                    <li class="mn-green mn-btn"><a href="#contact-form" class="jq-section-form">Customer Care <span
+                    <li class="mn-green mn-btn"><a href="/contact" class="jq-section-form">Customer Care <span
                                 class="icon-home icon-costumer-care"></span></a></li>
-                    <li class="mn-blue mn-btn"><a href="../leasing.dmcihomes.com" target="_blank">Leasing <br>
+                    <li class="mn-blue mn-btn"><a href="/prop" target="_blank">Leasing <br>
                             Services<span class="icon-home icon-leasing"></span></a></li>
-                    <li class="mn-white mn-btn"><a href="../communities.dmcihomes.com" target="_blank">DMCI
+                    <li class="mn-white mn-btn"><a href="/whatsNew" target="_blank">DMCI
                             <br>Communities
                             <span class="icon-communitys">
                                 <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
@@ -7908,7 +7908,7 @@
                 <picture class="coverimage-img">
                     <source srcset="{{ asset('images/hero-shd.webp')}}" media="(min-width: 570px)">
                     <source srcset="{{ asset('images/hero-shd.webp')}}" media="(min-width: 320px)">
-                    <img class=" ls-is-cached lazyloaded" src="{{ asset('images/hero-shd.webp')}}" width="1440" height="330" alt="MDN" style="width: 1700px; height: 330px; margin-top: 0px; margin-left: -173px;">
+                    <img class=" ls-is-cached lazyloaded" src="{{ asset('images/hero-shd.webp')}}" width="1440" height="330" alt="MDN" style="width: 1900px; height: 330px; margin-top: 0px; margin-left: -173px;">
                 </picture>
                 <div class="banner-text">
                     <div class="container">
@@ -7937,7 +7937,7 @@
                                         </figure>
                                         <div class="content">
                                             <h3>{{ $high->name }}</h3>
-                                            <p>{{ $high->place }}</p>
+                                            <p style="font-size: 30px">{{ $high->place }}</p>
                                             <p class="property-type"><span class="box-type ">{{ $high->bed }}
                                             <p class="price"><span class="currency-convert" data-value="8311000.00">
                                                 {{ $high->price }}</span>
@@ -7985,7 +7985,7 @@
                                         </figure>
                                         <div class="content">
                                             <h3>{{ $mid->name }}</h3>
-                                            <p>{{ $mid->place }}</p>
+                                            <p style="font-size: 30px">{{ $mid->place }}</p>
                                             <p class="property-type">
                                                 {{ $mid->bed }}
                                             </p>
@@ -8033,7 +8033,7 @@
                                         </figure>
                                         <div class="content">
                                             <h3>{{ $subdivision->name }}</h3>
-                                            <p>{{ $subdivision->place }}</p>
+                                            <p style="font-size: 30px">{{ $subdivision->place }}</p>
                                             <p class="property-type">
                                                 {{ $subdivision->bed }}
                                             </p>
@@ -8081,7 +8081,7 @@
                                         </figure>
                                         <div class="content">
                                             <h3>{{ $leisure->name }}</h3>
-                                            <p>{{ $leisure->place }}</p>
+                                            <p style="font-size: 30px">{{ $leisure->place }}</p>
                                             <p class="property-type">
                                                 <span class="box-type">{{ $leisure->bed }}</span>
                                             </p>
@@ -8118,7 +8118,7 @@
                                             <figure class="article-img">
                                                 <img class="" src="{{ asset($city->image) }}" alt="{{ $city->place }}" style="max-width: 400px; height: auto;">
                                             </figure>
-                                            <span>{{ $city->place }}</span>
+                                            <span><p style="font-size: 30px">{{ $city->place }}</span></p>
                                         </article>
                                     </a>
                                 </div>

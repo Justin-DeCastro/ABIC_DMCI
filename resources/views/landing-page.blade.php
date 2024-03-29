@@ -2,93 +2,6 @@
 
 
 
-
-        <div class="search-mobile parent-class">
-            <div class="sm-content">
-                <a href="#" class="jq-close">
-                    <span class="icon-home icon-close"></span>
-                </a>
-                <div class="container">
-                    <div class="sec-head">
-                        <h2 class="sec-title">More Search Options</h2>
-                    </div>
-                    <form action="https://www.dmcihomes.com/property-finder">
-                        <div class="row">
-                            <div class="col-md-12 not-this">
-                                <div class="input-wrap looking-type">
-                                    <h2 class="fl">I am Looking to..</h2>
-                                    <ul class="ad-filter-search-options fl">
-                                        <li>
-                                            <div class="custom-checkbox radio-style">
-                                                <input id="rf-buy" type="radio" value="buy" name="as-radio"
-                                                    checked>
-                                                <label for="rf-buy">Buy</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="custom-checkbox radio-style">
-                                                <input id="rf-rent" type="radio" value="lease" name="as-radio">
-                                                <label for="rf-rent">Rent/Lease</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row m-t-20">
-                            <div class="col-md-12" data-search-option="buy" data-filter="rent">
-                                <div class="input-wrap multi-select">
-                                    <h2>Property type</h2>
-                                    <ul class="ads-types">
-                                        <li>
-                                            <div class="custom-checkbox">
-                                                <input id="tp-highrise" type="checkbox" class="advance-dev-type-cb"
-                                                    name="development_type[]" value="2">
-                                                <label for="tp-highrise">High Rise Condominiums</label>
-                                            </div>
-                                        </li>
-                                        <!-- Other property types omitted for brevity -->
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Other columns omitted for brevity -->
-                        </div>
-                        <div class="input-wrap text-center not-this">
-                            <button id="advance-search-button" data-search-option="buy"
-                                    class="btn btn-large btn-round btn-green "
-                                    style="margin-top: 20px; display: none;" onclick="window.location.href='{{route('prop')}}'">Search</button>
-                            <button id="advance-lease-button" data-search-option="lease"
-                                    class="btn btn-large btn-round btn-green disabled"
-                                    style="margin-top: 20px; display: none;" onclick="window.location.href='{{route('prop')}}'">Search</button>
-                            <br>
-                            <a href="{{route('prop')}}" class="btn-link btn-advance-search">Show Advance Search</a>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="property-nav">
-            <div class="property-content">
-                <a href="#" class="jq-close"></a>
-                <div class="property-left-card">
-                    <h3 id="sidebar-property-header"></h3>
-                    <div class="property-list">
-                        <ul class="flex property-list-carousel" id="sidebar-property-list">
-                        </ul>
-                    </div>
-                </div>
-                <div class="property-right-loc">
-                    <h5>Other Locations</h5>
-                    <ul id="sidebar-property-modal-location-list">
-                    </ul>
-                    <p>Can't see what your looking for?</p>
-                    <a href="properties.htm" class="btn btn-round btn-small">View all <span> Properties</span></a>
-                </div>
-            </div>
-        </div>
-
         <section class="banner wavy">
 
             <picture class="coverimage-img">
@@ -104,22 +17,17 @@
                 <div class="table-cell">
                     <div class="container">
                         <div class="banner-left">
-                            <figure class="banner-logo animated hiding" data-animation="fadeInUp" data-delay="100">
-                                <img id="dynamic-banner-logo"
-                                    src="{{ asset('images/Mulberry Place Header Logo-large.png') }}" alt="">
+                            <figure class="banner-logo animated" data-animation="fadeInUp" data-delay="100">
+                                <img id="dynamic-banner-logo" src="{{ asset('images/Mulberry Place Header Logo-small.png') }}" alt="">
                             </figure>
-                            <div class="banner-text animated hiding" data-animation="fadeInUp" data-delay="300">
-                                <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City
-                                </h1>
-                                <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development
-                                    found at the growing community of Acacia Estates in Taguig City. This exclusive
-                                    residential retreat seamlessly blends exquisitely designed amenities with nature's
-                                    grandeur.</p>
-                                <a href="{{route('mulberry')}}" class="btn btn-round" id="dynamic-banner-cta">Visit
-                                    Mulberry Place</a>
+                            <div class="" data-animation="fadeInUp" data-delay="300" style="color: white;">
+                                <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City</h1>
+                                <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development found at the growing community of Acacia Estates in Taguig City. This exclusive residential retreat seamlessly blends exquisitely designed amenities with nature's grandeur.</p>
+                                <a href="{{route('mulberry')}}" class="btn btn-round" id="dynamic-banner-cta">Visit Mulberry Place</a>
                             </div>
-                        </div>
 
+                        </div>
+                    </div>
                         <div class="banner-filter-bottom animated fadeInUp visible" data-animation="fadeInUp"
                             data-delay="200">
                             <div class="container">
@@ -153,98 +61,82 @@
                                     </div>
                                     <hr>
 
-                                    <div class="row">
-                                        <div class="col-sm-4" data-search-option="both">
-                                            <label for="">Location</label>
-                                            <div class="input-wrap map-pin-trigger">
-                                                <input id="header-search-location-field" type="text"
-                                                    readonly="" name="" value=""
-                                                    placeholder="Any Location" data-fancybox-loc=""
-                                                    data-src="#map-pin">
-                                                <button data-fancybox-loc="" data-src="#map-pin"></button>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4" data-search-option="both">
-                                            <label for="header-search-unit-type">Unit Type</label>
-                                            <div class="custom-select">
-                                                <select name="header-search-unit-type" id="header-search-unit-type">
-                                                    <option value="any">Any</option>
-                                                    <option value="1">Studio</option>
-                                                    <option value="2">1 Bedroom</option>
-                                                    <option value="3">2 Bedroom</option>
-                                                    <option value="4">3 Bedroom</option>
-                                                    <option value="5">4 Bedroom</option>
-                                                    <option value="6">Loft</option>
-                                                    <option value="7">House & Lot</option>
-                                                    <option value="8">Lot</option>
-                                                </select>
-                                            </div>
-                                        </div>
 
 
-                                        <div class="col-sm-4" data-search-option="lease" style="display: none;">
-                                            <label>Budget per month</label>
-                                            <div class="bf-price-range bf-price-budget">
-                                                <div class="price-range">
-                                                    <div class="noUiSlider" id="noUiSlider-budget"></div>
-                                                    <input type="hidden" id="budget-min-price" name="budget_fm"
-                                                        class="price_fm">
-                                                    <input type="hidden" id="budget-max-price" name="budget_to"
-                                                        class="price_to">
-                                                    <p class="pricing-label clear">
-                                                        <label class="pl-1 fl" for=""
-                                                            style="left: -12px;"><span>P </span><span
-                                                                id="budget-min-price-label">5</span><span>,000</span></label>
-                                                        <label class="pl-3 fr" for=""
-                                                            style="left: auto; right: -18px;"><span>P </span><span
-                                                                id="budget-max-price-label">90</span><span>,000</span></label>
-                                                    </p>
+
+                                    <form action="{{ route('search') }}" method="post">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-sm-4" data-search-option="both">
+                                                <label for="location">Location</label>
+                                                <div class="input-wrap map-pin-trigger">
+                                                    <input id="header-search-location-field" type="text" readonly name="location" value="{{ old('location') }}" placeholder="Any Location" data-fancybox-loc="" data-src="#map-pin">
+                                                    <button data-fancybox-loc="" data-src="#map-pin"></button>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="col-sm-4" data-search-option="both">
+                                                <label for="unitType">Unit Type</label>
+                                                <div class="custom-select">
+                                                    <select name="bed" id="header-search-unit-type">
+                                                        <option value="Any">Any</option>
+                                                        <option value="Studio">Studio</option>
+                                                        <option value="1BR">1BR</option>
+                                                        <option value="2BR">2BR</option>
+                                                        <option value="3BR">3BR</option>
+                                                        <option value="4BR">4BR</option>
+                                                        <option value="Loft">Loft</option>
+                                                        <option value="H&L">H&L</option>
+                                                        {{-- <option value="Lot">Lot</option> --}}
+                                                        <option value="N/A">N/A</option>
+                                                        <option value="1BR 2BR">1BR2BR</option>
+                                                        <option value="1BR 2BR STUDIO">1BR 2BR STUDIO</option>
+                                                        <option value="LOFT STUDIO">LOFT STUDIO</option>
+                                                        <option value="1BR 2BR 3BR">1BR 2BR 3BR</option>
+                                                        <option value="2BR 3BR STUDIO">2BR 3BR STUDIO</option>
+                                                        <option value="1BR 2BR 3BR STUDIO">1BR 2BR 3BR STUDIO</option>
 
-
-
-                                        <div class="col-sm-4" data-search-option="buy">
-                                            <label for="header-min-price">Price range
-                                                <span class="fr">
-                                                    <span id="first-mil-label" data-value="1"
-                                                        class="currency-convert">PHP 1</span> Million -
-                                                    <span id="second-mil-label" class="currency-convert"
-                                                        data-value="20">PHP 20</span> Million
-                                                </span>
-                                            </label>
-                                            <span id="first-mil" style="display:none;">1</span>
-                                            <span id="second-mil" style="display:none;">20</span>
-                                            <div class="bf-price-range">
-                                                <div class="price-range">
-                                                    <div class="noUiSlider" id="noUiSlider"></div>
-                                                    <input type="hidden" id="header-min-price" name="price_fm"
-                                                        class="price_fm">
-                                                    <input type="hidden" id="header-max-price" name="price_to"
-                                                        class="price_to">
-                                                    <p class="pricing-label">
-                                                        <label class="pl-1" for=""><span data-value="1"
-                                                                class="currency-convert-no-symbol">1</span><span>M</span></label>
-                                                        <label class="pl-3" for=""><span data-value="3"
-                                                                class="currency-convert-no-symbol">3</span><span>M</span></label>
-                                                        <label class="pl-5" for=""><span data-value="5"
-                                                                class="currency-convert-no-symbol">5</span><span>M</span></label>
-                                                        <label class="pl-7" for=""><span data-value="7"
-                                                                class="currency-convert-no-symbol">7</span><span>M</span></label>
-                                                        <label class="pl-10" for=""><span data-value="10"
-                                                                class="currency-convert-no-symbol">10</span><span>M</span></label>
-                                                        <label class="pl-15" for=""><span data-value="15"
-                                                                class="currency-convert-no-symbol">15</span><span>M</span></label>
-                                                        <label class="pl-20" for=""><span data-value="20"
-                                                                class="currency-convert-no-symbol">20</span><span>M</span></label>
-                                                    </p>
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <a href="https://www.dmcihomes.com/property-finder?search=simple&min=1&max=20&type=any&location=any" data-search-option="lease" class="btn btn-block search-button">Search for Lease</a>
-                                        <a href="https://www.dmcihomes.com/property-finder?search=simple&min=1&max=20&type=any&location=any" data-search-option="buy" class="btn btn-block search-button">Search for Buy</a>
+                                            <div class="col-sm-4" data-search-option="buy">
+                                                <label for="price">Price range
+                                                    <span class="fr">
+                                                        <span id="first-mil-label" data-value="1" class="currency-convert">PHP 1</span> Million -
+                                                        <span id="second-mil-label" class="currency-convert" data-value="20">PHP 20</span> Million
+                                                    </span>
+                                                </label>
+                                                <span id="first-mil" style="display:none;">1</span>
+                                                <span id="second-mil" style="display:none;">20</span>
+                                                <div class="bf-price-range">
+                                                    <div class="price-range">
+                                                        <div class="noUiSlider" id="noUiSlider"></div>
+                                                        <!-- Corrected input names for price range -->
+                                                        <input type="hidden" id="header-min-price" name="price_fm" class="price_fm">
+                                                        <input type="hidden" id="header-max-price" name="price_to" class="price_to">
+                                                        <p class="pricing-label">
+                                                            <label class="pl-1" for=""><span data-value="1M" class="currency-convert-no-symbol">1</span><span>M</span></label>
+                                                            <label class="pl-3" for=""><span data-value="3M" class="currency-convert-no-symbol">3</span><span>M</span></label>
+                                                            <label class="pl-5" for=""><span data-value="5M" class="currency-convert-no-symbol">5</span><span>M</span></label>
+                                                            <label class="pl-7" for=""><span data-value="7M" class="currency-convert-no-symbol">7</span><span>M</span></label>
+                                                            <label class="pl-10" for=""><span data-value="1M" class="currency-convert-no-symbol">10</span><span>M</span></label>
+                                                            <label class="pl-15" for=""><span data-value="15M" class="currency-convert-no-symbol">15</span><span>M</span></label>
+                                                            <label class="pl-20" for=""><span data-value="20M" class="currency-convert-no-symbol">20</span><span>M</span></label>
+                                                        </p>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" data-search-option="lease" class="btn btn-block search-button">Search</button>
+                                        </div>
+                                    </form>
+
+
+
+
 
                                             <style>
 
@@ -317,137 +209,7 @@
                     </ul>
                 </div>
 
-                        {{-- <li class="" data-animation="fadeInUp" data-delay="200">
-                            <a href="https://www.dmcihomes.com/prisma-residences">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Prisma Residences - Featured Image-small.webp"
-                                            alt="/uploads/media/generated/Prisma Residences - Featured Image-small.webp"
-                                            width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home rfo icon-RFO"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>Prisma Residences</h3>
-                                        <p>Pasig</p>
-                                        <p class="property-type">
-                                            <span class="box-type ">1BR</span>
-                                            <span class="box-type ">2BR</span>
-                                            <span class="box-type not-available">3BR</span>
-                                        </p>
-                                        <p class="price"> ₱ 4,562,000 - ₱ 12,174,000</p>
-                                        <!-- <span href="/prisma-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="" data-animation="fadeInUp" data-delay="300">
-                            <a href="https://www.dmcihomes.com/the-crestmont">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                            data-src="https://www.dmcihomes.com/uploads/media/generated/The Crestmont-featured-1650348573129-small.webp"
-                                            alt="/uploads/media/generated/The Crestmont-featured-1650348573129-small.webp"
-                                            width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home uc icon-under-construction"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>The Crestmont</h3>
-                                        <p>Quezon City</p>
-                                        <p class="property-type">
-                                            <span class="box-type not-available">1BR</span>
-                                            <span class="box-type ">2BR</span>
-                                            <span class="box-type ">3BR</span>
-                                        </p>
-                                        <p class="price"> ₱ 6,271,000 - ₱ 15,106,000</p>
-                                        <!-- <span href="/the-crestmont" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="" data-animation="fadeInUp" data-delay="400">
-                            <a href="https://www.dmcihomes.com/allegra-garden-place">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Balcony View - Allegra Garden Place-small.webp"
-                                            alt="/uploads/media/generated/Balcony View - Allegra Garden Place-small.webp"
-                                            width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home uc icon-under-construction"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>Allegra Garden Place</h3>
-                                        <p>Pasig</p>
-                                        <p class="property-type">
-                                            <span class="box-type ">1BR</span>
-                                            <span class="box-type ">2BR</span>
-                                            <span class="box-type ">3BR</span>
-                                            <span class="box-type ">STUDIO</span>
-                                        </p>
-                                        <p class="price"> ₱ 4,670,020 - ₱ 13,388,520</p>
-                                        <!-- <span href="/allegra-garden-place" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="" data-animation="fadeInUp" data-delay="500">
-                            <a href="https://www.dmcihomes.com/sonora-garden-residences">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Sonora Garden Residences-featured-small.webp"
-                                            alt="{{ asset('images/Sonora Garden Residences-featured-small.png') }}"
-                                            width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home uc icon-under-construction"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>Sonora Garden Residences</h3>
-                                        <p>Las Piñas</p>
-                                        <p class="property-type">
-                                            <span class="box-type ">1BR</span>
-                                            <span class="box-type ">2BR</span>
-                                            <span class="box-type ">3BR</span>
-                                        </p>
-                                        <p class="price"> ₱ 4,314,000 - ₱ 10,615,000</p>
-                                        <!-- <span href="/sonora-garden-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="" data-animation="fadeInUp" data-delay="600">
-                            <a href="https://www.dmcihomes.com/fortis-residences">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                            data-src="https://www.dmcihomes.com/uploads/media/generated/Fortis Residences-featured-1657091424326-small.jpg"
-                                            alt="/uploads/media/generated/Fortis Residences-featured-1657091424326-small.jpg"
-                                            width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home new icon-new"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>Fortis Residences</h3>
-                                        <p>Makati</p>
-                                        <p class="property-type">
-                                            <span class="box-type not-available">1BR</span>
-                                            <span class="box-type ">2BR</span>
-                                            <span class="box-type ">3BR</span>
-                                        </p>
-                                        <p class="price"> ₱ 13,832,000 - ₱ 38,596,000</p>
-                                        <!-- <span href="/fortis-residences" class="btn btn-ghost btn-v-small btn-dark btn-round">Visit</span> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li> --}}
+
                     </ul>
                 </div>
             </div>
@@ -457,6 +219,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
         <section class="sec-pad sec-default bg-blue">
+           <center> <h2>SITE PROGRESS</h2>
             <div class="site-progress-wrap animated fadeInUp visible" data-animation="fadeInUp">
                 <ul class="site-progress-list" id="site-progress-list">
                     <!-- Site progress items -->
@@ -467,7 +230,7 @@
                                 <figure class="site-progress-bg">
                                     <span class="sp-percent-value" style="height:{{ $card->progress }}; display: block; background-color: rgba(0, 255, 0, 0.5);"></span>
 
-<span class="sp-percentage">{{ $card->progress }}</span>
+                                <span class="sp-percentage">{{ $card->progress }}</span>
 
                                     <img src="{{ asset($card->image) }}" alt="Card Image" width="100">
                                 </figure>
@@ -495,10 +258,12 @@
                     autoplaySpeed: 2000,
                     arrows: true,
                     dots: true,
+                    infinite: true,
+                    variableWidth: true, // Set variable width
                     responsive: [{
                             breakpoint: 0,
                             settings: {
-                                slidesToShow: 2
+                                slidesToShow: 1
                             }
                         },
                         {
@@ -507,16 +272,14 @@
                                 slidesToShow: 1
                             }
                         }
-                    ],
-                    onAfterChange: function(slick, currentSlide) {
-                        if (currentSlide === slick.slideCount - 1) {
-                            // If it's the last slide, jump to the first slide
-                            $('#site-progress-list').slick('slickGoTo', 0);
-                        }
-                    }
+                    ]
                 });
             });
         </script>
+
+
+
+
 
 
 </body>
@@ -669,675 +432,290 @@
     <div class="slant-border slant-bot slant-white slant-right"></div>
 </section>
 
-<section class="sec-pad">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-sm-12">
-                <div class="
-        -form-wrap contact-us" id="contact-form">
-                    <div class="sec-head">
-                        <h2 class="sec-title">Contact Us</h2>
-                        <p>Leave us a message and we will get back to you as soon as possible.</p>
+
+
+
+    <section class="sec-pad contact-us" id="contact-us">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="contact-form-wrap" id="contact-form">
+
+                        <form action="{{ route('contact.send') }}" method="POST">
+
+                            @csrf
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="first_name">First Name <span
+                                                class="required-field">*</span></label>
+                                        <input id="first_name" name="first_name" type="text">
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="last_name">Last Name <span
+                                                class="required-field">*</span></label>
+                                        <input id="last_name" name="last_name" type="text">
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="email">Email <span
+                                                class="required-field">*</span></label>
+                                        <input id="email" name="email" type="email">
+                                        <p class="error-message">Input a valid email address (eg.
+                                            juan@gmail.com)</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="contact">Contact Number <span
+                                                class="required-field">*</span></label>
+                                        <input id="contact" name="contact"
+                                            onkeypress="return event.charCode === 0 || /[\d-+=,()]/.test(String.fromCharCode(event.charCode));"
+                                            type="tel" maxlength="15">
+                                        <p class="error-message">Input a valid mobile or landline number.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-wrap">
+                                        <label for="country">Country <span
+                                                class="required-field">*</span></label>
+                                        <div class="custom-select">
+                                            <select id="country" name="country" title="Country">
+                                                <option value="Philippines" selected="">Philippines
+                                                </option>
+
+                                            </select>
+                                        </div>
+
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-wrap">
+                                        <label for="province">Province<span
+                                                class="required-field">*</span></label>
+                                        <input id="province" name="province" type="text">
+
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <div class="input-wrap">
+                                        <label for="city">Town / City <span
+                                                class="required-field">*</span></label>
+                                        <input id="city" name="city" type="text">
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 inquiry-condition">
+                                    <div class="input-wrap">
+                                        <label for="property" class="inquiry-label"
+                                            data-inquiry="customer-care" style="display: none;">Property
+                                            Owned: <span class="required-field">*</span></label>
+                                        <label for="property" class="inquiry-label"
+                                            data-inquiry="sales">Property Inquired: <span
+                                                class="required-field">*</span></label>
+                                        <div class="custom-select">
+                                            <select id="property" name="property" title="Property Inquired">
+                                                <option value="Accolade Place">Accolade Place</option>
+                                                <option value="Alder Residences">Alder Residences</option>
+                                                <option value="Alea Residences">Alea Residences</option>
+                                                <option value="Allegra Garden Place">Allegra Garden Place
+                                                </option>
+                                                <option value="Alta Vista de Boracay">Alta Vista de Boracay
+                                                </option>
+                                                <option value="Arista Place">Arista Place</option>
+                                                <option value="Asteria Residences">Asteria Residences</option>
+                                                <option value="The Aston Place">The Aston Place</option>
+                                                <option value="Belleza Towers">Belleza Towers</option>
+                                                <option value="Bonifacio Heights Condominiums">Bonifacio
+                                                    Heights Condominiums</option>
+                                                <option value="Brio Tower">Brio Tower</option>
+                                                <option value="Bristle Ridge">Bristle Ridge</option>
+                                                <option value="Brixton Place">Brixton Place</option>
+                                                <option value="Calathea Place">Calathea Place</option>
+                                                <option value="Cardea Terraces">Cardea Terraces</option>
+                                                <option value="Cedar Crest Condominiums">Cedar Crest
+                                                    Condominiums</option>
+                                                <option value="Cameron Residences">Cameron Residences</option>
+                                                <option value="Cypress Towers">Cypress Towers</option>
+                                                <option value="Dansalan Gardens Condominiums">Dansalan Gardens
+                                                    Condominiums</option>
+                                                <option value="East Ortigas Mansions">East Ortigas Mansions
+                                                </option>
+                                                <option value="East Raya Gardens">East Raya Gardens</option>
+                                                <option value="Fairlane Residences">Fairlane Residences
+                                                </option>
+                                                <option value="Flair Towers">Flair Towers</option>
+                                                <option value="Fortis Residences">Fortis Residences</option>
+                                                <option value="Fairway Terraces">Fairway Terraces</option>
+                                                <option value="Hampstead Garden Condominiums">Hampstead Garden
+                                                    Condominiums</option>
+                                                <option value="Infina Towers">Infina Towers</option>
+                                                <option value="Illumina Residences Manila">Illumina Residences
+                                                    Manila</option>
+                                                <option value="Ivory Wood">Ivory Wood</option>
+                                                <option value="Kai Garden Residences">Kai Garden Residences
+                                                </option>
+                                                <option value="Kalea Heights">Kalea Heights</option>
+                                                <option value="La Verti Residences">La Verti Residences
+                                                </option>
+                                                <option value="Lakeview Manors">Lakeview Manors</option>
+                                                <option value="Levina Place">Levina Place</option>
+                                                <option value="Lumiere Residences">Lumiere Residences</option>
+                                                <option value="Lyre Garden Residences">Lyre Garden Residences
+                                                </option>
+                                                <option value="Magnolia Place">Magnolia Place</option>
+                                                <option value="Mahogany Place">Mahogany Place</option>
+                                                <option value="Mahogany Place 2">Mahogany Place 2</option>
+                                                <option value="Mahogany Place 3">Mahogany Place 3</option>
+                                                <option value="Maple Place">Maple Place</option>
+                                                <option value="Maricielo Villas">Maricielo Villas</option>
+                                                <option value="Mayfield Park Residences">Mayfield Park
+                                                    Residences</option>
+                                                <option value="Mirea Residences">Mirea Residences</option>
+                                                <option value="Moncello Crest">Moncello Crest</option>
+                                                <option value="Morning Sun Townhomes">Morning Sun Townhomes
+                                                </option>
+                                                <option value="Mulberry Place">Mulberry Place</option>
+                                                <option value="Oak Harbor Residences">Oak Harbor Residences
+                                                </option>
+                                                <option value="Ohana Place">Ohana Place</option>
+                                                <option value="Olea Estates">Olea Estates</option>
+                                                <option value="One Castilla Place">One Castilla Place</option>
+                                                <option value="Outlook Ridge Residences">Outlook Ridge
+                                                    Residences</option>
+                                                <option value="Palm Grove">Palm Grove</option>
+                                                <option value="Parama Residences">Parama Residences</option>
+                                                <option value="Prisma Residences">Prisma Residences</option>
+                                                <option value="Rainbow Ridge Condominiums">Rainbow Ridge
+                                                    Condominiums</option>
+                                                <option value="Raya Garden Condominiums">Raya Garden
+                                                    Condominiums</option>
+                                                <option value="Rhapsody Residences">Rhapsody Residences
+                                                </option>
+                                                <option value="Riverfront Residences">Riverfront Residences
+                                                </option>
+                                                <option value="Rosewood Pointe">Rosewood Pointe</option>
+                                                <option value="Royal Palm Residences">Royal Palm Residences
+                                                </option>
+                                                <option value="Sage Residences">Sage Residences</option>
+                                                <option value="Satori Residences">Satori Residences</option>
+                                                <option value="Sheridan Towers">Sheridan Towers</option>
+                                                <option value="Siena Park Residences">Siena Park Residences
+                                                </option>
+                                                <option value="Solmera Coast">Solmera Coast</option>
+                                                <option value="Sonora Garden Residences">Sonora Garden
+                                                    Residences</option>
+                                                <option value="Sorrel Residences">Sorrel Residences</option>
+                                                <option value="Sovanna Towers">Sovanna Towers</option>
+                                                <option value="Spring Lane Homes">Spring Lane Homes</option>
+                                                <option value="Stellar Place">Stellar Place</option>
+                                                <option value="The Amaryllis">The Amaryllis</option>
+                                                <option value="The Atherton">The Atherton</option>
+                                                <option value="The Avalon Heights">The Avalon Heights</option>
+                                                <option value="The Birchwood">The Birchwood</option>
+                                                <option value="The Camden Place">The Camden Place</option>
+                                                <option value="The Celandine">The Celandine</option>
+                                                <option value="The Crestmont">The Crestmont</option>
+                                                <option value="Lucine Estates">Lucine Estates</option>
+                                                <option value="The Manors at Celebrity Place">The Manors at
+                                                    Celebrity Place</option>
+                                                <option value="The Orabella">The Orabella</option>
+                                                <option value="The Oriana">The Oriana</option>
+                                                <option value="The Redwoods">The Redwoods</option>
+                                                <option value="The Valeron Tower">The Valeron Tower</option>
+                                                <option value="Tivoli Garden Residences">Tivoli Garden
+                                                    Residences</option>
+                                                <option value="Torre de Manila">Torre de Manila</option>
+                                                <option value="Verawood Residences">Verawood Residences
+                                                </option>
+                                                <option value="Verdon Parc">Verdon Parc</option>
+                                                <option value="Viera Residences">Viera Residences</option>
+                                                <option value="Villa Alegre Homes">Villa Alegre Homes</option>
+                                                <option value="Vista De Lago">Vista De Lago</option>
+                                                <option value="Willow Park Homes">Willow Park Homes</option>
+                                                <option value="Woodland Hills">Woodland Hills</option>
+                                                <option value="Zinnia Towers">Zinnia Towers</option>
+                                                <option value="The Erin Heights">The Erin Heights</option>
+                                            </select>
+                                        </div>
+                                        <p class="error-message">Please select a property.</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-wrap">
+                                        <label for="message">Message <span
+                                                class="required-field">*</span></label>
+                                        <textarea id="message" name="message" placeholder="Type your message here" wrap="soft"></textarea>
+                                        <p class="error-message">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit">Submit</button>
                     </div>
-
-                    <form method="POST"
-                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
-                        id="multi-type-inquiry">
-                        <input type="hidden" name="oid" value="00D5g000000J3Js">
-                        <input type="hidden" name="lead_source" value="Website">
-                        <input type="hidden" name="retURL" value="https://www.dmcihomes.com/thank-you">
-                        <!--<input type="hidden" name="debug" value=1>
-                <input type="hidden" name="debugEmail" value="robbie.ko@afdigital.com">-->
-                        <!-- <div class="contact-form-wrap"> -->
-                        <!-- <div class="sec-head">
-                        <h4>What can we help you with?</h4>
-                    </div> -->
-                        <div class="input-wrap inquiry-wrap">
-                            <label for="00N5g000003tIus">What can we help you with? <span
-                                    class="required-field">*</span></label>
-                            <div class="custom-select">
-                                <!--<label for="inquiry-type"></label>-->
-                                <select id="00N5g000003tIus" name="00N5g000003tIus" title="Inquiry Type">
-                                    <option value="Sales Inquiry" selected>Sales Inquiry</option>
-                                    <option value="Customer Care Concern">Customer Care Concern</option>
-                                    <option value="Leasing Inquiry">Leasing Inquiry</option>
-                                    <!--<option value="Careers">Careers</option>-->
-                                    <option value="Other Concerns">Other Concerns</option>
-                                </select>
-                            </div>
-                            <div class="clr"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-wrap">
-                                    <label for="first_name">First Name <span class="required-field">*</span></label>
-                                    <input id="first_name" name="first_name" type="text">
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-wrap">
-                                    <label for="last_name">Last Name <span class="required-field">*</span></label>
-                                    <input id="last_name" name="last_name" type="text">
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-wrap">
-                                    <label for="email">Email <span class="required-field">*</span></label>
-                                    <input id="email" name="email" type="email">
-                                    <p class="error-message">Input a valid email address (eg. juan@gmail.com)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-wrap">
-                                    <label for="00N5g000003tnlz">Contact Number <span
-                                            class="required-field">*</span></label>
-                                    <input id="00N5g000003tnlz" name="00N5g000003tnlz"
-                                        onkeypress="return event.charCode === 0 || /[\d-+=,()]/.test(String.fromCharCode(event.charCode));"
-                                        type="tel" maxlength="15">
-                                    <p class="error-message">Input a valid mobile or landline number.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="input-wrap">
-                                    <label for="00N5g000003tnOR">Country <span
-                                            class="required-field">*</span></label>
-                                    <div class="custom-select">
-                                        <select id="00N5g000003tnOR" name="00N5g000003tnOR" title="Country">
-                                            <option value="Afghanistan">Afghanistan</option>
-                                            <option value="Albania">Albania</option>
-                                            <option value="Algeria">Algeria</option>
-                                            <option value="Andorra">Andorra</option>
-                                            <option value="Angola">Angola</option>
-                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                            <option value="Argentina">Argentina</option>
-                                            <option value="Armenia">Armenia</option>
-                                            <option value="Australia">Australia</option>
-                                            <option value="Austria">Austria</option>
-                                            <option value="Azerbaijan">Azerbaijan</option>
-                                            <option value="Bahrain">Bahrain</option>
-                                            <option value="Bangladesh">Bangladesh</option>
-                                            <option value="Barbados">Barbados</option>
-                                            <option value="Belarus">Belarus</option>
-                                            <option value="Belgium">Belgium</option>
-                                            <option value="Belize">Belize</option>
-                                            <option value="Benin">Benin</option>
-                                            <option value="Bhutan">Bhutan</option>
-                                            <option value="Bolivia">Bolivia</option>
-                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                                            <option value="Botswana">Botswana</option>
-                                            <option value="Brazil">Brazil</option>
-                                            <option value="Brunei">Brunei</option>
-                                            <option value="Bulgaria">Bulgaria</option>
-                                            <option value="Burkina Faso">Burkina Faso</option>
-                                            <option value="Burundi">Burundi</option>
-                                            <option value="Cambodia">Cambodia</option>
-                                            <option value="Cameroon">Cameroon</option>
-                                            <option value="Canada">Canada</option>
-                                            <option value="Cape Verde">Cape Verde</option>
-                                            <option value="Central African Republic">Central African Republic</option>
-                                            <option value="Chad">Chad</option>
-                                            <option value="Chile">Chile</option>
-                                            <option value="China">China</option>
-                                            <option value="Colombia">Colombia</option>
-                                            <option value="Comoros">Comoros</option>
-                                            <option value="Congo, Democratic Republic of the">Congo, Democratic
-                                                Republic of the</option>
-                                            <option value="Congo, Republic of the">Congo, Republic of the</option>
-                                            <option value="Costa Rica">Costa Rica</option>
-                                            <option value="Cote d&#39;Ivoire">Cote d&#39;Ivoire</option>
-                                            <option value="Croatia">Croatia</option>
-                                            <option value="Cuba">Cuba</option>
-                                            <option value="Cyprus">Cyprus</option>
-                                            <option value="Czech Republic">Czech Republic</option>
-                                            <option value="Denmark">Denmark</option>
-                                            <option value="Djibouti">Djibouti</option>
-                                            <option value="Dominica">Dominica</option>
-                                            <option value="Dominican Republic">Dominican Republic</option>
-                                            <option value="East Timor (Timor-Leste)">East Timor (Timor-Leste)</option>
-                                            <option value="Ecuador">Ecuador</option>
-                                            <option value="Egypt">Egypt</option>
-                                            <option value="El Salvador">El Salvador</option>
-                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                            <option value="Eritrea">Eritrea</option>
-                                            <option value="Estonia">Estonia</option>
-                                            <option value="Ethiopia">Ethiopia</option>
-                                            <option value="Fiji">Fiji</option>
-                                            <option value="Finland">Finland</option>
-                                            <option value="France">France</option>
-                                            <option value="Gabon">Gabon</option>
-                                            <option value="Georgia">Georgia</option>
-                                            <option value="Germany">Germany</option>
-                                            <option value="Ghana">Ghana</option>
-                                            <option value="Greece">Greece</option>
-                                            <option value="Grenada">Grenada</option>
-                                            <option value="Guatemala">Guatemala</option>
-                                            <option value="Guinea">Guinea</option>
-                                            <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                            <option value="Guyana">Guyana</option>
-                                            <option value="Haiti">Haiti</option>
-                                            <option value="Honduras">Honduras</option>
-                                            <option value="Hungary">Hungary</option>
-                                            <option value="Iceland">Iceland</option>
-                                            <option value="India">India</option>
-                                            <option value="Indonesia">Indonesia</option>
-                                            <option value="Iran">Iran</option>
-                                            <option value="Iraq">Iraq</option>
-                                            <option value="Ireland">Ireland</option>
-                                            <option value="Israel">Israel</option>
-                                            <option value="Italy">Italy</option>
-                                            <option value="Jamaica">Jamaica</option>
-                                            <option value="Japan">Japan</option>
-                                            <option value="Jordan">Jordan</option>
-                                            <option value="Kazakhstan">Kazakhstan</option>
-                                            <option value="Kenya">Kenya</option>
-                                            <option value="Kiribati">Kiribati</option>
-                                            <option value="Korea, North">Korea, North</option>
-                                            <option value="Korea, South">Korea, South</option>
-                                            <option value="Kosovo">Kosovo</option>
-                                            <option value="Kuwait">Kuwait</option>
-                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                            <option value="Laos">Laos</option>
-                                            <option value="Latvia">Latvia</option>
-                                            <option value="Lebanon">Lebanon</option>
-                                            <option value="Lesotho">Lesotho</option>
-                                            <option value="Liberia">Liberia</option>
-                                            <option value="Libya">Libya</option>
-                                            <option value="Liechtenstein">Liechtenstein</option>
-                                            <option value="Lithuania">Lithuania</option>
-                                            <option value="Luxembourg">Luxembourg</option>
-                                            <option value="Macedonia">Macedonia</option>
-                                            <option value="Madagascar">Madagascar</option>
-                                            <option value="Malawi">Malawi</option>
-                                            <option value="Malaysia">Malaysia</option>
-                                            <option value="Maldives">Maldives</option>
-                                            <option value="Mali">Mali</option>
-                                            <option value="Malta">Malta</option>
-                                            <option value="Marshall Islands">Marshall Islands</option>
-                                            <option value="Mauritania">Mauritania</option>
-                                            <option value="Mauritius">Mauritius</option>
-                                            <option value="Mexico">Mexico</option>
-                                            <option value="Micronesia, Federated States of">Micronesia, Federated
-                                                States of</option>
-                                            <option value="Moldova">Moldova</option>
-                                            <option value="Monaco">Monaco</option>
-                                            <option value="Mongolia">Mongolia</option>
-                                            <option value="Montenegro">Montenegro</option>
-                                            <option value="Morocco">Morocco</option>
-                                            <option value="Mozambique">Mozambique</option>
-                                            <option value="Myanmar (Burma)">Myanmar (Burma)</option>
-                                            <option value="Namibia">Namibia</option>
-                                            <option value="Nauru">Nauru</option>
-                                            <option value="Nepal">Nepal</option>
-                                            <option value="Netherlands">Netherlands</option>
-                                            <option value="New Zealand">New Zealand</option>
-                                            <option value="Nicaragua">Nicaragua</option>
-                                            <option value="Niger">Niger</option>
-                                            <option value="Nigeria">Nigeria</option>
-                                            <option value="Norway">Norway</option>
-                                            <option value="Oman">Oman</option>
-                                            <option value="Pakistan">Pakistan</option>
-                                            <option value="Palau">Palau</option>
-                                            <option value="Panama">Panama</option>
-                                            <option value="Papua New Guinea">Papua New Guinea</option>
-                                            <option value="Paraguay">Paraguay</option>
-                                            <option value="Peru">Peru</option>
-                                            <option value="Philippines" selected>Philippines</option>
-                                            <option value="Poland">Poland</option>
-                                            <option value="Portugal">Portugal</option>
-                                            <option value="Qatar">Qatar</option>
-                                            <option value="Romania">Romania</option>
-                                            <option value="Russia">Russia</option>
-                                            <option value="Rwanda">Rwanda</option>
-                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                            <option value="Saint Lucia">Saint Lucia</option>
-                                            <option value="Saint Vincent and the Grenadines">Saint Vincent and the
-                                                Grenadines</option>
-                                            <option value="Samoa">Samoa</option>
-                                            <option value="San Marino">San Marino</option>
-                                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                            <option value="Saudi Arabia">Saudi Arabia</option>
-                                            <option value="Senegal">Senegal</option>
-                                            <option value="Serbia">Serbia</option>
-                                            <option value="Seychelles">Seychelles</option>
-                                            <option value="Sierra Leone">Sierra Leone</option>
-                                            <option value="Singapore">Singapore</option>
-                                            <option value="Slovakia">Slovakia</option>
-                                            <option value="Slovenia">Slovenia</option>
-                                            <option value="Solomon Islands">Solomon Islands</option>
-                                            <option value="Somalia">Somalia</option>
-                                            <option value="South Africa">South Africa</option>
-                                            <option value="South Sudan">South Sudan</option>
-                                            <option value="Spain">Spain</option>
-                                            <option value="Sri Lanka">Sri Lanka</option>
-                                            <option value="Sudan">Sudan</option>
-                                            <option value="Suriname">Suriname</option>
-                                            <option value="Swaziland">Swaziland</option>
-                                            <option value="Sweden">Sweden</option>
-                                            <option value="Switzerland">Switzerland</option>
-                                            <option value="Syria">Syria</option>
-                                            <option value="Taiwan">Taiwan</option>
-                                            <option value="Tajikistan">Tajikistan</option>
-                                            <option value="Tanzania">Tanzania</option>
-                                            <option value="Thailand">Thailand</option>
-                                            <option value="The Bahamas">The Bahamas</option>
-                                            <option value="The Gambia">The Gambia</option>
-                                            <option value="Togo">Togo</option>
-                                            <option value="Tonga">Tonga</option>
-                                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                            <option value="Tunisia">Tunisia</option>
-                                            <option value="Turkey">Turkey</option>
-                                            <option value="Turkmenistan">Turkmenistan</option>
-                                            <option value="Tuvalu">Tuvalu</option>
-                                            <option value="Uganda">Uganda</option>
-                                            <option value="Ukraine">Ukraine</option>
-                                            <option value="United Arab Emirates">United Arab Emirates</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="United States of America">United States of America</option>
-                                            <option value="Uruguay">Uruguay</option>
-                                            <option value="Uzbekistan">Uzbekistan</option>
-                                            <option value="Vanuatu">Vanuatu</option>
-                                            <option value="Vatican City (Holy See)">Vatican City (Holy See)</option>
-                                            <option value="Venezuela">Venezuela</option>
-                                            <option value="Vietnam">Vietnam</option>
-                                            <option value="Yemen">Yemen</option>
-                                            <option value="Zambia">Zambia</option>
-                                            <option value="Zimbabwe">Zimbabwe</option>
-                                        </select>
-                                    </div>
-                                    <!-- <input type="text" name="country" id="country" placeholder="eq. Philippines"> -->
-                                    <!--input type="text" value="" /-->
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="input-wrap">
-                                    <label for="00N5g000003tIux">Province<span
-                                            class="required-field">*</span></label>
-                                    <input id="00N5g000003tIux" name="00N5g000003tIux" type="text">
-                                    <!-- input type="text" value="" /-->
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-
-                                <div class="input-wrap">
-                                    <label for="00N5g000003tnnR">Town / City <span
-                                            class="required-field">*</span></label>
-                                    <input id="00N5g000003tnnR" name="00N5g000003tnnR" type="text">
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-12 inquiry-condition">
-                                <div class="input-wrap">
-                                    <label for="00N5g000009mqi9" class="inquiry-label"
-                                        data-inquiry="customer-care" style="display: none;">Property Owned: <span
-                                            class="required-field">*</span></label>
-                                    <label for="00N5g000009mqi9" class="inquiry-label"
-                                        data-inquiry="sales">Property Inquired: <span
-                                            class="required-field">*</span></label>
-                                    <div class="custom-select">
-                                        <select id="00N5g000009mqi9" name="00N5g000009mqi9"
-                                            title="Property Inquired">
-                                            <option value="Accolade Place">Accolade Place</option>
-                                            <option value="Alder Residences">Alder Residences</option>
-                                            <option value="Alea Residences">Alea Residences</option>
-                                            <option value="Allegra Garden Place">Allegra Garden Place</option>
-                                            <option value="Alta Vista de Boracay">Alta Vista de Boracay</option>
-                                            <option value="Arista Place">Arista Place</option>
-                                            <option value="Asteria Residences">Asteria Residences</option>
-                                            <option value="The Aston Place">The Aston Place</option>
-                                            <option value="Belleza Towers">Belleza Towers</option>
-                                            <option value="Bonifacio Heights Condominiums">Bonifacio Heights
-                                                Condominiums</option>
-                                            <option value="Brio Tower">Brio Tower</option>
-                                            <option value="Bristle Ridge">Bristle Ridge</option>
-                                            <option value="Brixton Place">Brixton Place</option>
-                                            <option value="Calathea Place">Calathea Place</option>
-                                            <option value="Cardea Terraces">Cardea Terraces</option>
-                                            <option value="Cedar Crest Condominiums">Cedar Crest Condominiums</option>
-                                            <option value="Cameron Residences">Cameron Residences</option>
-                                            <option value="Cypress Towers">Cypress Towers</option>
-                                            <option value="Dansalan Gardens Condominiums">Dansalan Gardens
-                                                Condominiums</option>
-                                            <option value="East Ortigas Mansions">East Ortigas Mansions</option>
-                                            <option value="East Raya Gardens">East Raya Gardens</option>
-                                            <option value="Fairlane Residences">Fairlane Residences</option>
-                                            <option value="Flair Towers">Flair Towers</option>
-                                            <option value="Fortis Residences">Fortis Residences</option>
-                                            <option value="Fairway Terraces">Fairway Terraces</option>
-                                            <option value="Hampstead Garden Condominiums">Hampstead Garden
-                                                Condominiums</option>
-                                            <option value="Infina Towers">Infina Towers</option>
-                                            <option value="Illumina Residences Manila">Illumina Residences Manila
-                                            </option>
-                                            <option value="Ivory Wood">Ivory Wood</option>
-                                            <option value="Kai Garden Residences">Kai Garden Residences</option>
-                                            <option value="Kalea Heights">Kalea Heights</option>
-                                            <option value="La Verti Residences">La Verti Residences</option>
-                                            <option value="Lakeview Manors">Lakeview Manors</option>
-                                            <option value="Levina Place">Levina Place</option>
-                                            <option value="Lumiere Residences">Lumiere Residences</option>
-                                            <option value="Lyre Garden Residences">Lyre Garden Residences</option>
-                                            <option value="Magnolia Place">Magnolia Place</option>
-                                            <option value="Mahogany Place">Mahogany Place</option>
-                                            <option value="Mahogany Place 2">Mahogany Place 2</option>
-                                            <option value="Mahogany Place 3">Mahogany Place 3</option>
-                                            <option value="Maple Place">Maple Place</option>
-                                            <option value="Maricielo Villas">Maricielo Villas</option>
-                                            <option value="Mayfield Park Residences">Mayfield Park Residences</option>
-                                            <option value="Mirea Residences">Mirea Residences</option>
-                                            <option value="Moncello Crest">Moncello Crest</option>
-                                            <option value="Morning Sun Townhomes">Morning Sun Townhomes</option>
-                                            <option value="Mulberry Place">Mulberry Place</option>
-                                            <option value="Oak Harbor Residences">Oak Harbor Residences</option>
-                                            <option value="Ohana Place">Ohana Place</option>
-                                            <option value="Olea Estates">Olea Estates</option>
-                                            <option value="One Castilla Place">One Castilla Place</option>
-                                            <option value="Outlook Ridge Residences">Outlook Ridge Residences</option>
-                                            <option value="Palm Grove">Palm Grove</option>
-                                            <option value="Parama Residences">Parama Residences</option>
-                                            <option value="Prisma Residences">Prisma Residences</option>
-                                            <option value="Rainbow Ridge Condominiums">Rainbow Ridge Condominiums
-                                            </option>
-                                            <option value="Raya Garden Condominiums">Raya Garden Condominiums</option>
-                                            <option value="Rhapsody Residences">Rhapsody Residences</option>
-                                            <option value="Riverfront Residences">Riverfront Residences</option>
-                                            <option value="Rosewood Pointe">Rosewood Pointe</option>
-                                            <option value="Royal Palm Residences">Royal Palm Residences</option>
-                                            <option value="Sage Residences">Sage Residences</option>
-                                            <option value="Satori Residences">Satori Residences</option>
-                                            <option value="Sheridan Towers">Sheridan Towers</option>
-                                            <option value="Siena Park Residences">Siena Park Residences</option>
-                                            <option value="Solmera Coast">Solmera Coast</option>
-                                            <option value="Sonora Garden Residences">Sonora Garden Residences</option>
-                                            <option value="Sorrel Residences">Sorrel Residences</option>
-                                            <option value="Sovanna Towers">Sovanna Towers</option>
-                                            <option value="Spring Lane Homes">Spring Lane Homes</option>
-                                            <option value="Stellar Place">Stellar Place</option>
-                                            <option value="The Amaryllis">The Amaryllis</option>
-                                            <option value="The Atherton">The Atherton</option>
-                                            <option value="The Avalon Heights">The Avalon Heights</option>
-                                            <option value="The Birchwood">The Birchwood</option>
-                                            <option value="The Camden Place">The Camden Place</option>
-                                            <option value="The Celandine">The Celandine</option>
-                                            <option value="The Crestmont">The Crestmont</option>
-                                            <option value="Lucine Estates">Lucine Estates</option>
-                                            <option value="The Manors at Celebrity Place">The Manors at Celebrity
-                                                Place</option>
-                                            <option value="The Orabella">The Orabella</option>
-                                            <option value="The Oriana">The Oriana</option>
-                                            <option value="The Redwoods">The Redwoods</option>
-                                            <option value="The Valeron Tower">The Valeron Tower</option>
-                                            <option value="Tivoli Garden Residences">Tivoli Garden Residences</option>
-                                            <option value="Torre de Manila">Torre de Manila</option>
-                                            <option value="Verawood Residences">Verawood Residences</option>
-                                            <option value="Verdon Parc">Verdon Parc</option>
-                                            <option value="Viera Residences">Viera Residences</option>
-                                            <option value="Villa Alegre Homes">Villa Alegre Homes</option>
-                                            <option value="Vista De Lago">Vista De Lago</option>
-                                            <option value="Willow Park Homes">Willow Park Homes</option>
-                                            <option value="Woodland Hills">Woodland Hills</option>
-                                            <option value="Zinnia Towers">Zinnia Towers</option>
-                                            <option value="The Erin Heights">The Erin Heights</option>
-
-                                        </select>
-                                    </div>
-                                    <p class="error-message">Please select a property.</p>
-                                </div>
-                            </div>
-
-                            <!--<div class="col-md-12 inquiry-condition" data-inquiry="customer-care">
-                            <div class="input-wrap">
-                                <label for="propertyOwned">Property owned: <span class="required-field">*</span></label>
-                                <div class="custom-select">
-                                    <select  id="00N5g000009mqi9" name="00N5g000009mqi9" title="Property Inquired">
-                                        <option value="Accolade Place">Accolade Place</option>
-                                        <option value="Alder Residences">Alder Residences</option>
-                                        <option value="Alea Residences">Alea Residences</option>
-                                        <option value="Allegra Garden Place">Allegra Garden Place</option>
-                                        <option value="Alta Vista de Boracay">Alta Vista de Boracay</option>
-                                        <option value="Arista Place">Arista Place</option>
-                                        <option value="Asteria Residences">Asteria Residences</option>
-                                        <option value="The Aston Place">The Aston Place</option>
-                                        <option value="Belleza Towers">Belleza Towers</option>
-                                        <option value="Bonifacio Heights Condominiums">Bonifacio Heights Condominiums</option>
-                                        <option value="Brio Tower">Brio Tower</option>
-                                        <option value="Bristle Ridge">Bristle Ridge</option>
-                                        <option value="Brixton Place">Brixton Place</option>
-                                        <option value="Calathea Place">Calathea Place</option>
-                                        <option value="Cardea Terraces">Cardea Terraces</option>
-                                        <option value="Cedar Crest Condominiums">Cedar Crest Condominiums</option>
-                                        <option value="Cameron Residences">Cameron Residences</option>
-                                        <option value="Cypress Towers">Cypress Towers</option>
-                                        <option value="Dansalan Gardens Condominiums">Dansalan Gardens Condominiums</option>
-                                        <option value="East Ortigas Mansions">East Ortigas Mansions</option>
-                                        <option value="East Raya Gardens">East Raya Gardens</option>
-                                        <option value="Fairlane Residences">Fairlane Residences</option>
-                                        <option value="Flair Towers">Flair Towers</option>
-                                        <option value="Fortis Residences">Fortis Residences</option>
-                                        <option value="Fairway Terraces">Fairway Terraces</option>
-                                        <option value="Hampstead Garden Condominiums">Hampstead Garden Condominiums</option>
-                                        <option value="Infina Towers">Infina Towers</option>
-                                        <option value="Illumina Residences Manila">Illumina Residences Manila</option>
-                                        <option value="Ivory Wood">Ivory Wood</option>
-                                        <option value="Kai Garden Residences">Kai Garden Residences</option>
-                                        <option value="Kalea Heights">Kalea Heights</option>
-                                        <option value="La Verti Residences">La Verti Residences</option>
-                                        <option value="Lakeview Manors">Lakeview Manors</option>
-                                        <option value="Levina Place">Levina Place</option>
-                                        <option value="Lumiere Residences">Lumiere Residences</option>
-                                        <option value="Lyre Garden Residences">Lyre Garden Residences</option>
-                                        <option value="Magnolia Place">Magnolia Place</option>
-                                        <option value="Mahogany Place">Mahogany Place</option>
-                                        <option value="Mahogany Place 2">Mahogany Place 2</option>
-                                        <option value="Mahogany Place 3">Mahogany Place 3</option>
-                                        <option value="Maple Place">Maple Place</option>
-                                        <option value="Maricielo Villas">Maricielo Villas</option>
-                                        <option value="Mayfield Park Residences">Mayfield Park Residences</option>
-                                        <option value="Mirea Residences">Mirea Residences</option>
-                                        <option value="Moncello Crest">Moncello Crest</option>
-                                        <option value="Morning Sun Townhomes">Morning Sun Townhomes</option>
-                                        <option value="Mulberry Place">Mulberry Place</option>
-                                        <option value="Oak Harbor Residences">Oak Harbor Residences</option>
-                                        <option value="Ohana Place">Ohana Place</option>
-                                        <option value="Olea Estates">Olea Estates</option>
-                                        <option value="One Castilla Place">One Castilla Place</option>
-                                        <option value="Outlook Ridge Residences">Outlook Ridge Residences</option>
-                                        <option value="Palm Grove">Palm Grove</option>
-                                        <option value="Parama Residences">Parama Residences</option>
-                                        <option value="Prisma Residences">Prisma Residences</option>
-                                        <option value="Rainbow Ridge Condominiums">Rainbow Ridge Condominiums</option>
-                                        <option value="Raya Garden Condominiums">Raya Garden Condominiums</option>
-                                        <option value="Rhapsody Residences">Rhapsody Residences</option>
-                                        <option value="Riverfront Residences">Riverfront Residences</option>
-                                        <option value="Rosewood Pointe">Rosewood Pointe</option>
-                                        <option value="Royal Palm Residences">Royal Palm Residences</option>
-                                        <option value="Sage Residences">Sage Residences</option>
-                                        <option value="Satori Residences">Satori Residences</option>
-                                        <option value="Sheridan Towers">Sheridan Towers</option>
-                                        <option value="Siena Park Residences">Siena Park Residences</option>
-                                        <option value="Solmera Coast">Solmera Coast</option>
-                                        <option value="Sonora Garden Residences">Sonora Garden Residences</option>
-                                        <option value="Sorrel Residences">Sorrel Residences</option>
-                                        <option value="Sovanna Towers">Sovanna Towers</option>
-                                        <option value="Spring Lane Homes">Spring Lane Homes</option>
-                                        <option value="Stellar Place">Stellar Place</option>
-                                        <option value="The Amaryllis">The Amaryllis</option>
-                                        <option value="The Atherton">The Atherton</option>
-                                        <option value="The Avalon Heights">The Avalon Heights</option>
-                                        <option value="The Birchwood">The Birchwood</option>
-                                        <option value="The Camden Place">The Camden Place</option>
-                                        <option value="The Celandine">The Celandine</option>
-                                        <option value="The Crestmont">The Crestmont</option>
-                                        <option value="Lucine Estates">Lucine Estates</option>
-                                        <option value="The Manors at Celebrity Place">The Manors at Celebrity Place</option>
-                                        <option value="The Orabella">The Orabella</option>
-                                        <option value="The Oriana">The Oriana</option>
-                                        <option value="The Redwoods">The Redwoods</option>
-                                        <option value="The Valeron Tower">The Valeron Tower</option>
-                                        <option value="Tivoli Garden Residences">Tivoli Garden Residences</option>
-                                        <option value="Torre de Manila">Torre de Manila</option>
-                                        <option value="Verawood Residences">Verawood Residences</option>
-                                        <option value="Verdon Parc">Verdon Parc</option>
-                                        <option value="Viera Residences">Viera Residences</option>
-                                        <option value="Villa Alegre Homes">Villa Alegre Homes</option>
-                                        <option value="Vista De Lago">Vista De Lago</option>
-                                        <option value="Willow Park Homes">Willow Park Homes</option>
-                                        <option value="Woodland Hills">Woodland Hills</option>
-                                        <option value="Zinnia Towers">Zinnia Towers</option>
-                                        <option value="The Erin Heights">The Erin Heights</option>
-                                    </select>
-                                </div>
-                                <p class="error-message">Please select a property.</p>
-                            </div>
-                        </div>-->
-
-                            <!--<div class="col-md-12 inquiry-condition" data-inquiry="career">
-                            <div class="input-wrap custom-multi-select">
-                                <label for="position-interested">Select Position: <span class="required-field">*</span></label>
-                                <select id="position-interested" name="position">
-                                                                            <option value="182">Application Developer</option>
-                                                                            <option value="231">Architect</option>
-                                                                            <option value="229">BIM Project Specialist</option>
-                                                                            <option value="247">BIM Specialist</option>
-                                                                            <option value="202">Business Analyst</option>
-                                                                            <option value="259">Business Development Officer</option>
-                                                                            <option value="258">Business Development Senior Specialist</option>
-                                                                            <option value="141">Business Development Specialist</option>
-                                                                            <option value="269">Business Process Analyst (Methods Analyst)</option>
-                                                                            <option value="162">Civil Engineer</option>
-                                                                            <option value="254">Civil Engineer - Site Planner and Scheduler</option>
-                                                                            <option value="218">Company Nurse (HR Assistant)</option>
-                                                                            <option value="178">Construction Area Manager</option>
-                                                                            <option value="161">Contracts Engineer</option>
-                                                                            <option value="160">Cost Engineer</option>
-                                                                            <option value="246">Cost Officer</option>
-                                                                            <option value="138">Credit &amp; Collection Assistant</option>
-                                                                            <option value="203">Customer Care Specialist</option>
-                                                                            <option value="157">Design Assistant/Architect</option>
-                                                                            <option value="233">Electrical Engineer (Site-Based)</option>
-                                                                            <option value="171">Equipment Engineer</option>
-                                                                            <option value="199">Equipment Manager</option>
-                                                                            <option value="214">Field Recruiter</option>
-                                                                            <option value="136">Finance Assistant</option>
-                                                                            <option value="261">Fit-Out Engineer</option>
-                                                                            <option value="165">Geodetic Engineer</option>
-                                                                            <option value="213">HR Assistant (Direct Labor - Recruitment)</option>
-                                                                            <option value="215">HR Assistant (Direct Labor - Recruitment) - Cebu Based</option>
-                                                                            <option value="244">HR Assistant/Specialist - Recruitment (Project Based)</option>
-                                                                            <option value="216">HR Specialist - Training</option>
-                                                                            <option value="270">Internal Audit Specialist</option>
-                                                                            <option value="135">Junior Accountant</option>
-                                                                            <option value="192">Landscape Architect/Design Assistant</option>
-                                                                            <option value="194">Management Trainee for Construction</option>
-                                                                            <option value="195">Management Trainee for Design Management</option>
-                                                                            <option value="196">Management Trainee for Property Management</option>
-                                                                            <option value="250">Marketing Coordinator - Cebu-Based</option>
-                                                                            <option value="168">Mechanical Engineer</option>
-                                                                            <option value="167">Mechanical Engineer (Head Office)</option>
-                                                                            <option value="235">Mechanical Engineer (RMC)</option>
-                                                                            <option value="256">MEP Cost Engineer - Team Leader</option>
-                                                                            <option value="264">MEPF Engineer</option>
-                                                                            <option value="217">Organizational Development Assistant/Specialist</option>
-                                                                            <option value="208">Organizational Development Manager</option>
-                                                                            <option value="238">Payroll Supervisor</option>
-                                                                            <option value="227">Permits Assistant</option>
-                                                                            <option value="212">Project Accountant</option>
-                                                                            <option value="152">Project Development Specialist</option>
-                                                                            <option value="177">Project-In-Charge</option>
-                                                                            <option value="153">Property Advisor</option>
-                                                                            <option value="266">QC Engineer (RMC)</option>
-                                                                            <option value="271">Regional Sales Coordinator</option>
-                                                                            <option value="263">Research &amp; Development Manager</option>
-                                                                            <option value="139">Risk &amp; Control Officer</option>
-                                                                            <option value="201">Safety Auditor</option>
-                                                                            <option value="173">Safety Officer</option>
-                                                                            <option value="243">Sales Management Coordinator</option>
-                                                                            <option value="219">Sales Management Specialist</option>
-                                                                            <option value="265">Service Engineer</option>
-                                                                            <option value="166">Survey Assistant</option>
-                                                                            <option value="209">Treasury Assistant</option>
-                                                                    </select>
-                                <p class="error-message">Please select a your desired position.</p>
-                            </div>
-                        </div>-->
-
-                            <!--<div class="col-md-12 inquiry-condition" data-inquiry="career">
-                            <div class="input-wrap custom-upload">
-                                <input type="file" name="resume" id="resume" class="inputfile inputfile-6">
-                                <label for="resume"><strong> Upload CV</strong><span></span> </label>
-                                <p class="error-message">Please upload your resume.</p>
-                            </div>
-                        </div>-->
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="input-wrap">
-                                    <label for="00N5g000003tIvCEAU">Message <span
-                                            class="required-field">*</span></label>
-                                    <textarea id="00N5g000003tIvCEAU" name="00N5g000003tIvCEAU" placeholder="Type your message here" wrap="soft"></textarea>
-                                    <p class="error-message">This field is required.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-wrap new-recaptcha-wrap">
-                            <!-- <label for="">Prove you're not a robot.</label> -->
-                            <div id="captchacode"></div>
-                            <div class="error-message">
-                                <p>Please verify that you are not a robot.<span>*</span></p>
-                            </div>
-                        </div>
-
-                        <div class="notes policy">
-                            <ul class="flex check wide">
-                                <li>
-                                    <div class="custom-checkbox input-wrap data-privacy">
-                                        <input type="checkbox" id="agreedToDPA" name="agreedToDpa">
-                                        <label for="agreedToDPA"><span class="required-field">*</span> I agree to
-                                            the DMCI Homes <a data-fancybox data-src="#privacy-policy"><strong>Privacy
-                                                    Policy</strong></a> as guided by RA10173 or the Philippine Data
-                                            Privacy Act of 2012.</label>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="custom-checkbox input-wrap data-privacy">
-                                        <input type="checkbox" id="allowedCRF" name="allowedCRF" value="yes">
-                                        <label for="allowedCRF">I am allowing DMCI Homes’ Corporate Accounts
-                                            Management group to be my official sales representative for the next 30
-                                            days. The group will exclusively be responsible for any of my inquiries and
-                                            processes needed, should I decide to make a reservation/purchase.
-                                        </label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="input-wrap" id="all-field">
-                            <button type="submit" class="btn btn-round btn-green btn-large"
-                                id="submit-contact-form">Submit</button>
-                            <p class="error-message">Please fill up the required field correctly.</p>
-                        </div>
-
-
-                        <!-- </div> -->
-                    </form>
                 </div>
-            </div>
+
+                <style>
+                    button[type="submit"] {
+                        background-color: #4CAF50;
+                        /* Green background */
+                        border: none;
+                        /* Remove border */
+                        color: white;
+                        /* White text color */
+                        padding: 15px 32px;
+                        /* Padding */
+                        text-align: center;
+                        /* Center text */
+                        text-decoration: none;
+                        /* Remove underline */
+                        display: inline-block;
+                        /* Display as inline block */
+                        font-size: 16px;
+                        /* Font size */
+                        margin: 4px 2px;
+                        /* Margin */
+                        transition-duration: 0.4s;
+                        /* Transition duration */
+                        cursor: pointer;
+                        /* Cursor pointer */
+                        border-radius: 8px;
+                        /* Border radius */
+                    }
+
+                    button[type="submit"]:hover {
+                        background-color: #45a049;
+                        /* Darker green on hover */
+                    }
+                </style>
+
+
+
+
             <div class="col-sm-12 col-md-4 other-channel-wrap hidden-tablet">
                 <div class="sec-head">
                     <h4 class="sec-title">You can also reach us via the following channels</h4>
@@ -1397,9 +775,9 @@
                                     data-src="{{ asset('images/calendar.png') }}" alt="" width="40"
                                     height="40"></figure>
                             <h4><strong>Set an Appointment</strong></h4>
-                            <p>Avoid the long queues, book your next visit to our customer helpdesk at <a
+                            {{-- <p>Avoid the long queues, book your next visit to our customer helpdesk at <a
                                     href="../book.dmcihomes.com/index.html"
-                                    target="_blanks"><strong>book.dmcihomes.com</strong></a></p>
+                                    target="_blanks"><strong>book.dmcihomes.com</strong></a></p> --}}
                         </li>
                         <li class="animated hiding" data-animation="fadeInUp">
                             <figure><img class="whistles-icon lazyload" style="width:60px; margin-left: -8px;"
@@ -1495,100 +873,59 @@
 
                         <p><a data-fancybox data-type="iframe"
                                 data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1930.9966604879698!2d121.0134147!3d14.5423746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x63ca380cdb6728d1!2sDMCI%20Homes%20Corporate%20Center!5e0!3m2!1sen!2sph!4v1570602301415!5m2!1sen!2sph"
-                                href="javascript:;" class="footer-map-link">DMCI Homes Corporate Center, 1321
-                                Apolinario Street, Bangkal, Makati City, Metro Manila, PH 1233</a></p>
+                                href="javascript:;" class="footer-map-link">CAMPUS RUEDA BUILDING MAKATI CITY</a></p>
                         <ul>
                             <li>
                                 <a href="+63 (2) 53248888.htm">
-                                    <label for="">Sales</label> +63 (2) 53248888</a>
+                                    <label for="">Sales</label> 09456754591</a>
                             </li>
                             <li>
                                 <a href="+63 (2) 84037368.htm">
-                                    <label for="">Leasing</label> +63 (2) 84037368</a>
+                                    <label for="">Leasing</label>09456754591</a>
                             </li>
                             <li>
                                 <a href="+63 (2) 85557777.htm">
-                                    <label for="">Employment</label> +63 (2) 85557777</a>
+                                    <label for="">Employment</label> 09456754591</a>
                             </li>
                             <li>
                                 <a href="+63 (2) 85557700.htm">
-                                    <label for="">Customer Care </label> +63 (2) 85557700
+                                    <label for="">Customer Care </label>09456754591
                                 </a>
                             </li>
-                            <li>
-                                <a href="+63 (2) 85557777.htm">
-                                    <label for="">Others</label> +63 (2) 85557777
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="col-sm-4 footer-link">
-                        <h4>Links</h4>
+                        {{-- <h4>Links</h4> --}}
                         <ul>
-                            <li><a href="about-us.htm">About DMCI</a></li>
+                            {{-- <li><a href="about-us.htm">About DMCI</a></li>
                             <li><a href="properties.htm">Properties</a></li>
                             <li><a href="whats-new.htm">What’s New</a></li>
                             <li><a href="privacy-policy.htm">Terms</a></li>
-                            <li><a href="privacy-policy.htm">Privacy</a></li>
+                            <li><a href="privacy-policy.htm">Privacy</a></li> --}}
                         </ul>
                         <ul>
-                            <li><a href="../communities.dmcihomes.com/index.html" target="_blank">Community</a></li>
-                            <li><a href="../leasing.dmcihomes.com/index.html" target="_blank">Leasing</a></li>
-                            <li><a href="contact-us.htm">Customer Care</a></li>
+                            {{-- <li><a href="/showabout" target="_blank">Community</a></li>
+                            <li><a href="/prop" target="_blank">Leasing</a></li>
+                            <li><a href="/contact">Customer Care</a></li>
                             <li><a href="sellers.htm">Sellers</a></li>
                             <li><a href="careers.htm">Careers</a></li>
-                            <li><a href="site-map.htm">Sitemap</a></li>
+                            <li><a href="site-map.htm">Sitemap</a></li> --}}
                         </ul>
                     </div>
                     <div class="col-sm-3 footer-social">
                         <h4>Social Links</h4>
                         <ul>
-                            <li><a href="https://www.facebook.com/dmcihomesofficial"><span
+                            <li><a href="https://www.facebook.com/tine.tainy"><span
                                         class="icon-home-2 icon-facebook"></span> <span
                                         class="fs-text">Facebook<span></span></span></a></li>
-                            <li><a href="https://twitter.com/dmcihomes"><span
+                            {{-- <li><a href="https://twitter.com/dmcihomes"><span
                                         class="icon-home-2 icon-twitter"></span> <span class="fs-text">
-                                        Twitter</span></a></li>
-                            <li><a href="https://www.instagram.com/dmcihomesofficial"><span
-                                        class="icon-home-2 icon-instagram"></span> <span
-                                        class="fs-text">Instagram</span></a></li>
-                            <li><a href="https://www.youtube.com/user/dmcihomesofficial"><span
-                                        class="icon-home-2 icon-youtube"></span> <span class="fs-text">Youtube
-                                    </span></a></li>
+                                        Twitter</span></a></li> --}}
 
-                            <li class="qq-wrap">
-                                <a class="hide-mobile" data-fancybox-image-qr href="#qq-modal"
-                                    data-caption="Scan the QR code">
-                                    <figure><img class="lazyload" src="{{ asset('images/qr.png') }}"
-                                            data-src="{{ asset('images/qr.png') }}" width="18" height="18"
-                                            alt="">
-
-                                        <span class="fs-text">QQ</span>
-                                </a>
+                                    </ul>
 
 
-                                <a data-fancybox-image-qr data-src="#qq-brand" class="hide-desktop">
-                                    <img class="lazyload" src="{{ asset('images/qq.png') }}"
-                                        data-src="{{ asset('images/qq.png') }}" width="18" height="18"
-                                        alt="">
-
-                                </a>
-                            </li>
-                            <li class="wechat-wrap">
-                                <a class="hide-mobile" data-fancybox-image-qr href="#wechat-modal"
-                                    data-caption="Scan the QR code to add me on WeChat">
-                                    <figure><img class="lazyload" src="{{ asset('images/we.png') }}"
-                                            data-src="{{ asset('images/we.png') }}" width="18" height="18"
-                                            alt="">
-
-                                        <span class="fs-text">WeChat</span>
-                                </a>
-
-                                <a data-fancybox-image-qr data-src="#wechat-brand" class="hide-desktop">
-                                    <<img class="lazyload" src="{{ asset('images/wechat.png') }}"
-                                        data-src="{{ asset('images/wechat.png') }}" width="18" height="18"
-                                        alt="">
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -4257,19 +3594,87 @@
         console.log("est");
     }, 5000);
 
-    <
-    link rel = "stylesheet"
+
+    <link rel = "stylesheet"
     href = "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" >
-        <
-        link rel = "stylesheet"
+
+        <link rel = "stylesheet"
     href = "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" >
 
 
-        <
-        style >
 
-        <
-        /style>
+        <style>
+            .hamburger-menu {
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: #01a71c;
+            border-radius: 50%;
+            padding: 10px;
+            margin-left: 15px;
+            cursor: pointer;
+            display: none;
+            position: relative
+        }
+
+        @media (max-width:767px) {
+            .hamburger-menu {
+                margin-left: 0
+            }
+        }
+
+        .hamburger-menu .bar {
+            display: block;
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 5px auto;
+            border-radius: 5px;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -ms-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease
+        }
+
+        .hamburger-menu.active {
+            background: 0 0;
+            left: 10px
+        }
+
+        @media (max-width:767px) {
+            .hamburger-menu.active {
+                left: 0
+            }
+        }
+
+        .hamburger-menu.active .arrow-top {
+            -webkit-transform: rotateZ(45deg) translateY(5px);
+            -moz-transform: rotateZ(45deg) translateY(5px);
+            -ms-transform: rotateZ(45deg) translateY(5px);
+            -o-transform: rotateZ(45deg) translateY(5px);
+            transform: rotateZ(45deg) translateY(5px);
+            width: 15px
+        }
+
+        .hamburger-menu.active .arrow-middle {
+            -webkit-transform: translateX(-12px);
+            -moz-transform: translateX(-12px);
+            -ms-transform: translateX(-12px);
+            -o-transform: translateX(-12px);
+            transform: translateX(-12px)
+        }
+
+        .hamburger-menu.active .arrow-bottom {
+            -webkit-transform: rotateZ(-45deg) translateY(-5px);
+            -moz-transform: rotateZ(-45deg) translateY(-5px);
+            -ms-transform: rotateZ(-45deg) translateY(-5px);
+            -o-transform: rotateZ(-45deg) translateY(-5px);
+            transform: rotateZ(-45deg) translateY(-5px);
+            width: 15px
+        }
+
+        </style>
 </script>
 
 </body>

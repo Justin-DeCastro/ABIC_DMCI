@@ -34,7 +34,14 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\LeisureController;
 use App\Http\Controllers\KaakbayController;
 use App\Http\Controllers\ContactFormController;
-/*
+use App\Http\Controllers\ValueController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CoreController;
+use App\Http\Controllers\AlderController;
+use App\Http\Controllers\CelandineController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\AddLeaseController;
+use App\Http\Controllers\SendPropertyController;
 /*
 
 |--------------------------------------------------------------------------
@@ -85,7 +92,10 @@ Route::get('/mobile', [HomeController::class, 'mobile'])->name('mobile');
 Route::get('/aston', [HomeController::class, 'aston'])->name('aston');
 Route::get('/kai', [HomeController::class, 'kai'])->name('kai');
 Route::get('/crest', [HomeController::class, 'crest'])->name('crest');
-
+Route::get('/cellandine', [HomeController::class, 'cellandine'])->name('cellandine');
+Route::get('/viewproperties', [HomeController::class, 'viewproperties'])->name('viewproperties');
+Route::get('/loan', [HomeController::class, 'loan'])->name('loan');
+// Route::get('/rhapsody', [HomeController::class, 'rhapsody']);
 //faq
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq.1');
 Route::get('/faq2', [HomeController::class, 'faq2'])->name('faq.2');
@@ -135,26 +145,10 @@ Route::post('/signin', [SigninController::class, 'signin'])->name('signin.post')
 Route::group(['middleware' => ['auth', AdminMiddleware::class]], function () {
     // Define routes that require admin privileges here
 });
-//SELLERS ROUTE
-// Route::resource('sellers', 'App\Http\Controllers\SellerController');
-// Route::get('/sellers', [SellerController::class, 'index'])->name('sellers.index');
-// Route::get('/sellers/create', [SellerController::class, 'create'])->name('sellers.create');
-// Route::post('/sellers', [SellerController::class, 'store'])->name('sellers.store');
-// Route::get('/sellers/{seller}/edit', [SellerController::class, 'edit'])->name('sellers.edit');
-// Route::put('/sellers/{seller}', [SellerController::class, 'update'])->name('sellers.update');
-// Route::delete('/sellers/{seller}', [SellerController::class, 'destroy'])->name('sellers.destroy');
 
-
-
-
-// routes/web.php
-// Route::get('/admin/about', [AboutController::class, 'index'])->name('admin.about.index');
-// Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('admin.about.update');
-// // routes/web.php
 
 Route::get('/admin/about/{id}/edit', [AdminController::class, 'editAbout'])->name('admin.edit_about');
-// Route::put('/admin/about/{id}/update', [AdminController::class, 'updateAbout'])->name('admin.about.update');
-// Route::get('/admin/about', [AdminAboutDynamicController::class, 'index'])->name('admin.about.index');
+
 Route::put('/admin/about/update/{id}', [AdminAboutDynamicController::class, 'update'])->name('admin.about.update');
 
 //news
@@ -165,8 +159,8 @@ Route::delete('/news/{news}', [NewsUpdateController::class, 'delete'])->name('ne
 // Route::delete('/news/{news_id}', 'NewsController@delete');
 
 Route::get('/', [LandingPageController::class, 'latestUpdates']);
-Route::get('/seller', [HomeController::class, 'seller'])->name('seller');
-
+Route::get('/forsale', [HomeController::class, 'seller'])->name('seller');
+Route::get('/forlease', [HomeController::class, 'leasing'])->name('leasing');
 Route::get('/reco', [RecoController::class, 'index'])->name('reco.index');
 Route::post('/reco', [RecoController::class, 'store'])->name('reco.store');
 Route::put('/reco/{id}', [RecoController::class, 'update'])->name('reco.update');
@@ -237,7 +231,12 @@ Route::post('/promo', [PromoController::class, 'store'])->name('promo.store');
 Route::delete('promo/{promo}', [PromoController::class, 'delete'])->name('promo.delete');
 // Route::put('promo/{id}', [PromoController::class,'update'])->name('promo.update');
 Route::post('promo/{id}', [PromoController::class, 'update'])->name('promo.update');
-
+//brandvalues
+Route::get('/value', [ValueController::class, 'index'])->name('value.index');
+Route::post('/value', [ValueController::class, 'store'])->name('value.store');
+Route::delete('value/{value}', [ValueController::class, 'delete'])->name('value.delete');
+// Route::put('promo/{id}', [PromoController::class,'update'])->name('promo.update');
+Route::post('value/{id}', [ValueController::class, 'update'])->name('value.update');
 
 //mission
 Route::get('/showabout', [MissionController::class, 'showabout'])->name('about');
@@ -250,6 +249,8 @@ Route::delete('mission/{mission}', [MissionController::class,'delete'])->name('m
 //executive
 Route::get('/executive', [ExecutiveController::class, 'index'])->name('executive.index');
 Route::post('/executive', [ExecutiveController::class, 'store'])->name('executive.store');
+Route::put('/executive/{id}', [ExecutiveController::class, 'update'])->name('executive.update');
+Route::delete('executive/{executive}', [ExecutiveController::class,'delete'])->name('executive.delete');
 
 //brand
 Route::get('/brand', [BrandController::class, 'index'])->name('brand.index');
@@ -259,3 +260,70 @@ Route::get('/certification', [CertificationController::class, 'index'])->name('c
 Route::post('/certification', [CertificationController::class, 'store'])->name('certification.store');
 Route::put('/certification/{id}', [CertificationController::class, 'update'])->name('certification.update');
 Route::delete('certification/{certification}', [CertificationController::class,'delete'])->name('certification.delete');
+
+
+//filter
+Route::get('/filter-locations', [CityController::class, 'filterLocations'])->name('filter-locations');
+Route::match(['get', 'post'], '/search', [SearchController::class, 'search'])->name('search');
+
+//core
+Route::get('/core', [CoreController::class, 'index'])->name('core.index');
+Route::post('/core', [CoreController::class, 'store'])->name('core.store');
+
+Route::put('/core/{id}', [CoreController::class, 'update'])->name('core.update');
+
+Route::delete('core/{core}', [CoreController::class,'delete'])->name('core.delete');
+Route::delete('/core/{core}', [CoreController::class,'delete'])->name('core.delete');
+//feedback
+Route::put('/submit-feedback', 'FeedbackController@store')->name('feedback.store');
+
+
+//alder
+Route::get('/alder', [AlderController::class, 'index'])->name('alder.index');
+Route::post('/alder', [AlderController::class, 'store'])->name('alder.store');
+
+// Route::put('/alder/{id}', [AlderController::class, 'update'])->name('alder.update');
+// Route::put('/alder/update', [AlderController::class, 'update'])->name('alder.update');
+Route::put('/alder/{id}', [AlderController::class, 'update'])->name('alder.update');
+
+Route::delete('alder/{alder}', [AlderController::class,'delete'])->name('alder.delete');
+
+//celandine
+Route::get('/celandine', [CelandineController::class, 'index'])->name('celandine.index');
+Route::post('/celandine', [CelandineController::class, 'store'])->name('celandine.store');
+
+Route::put('/celandine/{id}', [CelandineController::class, 'update'])->name('celandine.update');
+
+Route::delete('celandine/{celandine}', [CelandineController::class,'delete'])->name('celandine.delete');
+
+
+
+Route::get('/contact', [ContactUsController::class, 'create'])->name('contact.create');
+
+// Route to handle the form submission
+Route::post('/contact', [ContactUsController::class, 'send'])->name('contact.send');
+
+
+
+//for lease
+
+Route::get('/viewsale/{id}', [AlderController::class, 'viewsale'])->name('viewsale');
+
+
+Route::get('/viewsale{id}', [HomeController::class, 'viewsale'])->name('viewsale');
+
+Route::get('/addleases', [AddLeaseController::class, 'index'])->name('addleases.index');
+Route::post('/addleases/store', [AddLeaseController::class, 'store'])->name('addleases.store');
+Route::get('/viewleasing{id}', [HomeController::class, 'viewleasing'])->name('viewleasing');
+Route::put('/addleases/{id}', [AddLeaseController::class, 'update'])->name('addleases.update');
+
+Route::delete('addleases/{addleases}', [AddLeaseController::class,'delete'])->name('addleases.destroy');
+
+//send your properties
+// Route::get('/sendproperties', [SendPropertyController::class, 'index'])->name('index');
+
+Route::get('/sendproperties', [SendPropertyController::class, 'index'])->name('sendproperties.index');
+Route::post('/sendproperties', [SendPropertyController::class, 'store'])->name('sendproperties.store');
+Route::get('/sendpropertys', [SendPropertyController::class, 'send'])->name('send');
+Route::post('/properties/{property}/accept', [SendPropertyController::class, 'accept'])->name('accept.property');
+Route::post('/properties/{property}/decline', [SendPropertyController::class, 'decline'])->name('decline.property');

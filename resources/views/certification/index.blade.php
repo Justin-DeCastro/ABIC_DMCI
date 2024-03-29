@@ -233,10 +233,11 @@
                             <table id="certificationTable" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Action</th>
+                                        <th style="width: 100px;">Image</th>
+                                        <th style="width: 100px;">Name</th>
+                                        <th style="width: 400px;">Description</th>
+
+                                        <th style="width: 50px;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -442,4 +443,31 @@
     $(document).ready(function() {
         $('#certificationTable').DataTable();
     });
+
 </script>
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #0056b3;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #ced4da;
+        color: #6c757d;
+        cursor: default;
+    }
+    .card-body {
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+</style>

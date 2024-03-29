@@ -20122,12 +20122,7 @@
     <script id="invite-esw-script" type="text/javascript"
         src="https://service.force.com/embeddedservice/5.0/client/invite.esw.min.js"></script>
     <div class="embeddedServiceHelpButton">
-        <div class="helpButton"><button class="helpButtonEnabled uiButton" href="javascript:void(0)"><span
-                    class="embeddedServiceIcon" aria-hidden="true" data-icon=""
-                    style="display: inline-block;"></span><span class="helpButtonLabel" id="helpButtonSpan"
-                    aria-live="polite" aria-atomic="true"><span class="assistiveText">Live chat:</span><span
-                        class="message">Chat with an Expert</span></span></button></div>
-    </div>
+
     <script id="inert-script" type="text/javascript" src="https://service.force.com/embeddedservice/5.0/utils/inert.min.js">
     </script>
     <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit">

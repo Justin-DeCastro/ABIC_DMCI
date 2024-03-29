@@ -393,7 +393,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this?
+                    Are you sure you want to delete this Subdivision?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -469,3 +469,29 @@
         $('#subdivisionTable').DataTable();
     });
 </script>
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #0056b3;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #ced4da;
+        color: #6c757d;
+        cursor: default;
+    }
+    .card-body {
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+</style>

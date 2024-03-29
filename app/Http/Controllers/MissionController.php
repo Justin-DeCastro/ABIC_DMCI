@@ -8,6 +8,8 @@ use App\Models\Executive;
 use App\Models\Brand;
 use App\Models\Certification;
 use App\Models\Kaakbay;
+use App\Models\Value;
+use App\Models\Core;
 class MissionController extends Controller
 {
     /**
@@ -37,14 +39,15 @@ class MissionController extends Controller
     }
     public function showabout()
     {
-
+        $cores = Core::all();
         $brands = Brand::all();
         $executives = Executive::all();
         $certifications = Certification::all();
         $kaakbays = Kaakbay::all();
         $missions = Mission::all();
+        $values = Value::latest()->get();
         // Return the view for creating a new mission
-        return view('about', compact('missions', 'executives', 'brands','certifications','kaakbays'));
+        return view('about', compact('missions', 'executives', 'brands','certifications','kaakbays', 'values','cores'));
     }
 
     /**

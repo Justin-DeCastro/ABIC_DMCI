@@ -305,7 +305,7 @@
             </picture>
             <div class="banner-text">
                 <div class="container">
-                    <h1>Careers</h1>
+                    <h1>JOB OFFER</h1>
                 </div>
             </div>
         </section>

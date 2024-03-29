@@ -7503,7 +7503,7 @@
                     <li><a href="{{ route('seller') }}">Sellers</a></li>
                     <li><a href="{{ route('career') }}">Careers</a></li>
                     <li><a href="{{ route('about') }}">About us</a>
-                        <li><a href="{{ route('contact') }}">Contact us</a>
+                        <li><a href="/contact">Contact us</a>
 
                     <li><a href="#" class="pop-up-trigger">Preferences</a></li>
                 </ul>
@@ -7908,7 +7908,7 @@
                 <picture class="coverimage-img">
                     <source srcset="{{ asset('images/hero-shd.webp')}}" media="(min-width: 570px)">
                     <source srcset="{{ asset('images/hero-shd.webp')}}" media="(min-width: 320px)">
-                    <img class=" ls-is-cached lazyloaded" src="{{ asset('images/hero-shd.webp')}}" width="1440" height="330" alt="MDN" style="width: 1700px; height: 330px; margin-top: 0px; margin-left: -173px;">
+                    <img class=" ls-is-cached lazyloaded" src="{{ asset('images/hero-shd.webp')}}" width="1440" height="330" alt="MDN" style="width: 1900px; height: 330px; margin-top: 0px; margin-left: -173px;">
                 </picture>
                 <div class="banner-text">
                     <div class="container">
@@ -7933,15 +7933,18 @@
                                         <figure class="property-img"><img src="{{ asset($result->image) }}" alt="High Image" width="100"></figure>
                                         <div class="content">
                                             <h3>{{ $result->name }}</h3>
-                                            <p>{{ $result->place }}</p>
+                                            <p style="font-size: 30px">{{ $result->place }}</p>
                                             <p class="property-type"><span class="box-type">{{ $result->bed }}</span></p>
-                                            <p class="price"><span class="currency-convert" data-value="8311000.00">
+                                            <p class="price"><span class="currency-convert" data-value="">
                                                 {{ $result->price }}</span>
                                         </div>
                                     </a>
                                 </div>
                             </li>
                             @endforeach
+                            @if($message)
+    <p>{{ $message }}</p>
+@endif
                         </ul>
                     </div>
                 </div>

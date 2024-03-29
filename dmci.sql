@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 07, 2024 at 01:51 AM
+-- Generation Time: Mar 29, 2024 at 11:05 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,61 @@ SET time_zone = "+00:00";
 --
 -- Database: `dmci`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_leases`
+--
+
+CREATE TABLE `add_leases` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `units` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `add_leases`
+--
+
+INSERT INTO `add_leases` (`id`, `image`, `name`, `price`, `description`, `status`, `units`, `location`, `created_at`, `updated_at`) VALUES
+(10, '/images/1711348701.jpg', 'Residential', '28,000', 'FOR LEASE! The Columns Legazpi Village T2 9th floor 32sqm Studio Near RCBC and PBcom Php28k/month, inclusive of dues Swimming Pool view Fully Furnished 2 dep + 1 adv CAN ISSUE OR / OFFICIAL RECEIPT', 'For Lease', '1 Bedroom', 'Makati', '2024-03-24 22:38:21', '2024-03-25 00:23:25'),
+(12, '/images/1711349036.jpg', 'Residential', '100,000', 'FOR LEASE! ICON PLAZA - 105 sqm 2 bedroom - 34th Floor - Fully Furnished - 100k per month. Please Contact :JUSTIN DE CASTRO NO: 09456754591', 'For Lease', '2 Bedroom', 'Taguig', '2024-03-24 22:43:56', '2024-03-25 00:23:15'),
+(13, '/images/1711353178.jpg', 'Commercial', '23,000', 'FOR LEASE! SHORE - Fully furnished - 23K per month. Please Contact: Marjorie Gelizon No.: 09651983796', 'For Lease', '30 sqm - 41 sqm', 'Makati', '2024-03-24 23:52:58', '2024-03-24 23:53:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alders`
+--
+
+CREATE TABLE `alders` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `units` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `alders`
+--
+
+INSERT INTO `alders` (`id`, `image`, `name`, `price`, `description`, `status`, `units`, `location`, `created_at`, `updated_at`) VALUES
+(24, '/images/1711346755.png', 'FOR SALE', '5.6M', 'FOR SALE!! 5.6M ONLY TIVOLI GARDEN RESIDENCES 2BR - 59SQM - 30TH FLOOR - FF Please Contact:JUSTIN DE CASTRO No.: 09456754591', 'Ready For Occupancy', '1 Bedroom', 'Taguig', '2024-03-24 22:05:55', '2024-03-24 22:13:49'),
+(25, '/images/1711356298.png', 'FOR SALE', '5.3M', 'FOR SALE!! VENICE LUXURY RESIDENCES - 6 UNITS AVAILABLE - ALL TENANTED - 10-12TH FLOOR - STUDIO TYPE - 40SQM - FULLY FURNISHED - 5.3M ONLY! Please Contact: Dianne Semacio No.: 09651 983 796', 'Ready For Occupancy', 'STUDIO TYPE - 40SQM - FULLY FURNISHED', 'Taguig City', '2024-03-25 00:44:58', '2024-03-25 00:47:49');
 
 -- --------------------------------------------------------
 
@@ -65,8 +120,8 @@ CREATE TABLE `cards` (
 
 INSERT INTO `cards` (`id`, `image`, `progress`, `name`, `place`, `date`, `created_at`, `updated_at`) VALUES
 (14, '1709270783_Kai Garden Residences-site-progress-data-1706666822429-medium.JPG', '96.33%', 'Kai Garden Residence', 'Mandaluyong', '2024-01-31', '2024-02-28 17:23:09', '2024-02-29 21:26:23'),
-(15, '1709270759_Prisma Residences-site-progress-data-1706678993706-medium.jpg', '99.57%', 'Prisma Residencesesss', 'Pasig Citys1234', '2024-01-31', '2024-02-28 17:24:20', '2024-02-29 21:25:59'),
-(16, '/images/1709169900.jpg', '88.99%', 'Satori Residenceses', 'Pasig City', '2024-01-31', '2024-02-28 17:25:00', '2024-02-29 21:20:33'),
+(15, '1709270759_Prisma Residences-site-progress-data-1706678993706-medium.jpg', '99.57%', 'Prisma Residences', 'Pasig City', '2024-01-31', '2024-02-28 17:24:20', '2024-03-13 21:11:49'),
+(16, '/images/1709169900.jpg', '88.99%', 'Satori Residence', 'Pasig City', '2024-01-31', '2024-02-28 17:25:00', '2024-03-13 21:12:05'),
 (17, '/images/1709171360.png', '10.24%', 'Sage Residences', 'Mandaluyong City', '2024-01-31', '2024-02-28 17:49:21', '2024-02-28 17:49:21'),
 (18, '/images/1709171420.jpg', '99.91%', 'Fairlane Residencess', 'Pasig', '2024-01-31', '2024-02-28 17:50:20', '2024-03-06 03:36:27'),
 (19, '/images/1709171464.jpg', '69.31%', 'Allegra Garden Place', 'Pasig', '2024-01-31', '2024-02-28 17:51:04', '2024-02-28 17:51:04'),
@@ -76,7 +131,36 @@ INSERT INTO `cards` (`id`, `image`, `progress`, `name`, `place`, `date`, `create
 (23, '/images/1709171638.jpg', '9.58%', 'The Calinea Tower', 'Caloocan', '2024-02-25', '2024-02-28 17:53:58', '2024-02-28 17:53:58'),
 (24, '/images/1709171679.png', '80.99%', 'Cameron Tower', 'Quezon City', '2024-02-25', '2024-02-28 17:54:39', '2024-02-28 17:54:39'),
 (26, '/images/1709171833.jpg', '10.42%', 'Fortis Residences', 'Makati', '2024-01-25', '2024-02-28 17:57:13', '2024-02-28 17:57:13'),
-(27, '/images/1709171882.jpg', '49.27%', 'Sonora Garden Residences', 'Las Piñas', '2024-01-25', '2024-02-28 17:58:02', '2024-03-06 03:37:09');
+(27, '/images/1709171882.jpg', '49.27%', 'Sonora Garden Residence', 'Las Piñas', '2024-01-25', '2024-02-28 17:58:02', '2024-03-14 01:03:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `celandines`
+--
+
+CREATE TABLE `celandines` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `development` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `units` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `general` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `building` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `celandines`
+--
+
+INSERT INTO `celandines` (`id`, `image`, `name`, `price`, `status`, `development`, `units`, `location`, `general`, `building`, `link`, `created_at`, `updated_at`) VALUES
+(1, '/images/1710494084.webp', 'BEACH CABIN 1', '4,000,000 - 7,968,000', 'Under Constructions', 'High Rise Condominiums1', '2 BEDROOM 54 sqm - 69 sqm', 'Taguig', '24-hour Security,Basketball Court/Playcourt,Children\'s Playground,Convenience Store,Fitness Gym,Lap Pool', 'Fire Alarm & Automatic Sprinkler System,Fire Exit,Garbage Rooms', '/crest', '2024-03-15 01:14:44', '2024-03-15 01:14:44');
 
 -- --------------------------------------------------------
 
@@ -98,7 +182,6 @@ CREATE TABLE `certifications` (
 --
 
 INSERT INTO `certifications` (`id`, `image`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, '1709259551.png', 'Philippine Quill Awards 2012', 'EDMCI Homes Ikaw Na, Maybe Customer Service Campaign won an Excellence Award in the 11th Philippine Quill Awards for Communication Management Division Employee/Member Communication Category.', '2024-02-29 18:19:11', '2024-03-06 03:41:15'),
 (2, '1709259723.png', 'ULI Healthy Places Awards', 'Aiming to recognize outstanding and innovative development with advance design strategies that focus on the development of environment and promote healthy living in the country', '2024-02-29 18:22:03', '2024-03-03 21:31:55'),
 (3, '1709260226.png', 'Annual Communicator Awards', 'DMCI Homes was awarded with distinction for its: Corporate Website, Mobile Application, and Print Ad: Ours is a Story on Quality. The Communicator Awards is the leading international awards program recognizing big ideas in marketing and communications.', '2024-02-29 18:30:26', '2024-02-29 18:30:26'),
 (7, '1709261078.png', 'Reader\'s Digest Asia Gold Trusted Brand', 'DMCI Homes has been consistently awarded with a Reader\'s Digest Asia Gold Trusted Brand.', '2024-02-29 18:44:38', '2024-02-29 18:44:38'),
@@ -108,7 +191,7 @@ INSERT INTO `certifications` (`id`, `image`, `name`, `description`, `created_at`
 (11, '1709261813.png', 'BIR 2013 Billionaires Club Award', 'DMCI Homes was among 10 companies that received the 2013 Billionaires Club Award from the Bureau of Internal Revenue (BIR) for paying more than P1 billion in taxes.', '2024-02-29 18:56:53', '2024-02-29 18:56:53'),
 (12, '1709261833.png', 'Developer with the Most Value for Money', 'Given during The Outlook Awards of Lamudi, DMCI Homes was chosen winner in the category of the Developer with the Most Value for Money.', '2024-02-29 18:57:13', '2024-02-29 18:57:13'),
 (13, '1709261877.png', 'PANATA', 'PANATA Excellence in Internal Communication', '2024-02-29 18:57:57', '2024-02-29 18:57:57'),
-(14, '1709261895.png', 'Gawad Kaagapays', 'Gawad Kaagapay: Large Corporations Category', '2024-02-29 18:58:15', '2024-03-06 03:25:39'),
+(14, '1709261895.png', 'Gawad Kaagapay', 'Gawad Kaagapay: Large Corporations Category', '2024-02-29 18:58:15', '2024-03-07 00:56:38'),
 (15, '1709261914.png', 'Quadruple A Contractors', 'The notice on DMCI Homes\' upgraded category was released on January 18, 2017 by Philippine Contractors Accreditation Board (PCAB). The AAAA license given to DMCI Homes is currently the highest given to firms that satisfy the institution\'s requirements.', '2024-02-29 18:58:34', '2024-03-03 21:29:42');
 
 -- --------------------------------------------------------
@@ -152,7 +235,32 @@ INSERT INTO `cities` (`id`, `image`, `place`, `created_at`, `updated_at`) VALUES
 (21, '/images/1709609185.jpg', 'Caloocan', '2024-03-04 19:26:25', '2024-03-04 19:26:25'),
 (22, '/images/1709609197.jpg', 'Carmona', '2024-03-04 19:26:37', '2024-03-04 19:26:37'),
 (23, '/images/1709609207.webp', 'cabuyao-laguna', '2024-03-04 19:26:47', '2024-03-04 23:46:59'),
-(24, '/images/1709609216.webp', 'Cavite', '2024-03-04 19:26:56', '2024-03-06 03:38:50');
+(24, '/images/1709609216.webp', 'Cavite', '2024-03-04 19:26:56', '2024-03-06 19:10:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cores`
+--
+
+CREATE TABLE `cores` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cores`
+--
+
+INSERT INTO `cores` (`id`, `image`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(1, '1710292812.jpg', 'Interdependence', 'With unity in purpose and mutual trust and respect for each other, we work toward\r\nshared aspirations and transcend boundaries along functional and organizational lines.', '2024-03-12 17:20:12', '2024-03-12 17:51:31'),
+(2, '1710292830.jpg', 'Customer Orientation', 'Our goal is to delight and please our customers. Thus, all activities and programs we undertake result in innovative projects and in the enhancement of productivity and quality.', '2024-03-12 17:20:30', '2024-03-12 17:20:30'),
+(3, '1710292844.jpg', 'Excellence', 'We reject mediocrity and strive for excellence in even the smallest of details.', '2024-03-12 17:20:44', '2024-03-12 17:20:44'),
+(4, '1710292867.jpg', 'Integrity', 'All our actions are guided by what is ethical, fair, and right. Believing in profit with honor, we are committed to good governance and the highest moral standards.', '2024-03-12 17:21:07', '2024-03-12 17:21:07');
 
 -- --------------------------------------------------------
 
@@ -176,7 +284,7 @@ CREATE TABLE `events` (
 INSERT INTO `events` (`id`, `name`, `date`, `description`, `created_at`, `updated_at`) VALUES
 (1, 'Great Home Deals from BDO and DMCI Homes!', '2024-02-15', 'Find your next home in one of DMCI Homes properties and avail BDO & Lowest Interest Rate at 5.55% fixed for 1 year. To know more about this promo, please visit your nearest BDO Branch. Promo period is from May 1 to July 31, 2013', '2024-02-28 19:45:43', '2024-03-06 03:47:57'),
 (2, 'Stunning Vistas and Serene Havens', '2024-01-31', 'DMCI Homes Grand Open House Series DMCI Homes, the country & leading developer of resort-inspired communities continues to redefine urban living with its extensive portfolio of residential projects featuring high-rise developments,', '2024-02-28 21:08:58', '2024-03-05 17:20:08'),
-(3, 'Acacia Estates Christmas Bazaar', '2024-02-01', 'Christmas is just around the corner at Acacia Estates open grounds. Come and join our residents in a Christmas Bazaar on December 14 to 16, 2012 from 10AM to 10PM. Great Food, Good Finds, Fun Shopping!', '2024-02-28 21:09:47', '2024-03-06 03:49:20'),
+(3, 'Acacia Estates Christmas Bazaar', '2024-02-01', 'Christmas is just around the corner at Acacia Estates open grounds. Come and join our residents in a Christmas Bazaar on December 14 to 16, 2012 from 10AM to 10PM. Great Food, Good Finds, Fun Shopping!', '2024-02-28 21:09:47', '2024-03-06 19:19:16'),
 (4, 'Take your Palate on a Journey Home', '2024-02-01', 'Allow us to take you through memory lane as we celebrate the rich culinary heritage of Filipino flavors. Delight yourselves with our unique takes on traditional dishes, heirloom recipes and family favorites.', '2024-02-28 21:10:10', '2024-02-28 21:10:10'),
 (5, 'DMCI Homes and SM Savemore bring grocery convenience to Acacia Estates', '2024-02-09', 'DMCI Homes and SM Savemore bring grocery convenience to Acacia Estates', '2024-02-28 21:10:35', '2024-02-28 21:10:35'),
 (6, 'DMCI Homes Summer Camp 2012', '2024-02-08', 'We are inviting all the kids of DMCI Homes Communities to join and participate in the SUMMER CAMP PROGRAM 2012. DMCI Homes will be offering various classes in sports, creative and performing arts that would be a convenient', '2024-02-28 21:11:59', '2024-02-28 21:11:59');
@@ -201,7 +309,7 @@ CREATE TABLE `executives` (
 --
 
 INSERT INTO `executives` (`id`, `image`, `name`, `position`, `created_at`, `updated_at`) VALUES
-(3, '1709256784.jpg', 'Isidro A. Consunji', 'Chairman', '2024-02-29 17:33:04', '2024-02-29 17:33:04'),
+(3, '1709256784.jpg', 'Isidro A. Consunji', 'Chairman', '2024-02-29 17:33:04', '2024-03-06 19:20:27'),
 (4, '1709256802.jpg', 'Alfredo R. Austria', 'President', '2024-02-29 17:33:22', '2024-02-29 17:33:22'),
 (5, '1709256818.jpg', 'Edwina C. Laperal', 'Treasurer', '2024-02-29 17:33:38', '2024-02-29 17:33:38'),
 (6, '1709256989.jpg', 'Enrico C. Wong', 'Senior Vice President - General Services, Leasing, Alta Vista De Boracay, Property Management, and Purchasing', '2024-02-29 17:36:29', '2024-02-29 17:36:29');
@@ -220,6 +328,39 @@ CREATE TABLE `failed_jobs` (
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rating` tinyint UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forleasings`
+--
+
+CREATE TABLE `forleasings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `units` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -244,15 +385,15 @@ CREATE TABLE `highs` (
 --
 
 INSERT INTO `highs` (`id`, `image`, `name`, `place`, `bed`, `price`, `created_at`, `updated_at`) VALUES
-(2, '/images/1709279921.webp', 'Allegra Garden Place', 'Pasig', '1BR 2BR 3BR', '4,670,020-13,388,520', '2024-02-29 23:58:41', '2024-02-29 23:58:41'),
-(3, '/images/1709280079.webp', 'Alder Residences', 'Taguig', '2BR', '8,311,000-19,570,000', '2024-03-01 00:01:19', '2024-03-01 00:01:19'),
-(4, '/images/1709280140.webp', 'Brio Tower', 'Makati', 'N/A', '5,571,000-14,479,000', '2024-03-01 00:02:20', '2024-03-01 00:02:20'),
-(5, '/images/1709280203.webp', 'Brixton Tower', 'Pasig', 'N/A', '5,898,000-14,622,000', '2024-03-01 00:03:23', '2024-03-01 00:03:23'),
-(6, '/images/1709280255.webp', 'Cameron Tower', 'Quezon City', 'N/A', '4,871,000-11,874,000', '2024-03-01 00:04:15', '2024-03-01 00:04:15'),
-(7, '/images/1709281410.webp', 'Cypress Tower', 'Taguig', '1BR', '3,584,000,8,207,000', '2024-03-01 00:23:30', '2024-03-01 00:23:30'),
-(8, '/images/1709281474.webp', 'Danlasan Gardens', 'Mandaluyong', 'N/A', '5,393,000-20,022,000', '2024-03-01 00:24:34', '2024-03-01 00:24:34'),
-(9, '/images/1709281590.webp', 'Fairlane Residences', 'Pasig', '2BR', '9,212,000-16,608,000', '2024-03-01 00:26:30', '2024-03-01 00:26:30'),
-(10, '/images/1709281960.webp', 'Fairway Terraces', 'Pasay', '1BR 2BR 3BR', '5,106,000-11,729,000', '2024-03-01 00:32:40', '2024-03-01 00:32:40'),
+(2, '/images/1709279921.webp', 'Allegra Garden Place', 'Pasig', '1BR 2BR 3BR', 'PHP  4,670,020- PHP  13,388,520', '2024-02-29 23:58:41', '2024-03-07 17:45:17'),
+(3, '/images/1709280079.webp', 'Alder Residences', 'Taguig', '2BR', 'PHP  8,311,000-PHP  19,570,000', '2024-03-01 00:01:19', '2024-03-07 17:45:03'),
+(4, '/images/1709280140.webp', 'Brio Tower', 'Makati', 'N/A', 'PHP  5,571,000-PHP  14,479,000', '2024-03-01 00:02:20', '2024-03-07 17:44:50'),
+(5, '/images/1709280203.webp', 'Brixton Tower', 'Pasig', 'N/A', 'PHP  5,898,000-PHP  14,622,000', '2024-03-01 00:03:23', '2024-03-07 17:44:35'),
+(6, '/images/1709280255.webp', 'Cameron Tower', 'Quezon City', 'N/A', 'PHP  4,871,000-PHP  11,874,000', '2024-03-01 00:04:15', '2024-03-07 17:44:24'),
+(7, '/images/1709281410.webp', 'Cypress Tower', 'Taguig', '1BR', 'PHP  3,584,000, PHP  8,207,000', '2024-03-01 00:23:30', '2024-03-07 17:44:06'),
+(8, '/images/1709281474.webp', 'Danlasan Gardens', 'Mandaluyong', 'N/A', 'PHP  5,393,000- PHP  20,022,000', '2024-03-01 00:24:34', '2024-03-07 17:43:55'),
+(9, '/images/1709281590.webp', 'Fairlane Residences', 'Pasig', '2BR', 'PHP  9,212,000- PHP  16,608,000', '2024-03-01 00:26:30', '2024-03-07 17:43:44'),
+(10, '/images/1709281960.webp', 'Fairway Terraces', 'Pasay', '1BR 2BR 3BR', 'PHP 5,106,000- PHP  11,729,000', '2024-03-01 00:32:40', '2024-03-07 17:43:24'),
 (11, '/images/1709513874.webp', 'Flair Towers', 'Mandaluyong', '1BR 2BR 3BR STUDIO', 'PHP 5,172,000 - PHP 13,488,000', '2024-03-03 16:57:54', '2024-03-03 16:57:54'),
 (12, '/images/1709513909.jpg', 'Fortis Residences', 'Makati', '1BR 2BR 3BR', 'PHP 13,832,000 - PHP 38,596,000', '2024-03-03 16:58:29', '2024-03-03 16:58:29'),
 (13, '/images/1709513959.webp', 'Hampstead Garden Condominiums', 'Manila', 'N/A', 'PHP 0 - PHP 0', '2024-03-03 16:59:19', '2024-03-03 16:59:19'),
@@ -277,16 +418,16 @@ INSERT INTO `highs` (`id`, `image`, `name`, `place`, `bed`, `price`, `created_at
 (33, '/images/1709605240.jpg', 'The Calinea Tower', 'Caloocan', '1BR 2BR 3BR STUDIO', 'PHP 5,325,000 - PHP 15,098,000', '2024-03-04 18:20:40', '2024-03-04 18:20:40'),
 (34, '/images/1709605270.webp', 'The Camden Place', 'Manila', '1BR 2BR STUDIO', 'PHP 4,799,500 - PHP 9,255,000', '2024-03-04 18:21:10', '2024-03-04 18:21:10'),
 (35, '/images/1709605301.webp', 'The Celandine', 'Quezon City', '1BR 2BR', 'PHP 3,930,000 - PHP 6,928,000', '2024-03-04 18:21:41', '2024-03-04 18:21:41'),
-(36, '/images/1709605321.webp', 'The Crestmont', 'Quezon City', '1BR 2BR 3BR', 'PHP 6,271,000 - PHP 15,106,000', '2024-03-04 18:22:01', '2024-03-04 18:22:01'),
-(37, '/images/1709606810.webp', 'The Erin Heights', 'Quezon City', '2BR 3BR STUDIO', 'PHP 4,881,000 - PHP 29,842,000', '2024-03-04 18:46:50', '2024-03-04 18:46:50'),
-(38, '/images/1709606836.webp', 'The Orabella', 'Quezon City', '1BR 2BR 3BR', 'PHP 4,551,000 - PHP 9,952,000', '2024-03-04 18:47:16', '2024-03-04 18:47:16'),
-(39, '/images/1709606863.webp', 'The Oriana', 'Quezon City', '1BR 2BR STUDIO', 'PHP 4,407,000 - PHP 9,769,000', '2024-03-04 18:47:43', '2024-03-04 18:47:43'),
+(36, '/images/1709605321.webp', 'The Crestmont', 'Quezon City', '1BR', 'PHP 6,271,000 - PHP 15,106,000', '2024-03-04 18:22:01', '2024-03-10 18:07:01'),
+(37, '/images/1709606810.webp', 'The Erin Heights', 'Quezon City', '2BR', 'PHP 4,881,000 - PHP 29,842,000', '2024-03-04 18:46:50', '2024-03-10 18:06:54'),
+(38, '/images/1709606836.webp', 'The Orabella', 'Quezon City', '1BR', 'PHP 4,551,000 - PHP 9,952,000', '2024-03-04 18:47:16', '2024-03-10 18:06:47'),
+(39, '/images/1709606863.webp', 'The Oriana', 'Quezon City', '1BR', 'PHP 4,407,000 - PHP 9,769,000', '2024-03-04 18:47:43', '2024-03-10 18:06:39'),
 (40, '/images/1709606992.webp', 'The Valeron Tower', 'Pasig', 'TBA', 'NOT YET AVAILABLE', '2024-03-04 18:49:52', '2024-03-04 18:49:52'),
-(41, '/images/1709607031.webp', 'Tivoli Garden Residences', 'Mandaluyong', '1BR 2BR 3BR STUDIO', 'PHP 5,118,000 - PHP 15,476,000', '2024-03-04 18:50:31', '2024-03-04 18:50:31'),
-(42, '/images/1709607066.webp', 'Torre De Manila', 'Manila', '1BR 2BR 3BR', 'PHP 5,918,000 - PHP 13,205,000', '2024-03-04 18:51:06', '2024-03-04 18:51:06'),
-(43, '/images/1709607192.webp', 'Verdon Parc', 'Davao City', '1BR 2BR', 'PHP 4,019,000 - PHP 8,763,000', '2024-03-04 18:53:12', '2024-03-04 18:53:12'),
-(44, '/images/1709607268.webp', 'Viera Residences', 'Quezon City', '1BR 2BR', 'PHP 4,277,000 - PHP 9,594,000', '2024-03-04 18:54:28', '2024-03-04 18:54:28'),
-(45, '/images/1709607303.webp', 'Zinnia Towers', 'Quezon City', '1BR 2BR 3BR STUDIO', 'PHP 3,760,000 - PHP 9,971,000', '2024-03-04 18:55:03', '2024-03-06 03:39:37');
+(41, '/images/1709607031.webp', 'Tivoli Garden Residences', 'Mandaluyong', 'STUDIO', 'PHP 5,118,000 - PHP 15,476,000', '2024-03-04 18:50:31', '2024-03-10 18:06:30'),
+(42, '/images/1709607066.webp', 'Torre De Manila', 'Manila', '1BR', 'PHP 5,918,000 - PHP 13,205,000', '2024-03-04 18:51:06', '2024-03-10 18:06:22'),
+(43, '/images/1709607192.webp', 'Verdon Parc', 'Davao City', '2BR', 'PHP 4,019,000 -  PHP 8,763,000', '2024-03-04 18:53:12', '2024-03-12 16:25:04'),
+(44, '/images/1709607268.webp', 'Viera Residences', 'Quezon City', '1BR', 'PHP 4,277,000 -  PHP 9,594,000', '2024-03-04 18:54:28', '2024-03-12 16:24:43'),
+(45, '/images/1709607303.webp', 'Zinnia Towers', 'Quezon City', '1BR', 'PHP 3,760,000 - PHP 9,971,000', '2024-03-04 18:55:03', '2024-03-12 16:24:23');
 
 -- --------------------------------------------------------
 
@@ -309,7 +450,7 @@ CREATE TABLE `kaakbays` (
 --
 
 INSERT INTO `kaakbays` (`id`, `image`, `name`, `description`, `date`, `created_at`, `updated_at`) VALUES
-(1, '1709520128.png', 'dmci-homes-employees-help-brgy-bangkal-makati-public-school', 'Kaakbay News DMCI Homes employees help Brgy. Bangkal, Makati public school', '2023-03-16', '2024-03-03 18:42:08', '2024-03-06 03:51:14'),
+(1, '1709520128.png', 'dmci-homes-employees-help-brgy-bangkal-makati-public-school', 'Kaakbay News DMCI Homes employees help Brgy. Bangkal, Makati public school', '2023-03-16', '2024-03-03 18:42:08', '2024-03-06 19:20:04'),
 (2, '1709521492.png', 'DMCI Homes backs program supporting Brgy. Bangkal, Makati MSMEs Corporate Communication', 'DMCI Homes backs program supporting Brgy. Bangkal, Makati MSMEs Corporate Communication', '2023-02-13', '2024-03-03 19:04:52', '2024-03-03 19:04:52'),
 (3, '1709521642.jpg', 'Sta. Cruz, Davao Del Sur lauds DMCI Homes\' Mt. Apo outreach activity .', 'Sta. Cruz, Davao Del Sur lauds DMCI Homes\' Mt. Apo outreach activity.', '2022-05-05', '2024-03-03 19:07:22', '2024-03-03 19:07:22'),
 (4, '1709521727.jpg', 'DMC Scholarship helps skilled workers\' children power through the pandemic', 'DMC Scholarship helps skilled workers\' children power through the pandemic', '2022-04-29', '2024-03-03 19:08:47', '2024-03-03 19:08:47'),
@@ -409,7 +550,7 @@ INSERT INTO `mids` (`id`, `image`, `name`, `place`, `bed`, `price`, `created_at`
 (33, '/images/1709608435.webp', 'The Redwoods', 'Quezon City', '2BR 3BR STUDIO', 'PHP 4,000,000 - PHP 8,173,00', '2024-03-04 19:13:55', '2024-03-04 19:13:55'),
 (34, '/images/1709608456.webp', 'Verawood Residences', 'Taguig', '2BR 3BR', 'PHP 5,122,000 - PHP 9,596,000', '2024-03-04 19:14:16', '2024-03-04 19:14:16'),
 (35, '/images/1709608478.webp', 'Verdon Parc', 'Davao City', '1BR 2BR', 'PHP 4,019,000 - PHP 8,763,000', '2024-03-04 19:14:38', '2024-03-04 19:14:38'),
-(36, '/images/1709608496.webp', 'Vista De Lago', 'Taguig', '2BR 3BR 4BR', 'PHP 4,195,000 - PHP 9,695,000', '2024-03-04 19:14:56', '2024-03-06 03:37:56');
+(36, '/images/1709608496.webp', 'Vista De Lago', 'Taguig', '2BR 3BR 4BR', 'PHP 4,195,000 - PHP 9,695,000', '2024-03-04 19:14:56', '2024-03-12 16:25:56');
 
 -- --------------------------------------------------------
 
@@ -453,7 +594,22 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (43, '2024_03_03_125212_create_subdivisions_table', 14),
 (44, '2024_03_03_235805_create_citys_table', 15),
 (45, '2024_03_04_003549_create_leisures_table', 16),
-(46, '2024_03_04_023203_create_kaakbays_table', 17);
+(46, '2024_03_04_023203_create_kaakbays_table', 17),
+(47, '2024_03_07_062718_create_values_table', 18),
+(48, '2024_03_13_003311_create_cores_table', 19),
+(49, '2024_03_13_060054_create_feedback_table', 20),
+(50, '2024_03_15_002709_create_alders_table', 21),
+(51, '2024_03_15_083735_create_celandines_table', 22),
+(52, '2024_03_21_035630_create_sent_emails_table', 23),
+(53, '2024_03_25_001907_create_sent_leasings_table', 23),
+(54, '2024_03_25_002031_create_leasings_table', 24),
+(55, '2024_03_25_014330_create_leases_table', 25),
+(56, '2024_03_25_020602_create_leases_table', 26),
+(57, '2024_03_25_021806_create_forlease_table', 27),
+(58, '2024_03_25_023608_create_forleasings_table', 28),
+(59, '2024_03_25_025133_create_add_leases_table', 29),
+(60, '2024_03_26_002524_create_sendproperty_table', 30),
+(61, '2024_03_26_002524_create_send_properties_table', 31);
 
 -- --------------------------------------------------------
 
@@ -474,7 +630,7 @@ CREATE TABLE `missions` (
 --
 
 INSERT INTO `missions` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Vision & Mission', 'We shall be the best provider of residential communities designed to create quality lifestyle responsive to the changing needs and preferences of the market we serve.\r\n\r\nIn so doing, we are committed:', '2024-02-29 00:38:12', '2024-03-06 03:41:56');
+(1, 'Vision & Mission', 'We shall be the best provider of residential communities designed to create quality lifestyle responsive to the changing needs and preferences of the market we serve.', '2024-02-29 00:38:12', '2024-03-06 22:04:57');
 
 -- --------------------------------------------------------
 
@@ -556,7 +712,7 @@ CREATE TABLE `promos` (
 --
 
 INSERT INTO `promos` (`id`, `image`, `name`, `date`, `created_at`, `updated_at`) VALUES
-(8, '1709187877.jpg', 'Vacation Pass', '2024-02-10', '2024-02-28 22:24:37', '2024-03-06 03:49:36');
+(8, '1709187877.jpg', 'Vacation Pass', '2024-02-10', '2024-02-28 22:24:37', '2024-03-06 19:19:33');
 
 -- --------------------------------------------------------
 
@@ -585,8 +741,7 @@ INSERT INTO `recos` (`id`, `image`, `name`, `link`, `place`, `bed`, `price`, `cr
 (7, '/images/1709102479.webp', 'The Cresmount', '/crest', 'Quezon City', '2BR 3BR', '6,217,000-15,106,000', '2024-02-27 22:41:19', '2024-03-06 16:42:44'),
 (8, '/images/1709102740.webp', 'Allegra Garden Place', '', 'Pasig', '1BR 2BR 3BR', '4,670,000-13,388,520', '2024-02-27 22:45:40', '2024-02-27 22:45:40'),
 (9, '/images/1709102907.webp', 'Sonora Garden Residences', '/sonora', 'Las Piñas', '1BR 2BR 3BR', '4,314,000-10,615,000', '2024-02-27 22:48:27', '2024-03-06 17:29:24'),
-(15, '/images/1709107729.jpg', 'The Atherton', '/atherton', 'Paranaque', '1BR 2BR', '4,000,000 - 7,968,000', '2024-02-28 00:08:49', '2024-03-06 17:04:42'),
-(16, '/images/1709107803.jpg', 'Fortis Residences', '/fortis', 'Makati', '2BR 3BR', '13,832,000-38,596,000', '2024-02-28 00:10:03', '2024-03-06 17:43:13');
+(15, '/images/1709107729.jpg', 'The Atherton', '/atherton', 'Paranaque', '1BR 2BR', '4,000,000 - 7,968,000', '2024-02-28 00:08:49', '2024-03-06 17:04:42');
 
 -- --------------------------------------------------------
 
@@ -600,6 +755,64 @@ CREATE TABLE `sellers` (
   `accreditation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `special_training` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `events` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `send_properties`
+--
+
+CREATE TABLE `send_properties` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PENDING',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `send_properties`
+--
+
+INSERT INTO `send_properties` (`id`, `image`, `name`, `email`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(8, '\"[\\\"\\\\\\/images\\\\\\/1711427556_EAVXWlcM3LQJNlxEoEEzBQfEscAKXLYsAa42I1Ns.png\\\",\\\"\\\\\\/images\\\\\\/1711427556_gC7V8js5RO4VneKpCh1Ky6Behyu8vBivJCzShXUC.jpg\\\",\\\"\\\\\\/images\\\\\\/1711427556_iO08T2oFUPMKE49if7K4lb8IoufCPsiCSHOpPDf0.jpg\\\"]\"', 'Fortis Residences', 'decastrojustin24@gmail.com', 'Welcome to your dream family home! This charming property boasts three spacious bedrooms, two modern bathrooms, and a cozy living area perfect for gathering with loved ones. Situated in a peaceful neighborhood, this home offers a serene retreat from the hustle and bustle of city life.\r\n\r\nFeatures:\r\n\r\nOpen-plan kitchen with stainless steel appliances\r\nBright and airy living room with large windows\r\nWell-maintained backyard, ideal for outdoor entertaining\r\nAttached garage for convenient parking\r\nClose proximity to schools, parks, and shopping centers', 'Accepted', '2024-03-25 20:32:36', '2024-03-25 20:59:13'),
+(19, '\"[\\\"\\\\\\/images\\\\\\/1711433750_1709079800_Alea Residences-featured-1644910665040-small.png\\\",\\\"\\\\\\/images\\\\\\/1711433750_1709081490_1709022343.jpg\\\",\\\"\\\\\\/images\\\\\\/1711433750_1709083740_1709023244.JPG\\\"]\"', 'Justin DE CASTRO', 'decastrojustin24@gmail.com', 'power ranger', 'PENDING', '2024-03-25 22:15:50', '2024-03-25 22:15:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sent_emails`
+--
+
+CREATE TABLE `sent_emails` (
+  `id` bigint UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sent_leasings`
+--
+
+CREATE TABLE `sent_leasings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `development` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `units` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `general` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `building` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -626,11 +839,11 @@ CREATE TABLE `subdivisions` (
 --
 
 INSERT INTO `subdivisions` (`id`, `image`, `name`, `place`, `bed`, `price`, `created_at`, `updated_at`) VALUES
-(2, '/images/1709471729.webp', 'Mahogany Place III', 'Taguig', 'H&L LOT', 'PHP 5,625,000 - PHP 61,256,000', '2024-03-03 05:15:29', '2024-03-06 03:23:56'),
-(3, '/images/1709471873.webp', 'Spring Lane', 'Taguig', 'H&L LOT', 'PHP 812,500 - PHP 3,676,000', '2024-03-03 05:17:53', '2024-03-03 05:17:53'),
-(4, '/images/1709472020.jpg', 'Villa Alegre Homes', 'Carmona', 'H&L LOT', 'PHP 1,359,700 - PHP 8,649,900', '2024-03-03 05:20:20', '2024-03-03 05:20:20'),
-(5, '/images/1709472056.jpg', 'Willow Park Homes', 'Cabuyao, Laguna', 'H&L LOT', 'PHP 756,000 - PHP 8,547,000', '2024-03-03 05:20:56', '2024-03-03 05:20:56'),
-(6, '/images/1709472089.jpg', 'Woodland Hills', 'Cavite City', 'H&L LOT', 'PHP 634,200 - PHP 10,990,000', '2024-03-03 05:21:29', '2024-03-06 03:40:18');
+(2, '/images/1709471729.webp', 'Mahogany Place III', 'Taguig', 'H&L', 'PHP 5,625,000 - PHP 61,256,000', '2024-03-03 05:15:29', '2024-03-10 19:24:48'),
+(3, '/images/1709471873.webp', 'Spring Lane', 'Taguig', 'H&L', 'PHP 812,500 - PHP 3,676,000', '2024-03-03 05:17:53', '2024-03-10 19:24:41'),
+(4, '/images/1709472020.jpg', 'Villa Alegre Homes', 'Carmona', 'H&L', 'PHP 1,359,700 - PHP 8,649,900', '2024-03-03 05:20:20', '2024-03-10 19:24:34'),
+(5, '/images/1709472056.jpg', 'Willow Park Homes', 'Cabuyao, Laguna', 'H&L', 'PHP 756,000 - PHP 8,547,000', '2024-03-03 05:20:56', '2024-03-10 19:24:27'),
+(6, '/images/1709472089.jpg', 'Woodland Hills', 'Cavite City', 'H&L', 'PHP 634,200 - PHP 10,990,000', '2024-03-03 05:21:29', '2024-03-10 19:24:21');
 
 -- --------------------------------------------------------
 
@@ -653,7 +866,7 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `image`, `name`, `description`, `date`, `created_at`, `updated_at`) VALUES
-(3, '1709175198.jpg', 'The Celandine', 'Trilingual digital artist shares inspiring journey to achieving dream home', '2024-01-31', '2024-02-28 18:53:18', '2024-03-06 04:33:14'),
+(3, '1709175198.jpg', 'Celandine', 'Trilingual digital artist shares inspiring journey to achieving dream home', '2024-01-31', '2024-02-28 18:53:18', '2024-03-14 02:07:12'),
 (4, '1709175928.jpg', 'Ideal Baguio', 'Many consider Baguio City as an ideal place to spend life after\r\n                                                retirement because of its cool weather, astonishing panoramic views, and\r\n                                                vacation atmosphere.', '2024-02-15', '2024-02-28 19:05:28', '2024-02-28 19:05:28'),
 (6, '1709177032.jpg', 'Lumiere Residences', 'Almost two years into the coronavirus pandemic, several companies in\r\n                                                Metro Manila continue to implement a work-from-home arrangement for\r\n                                                their employees', '2024-02-09', '2024-02-28 19:23:52', '2024-02-28 19:23:52'),
 (8, '1709177254.jpg', 'Calathea Place', 'This is the first property that my husband and I bought and\r\n                                                we made sure to choose the best.\r\n                                               \r\n                                                This was proudly declared by Amy Lamson as she fondly talked about their\r\n                                                2-bedroom unit at DMCI Homes&amp;rsquo; Calathea Place community in\r\n                                                Para&amp;ntilde;aque City', '2024-02-02', '2024-02-28 19:27:34', '2024-02-28 19:27:34'),
@@ -689,6 +902,32 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `values`
+--
+
+CREATE TABLE `values` (
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `values`
+--
+
+INSERT INTO `values` (`id`, `image`, `name`, `created_at`, `updated_at`) VALUES
+(2, '1709796347.jpg', 'MODERN IN-CITY LIVING', '2024-03-06 23:25:47', '2024-03-06 23:25:47'),
+(3, '1709796383.jpg', 'MEDIUM DENSITY DEVELOPMENT', '2024-03-06 23:26:23', '2024-03-06 23:26:23'),
+(4, '1709796416.jpg', 'RESORT LIVING', '2024-03-06 23:26:56', '2024-03-06 23:26:56'),
+(5, '1709796443.jpg', 'THEMED DEVELOPMENT', '2024-03-06 23:27:23', '2024-03-06 23:27:23'),
+(6, '1709797026.jpg', 'QUALITY WORKMANSHIP', '2024-03-06 23:37:06', '2024-03-06 23:37:06'),
+(7, '1709797070.jpg', 'READY FOR OCCUPANCY', '2024-03-06 23:37:50', '2024-03-06 23:37:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `visions`
 --
 
@@ -705,6 +944,18 @@ CREATE TABLE `visions` (
 --
 
 --
+-- Indexes for table `add_leases`
+--
+ALTER TABLE `add_leases`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `alders`
+--
+ALTER TABLE `alders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `brands`
 --
 ALTER TABLE `brands`
@@ -717,6 +968,12 @@ ALTER TABLE `cards`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `celandines`
+--
+ALTER TABLE `celandines`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `certifications`
 --
 ALTER TABLE `certifications`
@@ -726,6 +983,12 @@ ALTER TABLE `certifications`
 -- Indexes for table `cities`
 --
 ALTER TABLE `cities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cores`
+--
+ALTER TABLE `cores`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -746,6 +1009,18 @@ ALTER TABLE `executives`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `forleasings`
+--
+ALTER TABLE `forleasings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `highs`
@@ -828,6 +1103,24 @@ ALTER TABLE `sellers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `send_properties`
+--
+ALTER TABLE `send_properties`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sent_emails`
+--
+ALTER TABLE `sent_emails`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sent_leasings`
+--
+ALTER TABLE `sent_leasings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `subdivisions`
 --
 ALTER TABLE `subdivisions`
@@ -847,6 +1140,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `values`
+--
+ALTER TABLE `values`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `visions`
 --
 ALTER TABLE `visions`
@@ -855,6 +1154,18 @@ ALTER TABLE `visions`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `add_leases`
+--
+ALTER TABLE `add_leases`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `alders`
+--
+ALTER TABLE `alders`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `brands`
@@ -866,19 +1177,31 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `celandines`
+--
+ALTER TABLE `celandines`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `certifications`
 --
 ALTER TABLE `certifications`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `cores`
+--
+ALTER TABLE `cores`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -899,6 +1222,18 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `forleasings`
+--
+ALTER TABLE `forleasings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `highs`
 --
 ALTER TABLE `highs`
@@ -914,7 +1249,7 @@ ALTER TABLE `kaakbays`
 -- AUTO_INCREMENT for table `leisures`
 --
 ALTER TABLE `leisures`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `logos`
@@ -932,7 +1267,7 @@ ALTER TABLE `mids`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -956,18 +1291,36 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `promos`
 --
 ALTER TABLE `promos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `recos`
 --
 ALTER TABLE `recos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `send_properties`
+--
+ALTER TABLE `send_properties`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `sent_emails`
+--
+ALTER TABLE `sent_emails`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sent_leasings`
+--
+ALTER TABLE `sent_leasings`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -987,6 +1340,12 @@ ALTER TABLE `testimonials`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `values`
+--
+ALTER TABLE `values`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `visions`

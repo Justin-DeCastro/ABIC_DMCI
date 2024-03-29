@@ -23,27 +23,23 @@
                                 Apolinario Street, Bangkal, Makati City, Metro Manila, PH 1233</a></p>
                         <ul>
                             <li>
-                                <a href="+63 (2) 53248888.htm">
-                                    <label for="">Sales</label> +63 (2) 53248888</a>
+                                <a href="09456754591">
+                                    <label for="">Sales</label> 09456754591</a>
                             </li>
                             <li>
-                                <a href="+63 (2) 84037368.htm">
-                                    <label for="">Leasing</label> +63 (2) 84037368</a>
+                                <a href="09456754591">
+                                    <label for="">Leasing</label> 09456754591</a>
                             </li>
                             <li>
                                 <a href="+63 (2) 85557777.htm">
-                                    <label for="">Employment</label> +63 (2) 85557777</a>
+                                    <label for="">Employment</label> 09456754591</a>
                             </li>
                             <li>
                                 <a href="+63 (2) 85557700.htm">
-                                    <label for="">Customer Care </label> +63 (2) 85557700
+                                    <label for="">Customer Care </label> 09456754591
                                 </a>
                             </li>
-                            <li>
-                                <a href="+63 (2) 85557777.htm">
-                                    <label for="">Others</label> +63 (2) 85557777
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="col-sm-4 footer-link">
@@ -56,9 +52,9 @@
                             <li><a href="privacy-policy.htm">Privacy</a></li>
                         </ul>
                         <ul>
-                            <li><a href="../communities.dmcihomes.com/index.html" target="_blank">Community</a></li>
-                            <li><a href="../leasing.dmcihomes.com/index.html" target="_blank">Leasing</a></li>
-                            <li><a href="contact-us.htm">Customer Care</a></li>
+                            <li><a href="/showabout" target="_blank">Community</a></li>
+                            <li><a href="./prop" target="_blank">Leasing</a></li>
+                            <li><a href="/contact">Customer Care</a></li>
                             <li><a href="sellers.htm">Sellers</a></li>
                             <li><a href="careers.htm">Careers</a></li>
                             <li><a href="site-map.htm">Sitemap</a></li>

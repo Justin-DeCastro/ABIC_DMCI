@@ -335,6 +335,7 @@
                         </div>
                         <div>
                             <p><span class="sec-sub-title">{{ $mission->description }}</span></p>
+                            <br>
 
                     <p><strong>In so doing, we are committed:</strong></p>
 <ul class="list-2">
@@ -365,122 +366,35 @@
                     </div>
                 </div>
             </div>
-        </section>
+        {{-- </section> --}}
     </div>
 
-    {{-- <div class="container
-    ">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="sec-head">
-                    <h2 class="sec-title">Vision &amp; Mission</h2>
-                    @if($abouts->count() === 0)
-                        <p>No about information found.</p>
-                    @else
-                        @foreach ($abouts as $about)
-                            <p>{{ $about->vision_mission }}</p>
-                            <!-- Add other fields similarly -->
-                        @endforeach
-                    @endif
+
+
+<div class="container p-t-80">
+    <div class="sec-head">
+        <h2 class="sec-title">Our Core Values</h2>
+        <p>Learn about our company's fundamental beliefs.</p>
+    </div>
+
+    <div class="about-cards">
+        <ul class="flex card-list" id="core-values-wrapper">
+            @foreach($cores as $core)
+            <li class="box-card">
+                <figure class="property-img">
+                    <a href="#">
+                        <span class="text-top">{{ $core->name }}</span>
+                        <img src="{{ asset('images/' . $core->image) }}" alt="core Image" width="100">
+                    </a>
+                </figure>
+                <div class="content">
+                    <p>{{ $core->description }}</p>
                 </div>
-            </div>
-        </div>
+            </li>
+            @endforeach
+        </ul>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="sec-head">
-                    <h2 class="sec-title">DMCI &amp; CREED</h2>
-                    @if($abouts->isEmpty())
-                        <p>No about information found.</p>
-                    @else
-                        @foreach ($abouts as $about)
-                            <p>{{ $about->we_believe }}</p>
-                            <!-- Add other fields similarly -->
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div> --}}
-        {{-- <div class="container">
-            <div class="row">
-                    <div class="col-sm-6">
-                        <div class="sec-head">
-                            <h2 class="sec-title">The DMCI Creed</h2>
-                        </div>
-                        <div>
-                            <p><strong>We believe:</strong></p>
-                            @if($abouts)
-                            <p>{{ $abouts->we_believe }}</p>
-                            <!-- Add other fields similarly -->
-                        @else
-                            <p>No about information found.</p>
-                        @endif
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!-- <div class="slant-border slant-bot slant-blue slant-left pos-a"></div> -->
-        </section>
-    </div>
-
-
-    <div class="container p-t-80">
-        <div class="sec-head">
-            <h2 class="sec-title">Our Core Values</h2>
-            <p>Learn about our company's fundamental beliefs.</p>
-        </div>
-        <div class="about-cards">
-            <ul class="flex card-list" id="core-values-wrapper">
-                <li class="box-card">
-                    <figure class="property-img">
-                        <a href="#">
-                            <span class="text-top">Interdependence</span>
-                            <img class="lazyloaded" src="{{ asset('images/core-values-interdependence.jpg')}}" data-src="{{ asset('images/core-values-interdependence.jpg')}}" alt="/uploads/media/core-values-interdependence" width="215" height="150">
-                        </a>
-                    </figure>
-                    <div class="content">
-                        <p>With unity in purpose and mutual trust and respect for each other, we work toward shared aspirations and transcend boundaries along functional and organizational lines.</p>
-                    </div>
-                </li>
-                <li class="box-card">
-                    <figure class="property-img">
-                        <a href="#">
-                            <span class="text-top">Customer Orientation</span>
-                            <img class="lazyloaded" src="{{ asset('images/core-values-customer-orientation.jpg')}}" data-src="{{ asset('images/core-values-customer-orientation.jpg')}}" alt="/uploads/media/core-values-customer-orientation" width="215" height="150">
-                        </a>
-                    </figure>
-                    <div class="content">
-                        <p>Our goal is to delight and please our customers. Thus, all activities and programs we undertake result in innovative projects and in the enhancement of productivity and quality.</p>
-                    </div>
-                </li>
-                <li class="box-card">
-                    <figure class="property-img">
-                        <a href="#">
-                            <span class="text-top">Excellence</span>
-                            <img class="lazyloaded" src="{{ asset('images/core-values-excellence.jpg')}}" data-src="{{ asset('images/core-values-excellence.jpg')}}" alt="/uploads/media/core-values-excellence" width="215" height="150">
-                        </a>
-                    </figure>
-                    <div class="content">
-                        <p>We reject mediocrity and strive for excellence in even the smallest of details.</p>
-                    </div>
-                </li>
-                <li class="box-card">
-                    <figure class="property-img">
-                        <a href="#">
-                            <span class="text-top">Integrity</span>
-                            <img class="lazyloaded" src="{{ asset('images/core-values-1550807898224.jpg')}}" data-src="{{ asset('images/core-values-1550807898224.jpg')}}" alt="/uploads/media/core-values-1550807898224" width="215" height="150">
-                        </a>
-                    </figure>
-                    <div class="content">
-                        <p>All our actions are guided by what is ethical, fair, and right. Believing in profit with honor, we are committed to good governance and the highest moral standards.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+</div>
 
 
 <section class="sec-pad sec-default brand-story jq-section" id="brand-story">
@@ -531,113 +445,33 @@
 </section>
 
 
-            <section class="sec-pad sec-default sec-reveal jq-section" id="brand-values">
-                <div class="container">
-                    <div class="sec-head">
-                        <h2 class="sec-title">Brand Values  </h2>
-                        <p>Know what makes a DMCI Homes development a cut above the rest.</p>
+
+<section class="sec-pad sec-default bg-grey jq-section" id="certification">
+    <div class="container">
+        <div class="sec-head">
+            <h2 class="sec-title">BRAND VALUES</h2>
+
+        </div>
+        <div class="about-cards">
+            <ul class="flex card-list" id="certification">
+                @foreach($values as $value)
+                <li class="box-card">
+                    <figure class="property-img">
+                        <img src="{{ asset('images/value/' . $value->image) }}" alt="Value Image" width="100">
+                    </figure>
+                    <div class="content">
+                        <h3>{{ $value->name }}</h3>
+
                     </div>
-                    <div class="about-cards carousel-full-width">
-                        <ul id="brandValues" class="flex brand-values card-list owl-carousel">
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="MODERN IN-CITY LIVING" data-content="<p><span style=&quot;color: #191919; font-family: AvenirLight; font-size: 16px;&quot;>DMCI Homes residential communities are located in close proximity to major business and commercial centers of Makati, Ortigas, and the Bonifacio Global City, letting you enjoy modern living at its best. Strategically situated within the vicinity of malls, schools, hospitals, and government offices, DMCI Homes</span><span style=&quot;color: #191919; font-family: AvenirLight; font-size: 16px;&quot;>&amp;nbsp;residential communities make living hassle-free and convenient. DMCI Homes residential communities are easily accessible by public transportation.</span></p>" data-image="/uploads/media/brand-values-modern-city.jpg">
-                <figure class="property-img">
-                        <h3 class="text-top">MODERN IN-CITY LIVING</h3>
-                        <img class=" lazyloaded" src="{{asset('images/brand-values-modern-city.jpg')}}" data-src="{{asset('images/brand-values-modern-city.jpg')}}" alt="/uploads/media/brand-values-modern-city" width="210" height="145">
-                </figure>
-            </a>
-        </li>
+                </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</section>
 
 
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title=" MEDIUM DENSITY DEVELOPMENT" data-content="<p><span style=&quot;color: #191919; font-family: AvenirLight; font-size: 16px;&quot;>Built to contain only a limited number of housing units for residents, all DMCI Homes communities are exclusive. The medium-rise condominium buildings have single loaded corridors that open up to a garden space or an atrium instead of a neighboring door. This feature allows the unobstructed entry of natural lighting, constant ventilation, and optimum privacy. All DMCI Homes communities are also designed to maintain a 60:40 footprint-to-building space ratio that leaves ample room for gardens and more open areas.</span></p>" data-image="/uploads/media/brand-values-medium-density.jpg">
-                <figure class="property-img">
-                        <h3 class="text-top"> MEDIUM DENSITY DEVELOPMENT</h3>
-                        <img class=" lazyloaded" src="{{asset('images/brand-values-medium-density.jpg')}}" data-src="{{asset('images/brand-values-medium-density.jpg')}}" alt="/uploads/media/brand-values-medium-density" width="210" height="145">
-                </figure>
-            </a>
-        </li>
 
-
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="RESORT LIVING" data-content="<p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-size: 16px; font-family: AvenirLight; color: #191919;&quot;>DMCI Homes communities are equipped with complete resort amenities that include:</p>
-<ul style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #191919; font-family: AvenirLight;&quot;>
-<li style=&quot;box-sizing: border-box; list-style: disc; margin-left: 20px; font-size: 16px; margin-bottom: 10px;&quot;>A clubhouse with function rooms, a bar, KTV room, and view deck</li>
-<li style=&quot;box-sizing: border-box; list-style: disc; margin-left: 20px; font-size: 16px; margin-bottom: 10px;&quot;>Adult and kiddie swimming pools</li>
-<li style=&quot;box-sizing: border-box; list-style: disc; margin-left: 20px; font-size: 16px; margin-bottom: 10px;&quot;>Basketball and badminton courts</li>
-<li style=&quot;box-sizing: border-box; list-style: disc; margin-left: 20px; font-size: 16px; margin-bottom: 10px;&quot;>Well-landscaped open areas, parks, and playground</li>
-<li style=&quot;box-sizing: border-box; list-style: disc; margin-left: 20px; font-size: 16px; margin-bottom: 10px;&quot;>Jogging and biking paths</li>
-</ul>" data-image="{{asset('images/Resort Living.jpg')}}">
-                <figure class="property-img">
-                        <h3 class="text-top">RESORT LIVING</h3>
-                        <img class=" lazyloaded" src="{{asset('images//Resort Living.jpg')}}" data-src="{{asset('images/Resort Living.jpg')}}" alt="/uploads/media/Resort Living" width="210" height="145">
-                </figure>
-            </a>
-        </li>
-
-
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="THEMED DEVELOPMENT" data-content="<p><span style=&quot;color: #191919; font-family: AvenirLight; font-size: 16px;&quot;>DMCI Homes residential communities are created with distinct architectural design concepts that show first class development features. Choose from Asian, Mediterranean, and Modern Contemporary styled communities.</span></p>" data-image="/uploads/media/brand-values-themed-development.jpg">
-                <figure class="property-img">
-                        <h3 class="text-top">THEMED DEVELOPMENT</h3>
-                        <img class=" lazyloaded" src="{{asset('images/brand-values-themed-development.jpg')}}" data-src="{{asset('images/brand-values-themed-development.jpg')}}" alt="/uploads/media/brand-values-themed-development" width="210" height="145">
-                </figure>
-            </a>
-        </li>
-
-
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="QUALITY WORKMANSHIP" data-content="<p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-size: 16px; font-family: AvenirLight; color: #191919;&quot;>Expect efficient floor plans and high-quality structures with first-rate construction techniques in the development of all DMCI Homes projects, owing to its mother company DMCI 50-year commendable track record in the construction industry.</p>
-<p style=&quot;box-sizing: border-box; margin: 0px 0px 10px; font-size: 16px; font-family: AvenirLight; color: #191919;&quot;>DMCI Homes also provides one (1) year quality warranty that covers repairs, free of charge, on any workmanship defects of the unit. Fast and reliable, the company's construction of the residential buildings and turnover of units are within 6 to 12 months only.</p>" data-image="/uploads/media/brand-values-quality-workmanship.jpg">
-                <figure class="property-img">
-                        <h3 class="text-top">QUALITY WORKMANSHIP</h3>
-                        <img class=" ls-is-cached lazyloaded" src="{{asset('images/brand-values-quality-workmanship.jpg')}}" data-src="{{asset('images/brand-values-quality-workmanship.jpg')}}" alt="/uploads/media/brand-values-quality-workmanship" width="210" height="145">
-                </figure>
-            </a>
-        </li>
-
-
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="READY FOR OCCUPANCY AND MOVE-IN POLICY" data-content="<p><span style=&quot;color: #191919; font-family: AvenirLight; font-size: 16px;&quot;>For as low as 20% down payment for mid-rise or 30% down payment for high-rise, a homebuyer may immediately move into his or her unit and enjoy the privileges of living in a DMCI Homes residential community, provided his or her unit is completed. Without the long wait, take pleasure in a resort living ambience right within your own backyard, or realize your condo unit&amp;acirc;&amp;euro;&amp;trade;s earning potential sooner than you expected.</span></p>" data-image="/uploads/media/Ready for occupancy.JPG">
-                <figure class="property-img">
-                        <h3 class="text-top">READY FOR OCCUPANCY AND MOVE-IN POLICY</h3>
-                        <img class=" ls-is-cached lazyloaded" src="{{asset('images/Ready for occupancy.JPG')}}" data-src="{{asset('images/Ready for occupancy.JPG')}}" alt="/uploads/media/Ready for occupancy" width="210" height="145">
-                </figure>
-            </a>
-        </li>
-
-
-        <li class="box-card">
-            <a href="#values-info" class="jq-link-popup" data-fancybox="" data-title="WORRY-FREE LIVING" data-content="<p>DMCI Homes ensures that you continue to experience the quality service they provide, even after turnover. A Property Management Group composed of seasoned professionals handles the upkeep of DMCI Homes developments and as well as the day-to-day concerns of its homeowners. Among other things, the group is tasked to oversee:&amp;Acirc;&amp;nbsp;</p>
-<p>&amp;nbsp;</p>
-<ul>
-<li><strong>Initial orientation</strong> for the condominium owner upon turnover</li>
-<li><strong>Assistance for application of basic utilities</strong> such as telephone and Meralco power. The owner does not have to go to the agency branches. The PMO will be the one to forward documents to the respective agency.</li>
-<li><strong>Maintenance and assistance on minor works</strong>, such as the installation of air-conditioning and curtains, dealing with clogged drains, etc.</li>
-<li><strong>Serves as an information center</strong> for the project, e.g., information on units and important areas within the vicinity.</li>
-<li><strong>Assistance on transactions concerning the developer</strong>, including following up documents</li>
-<li><strong>Community events</strong> such as sports fests, family day, Halloween treats, Christmas party, etc.</li>
-</ul>
-<p>You are also able to enjoy the perks of living in a DMCI Homes community. Modern-day facilities that are standard features in the developments and which contribute to a more convenient lifestyle include:</p>
-<ul>
-<li>24-hour security service</li>
-<li>Gated entrance and perimeter fence</li>
-<li>Overhead water tank, deep well, and underground cistern</li>
-<li>Covered bridge way connecting the residential building to the car park</li>
-<li>Individual drying area at the roof deck</li>
-<li>Provision for CATV and telephone lines</li>
-</ul>
-<p>&amp;nbsp;</p>"
-data-image="{{asset('images/Worry-free lving.jpg')}}">
-
-        <figure class="property-img">
-                <h3 class="text-top">Worry Free Living</h3>
-                <img class=" ls-is-cached lazyloaded" src="{{asset('images/Worry-free lving.jpg')}}" data-src="{{asset('images/Worry-free lving.jpg')}}" alt="/uploads/media/Ready for occupancy" width="210" height="145">
-        </figure>
-    </a>
-</li>
-                    </div>
-                </div>
                 <section class="sec-pad sec-default banner for-pages slant-border slant-bot slant-white slant-ghost slant-right innovation jq-section" id="innovation">
                     <div class="slant-border slant-bot slant-grey slant-ghost slant-right"></div>
                     <div class="coverimage-title banner-text innovation">

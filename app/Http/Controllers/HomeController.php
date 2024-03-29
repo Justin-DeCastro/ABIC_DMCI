@@ -14,6 +14,8 @@ use App\Models\Subdivision;
 use App\Models\City;
 use App\Models\Leisure;
 use App\Models\Kaakbay;
+use App\Models\Alder;
+use App\Models\AddLease;
 class HomeController extends Controller
 {
     /**
@@ -44,7 +46,40 @@ class HomeController extends Controller
 
     public function seller()
     {
-        return view('sellers');
+        $alders = alder::all();
+        return view('sellers',compact('alders'));
+    }
+    public function viewsale($id)
+    {
+        $alders = Alder::findOrFail($id); // Assuming each Alder has a unique ID
+        return view('addleases.forsale', compact('alders'));
+    }
+
+
+
+
+
+    public function leasing()
+    {
+        $addLeases = AddLease::all();
+        return view('addleases.addforlease',compact('addLeases'));
+    }
+    public function viewleasing($id)
+    {
+        $addLeases = AddLease::find($id);
+        return view('addleases.lease',compact('addLeases'));
+    }
+    public function viewproperties()
+    {
+        return view('prop/index');
+    }
+    public function send()
+    {
+        return view('sendproperties');
+    }
+    public function loan()
+    {
+        return view('loan');
     }
     public function mulberry()
     {
@@ -69,6 +104,10 @@ class HomeController extends Controller
     public function fortis()
     {
         return view('fortis');
+    }
+    public function cellandine()
+    {
+        return view('leasing.cellandine');
     }
     public function finder()
     {

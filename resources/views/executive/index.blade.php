@@ -303,3 +303,246 @@
     </div>
 </div>
 
+
+
+@foreach($executives as $executive)
+    <!-- Update Card Modal for card with ID {{ $executive->id }} -->
+    <div class="modal fade" id="updateExecutiveModal{{ $executive->id }}" tabindex="-1" role="dialog" aria-labelledby="updateExecutiveModalLabel{{ $executive->id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateExecutiveModalLabel{{ $executive->id }}">Update Executive</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="updateExecutiveForm{{ $executive->id }}" action="{{ route('executive.update', ['id' => $executive->id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('Put')
+
+                        <!-- Hidden input to store card ID -->
+                        <input type="hidden" name="executive_id" value="{{ $executive->id }}">
+                         <div class="form-group">
+                            <label for="image{{ $executive->id }}">Image</label>
+                            <input type="file" class="form-control" id="image{{ $executive->id }}" name="image" accept="image/*">
+                        </div>
+                        <!-- Form fields for updating card details -->
+                        {{-- <div class="form-group">
+                            <label for="progress{{ $mid->id }}">Progress</label>
+                            <input type="text" class="form-control" id="progress{{ $mid->id }}" name="progress" value="{{ $mid->progress }}">
+                        </div> --}}
+                        <div class="form-group">
+                            <label for="name{{ $executive->id }}">Name</label>
+                            <input type="text" class="form-control" id="name{{ $executive->id }}" name="name" value="{{ $executive->name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="position{{ $executive->id }}">Position</label>
+                            <input type="text" class="form-control" id="position{{ $executive->id }}" name="position" value="{{ $executive->position }}">
+                        </div>
+                        {{-- <div class="form-group">
+                            <label for="description{{ $event->id }}">Description</label>
+                            <textarea class="form-control" id="description{{ $event->id }}" name="description" rows="4">{{ $event->description }}</textarea>
+                        </div> --}}
+                        {{-- <div class="form-group">
+                            <label for="bed{{ $mid->id }}">Bed</label>
+                            <textarea class="form-control" id="bed{{ $mid->id }}" name="bed" rows="4">{{ $mid->bed }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="price{{ $mid->id }}">Price</label>
+                            <textarea class="form-control" id="price{{ $mid->id }}" name="price" rows="4">{{ $mid->price }}</textarea>
+                        </div> --}}
+
+
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="updateEvent({{ $executive->id }})">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+<!-- Delete Card Modal -->
+@foreach($executives as $executive)
+    <!-- Delete Button -->
+    {{-- <button type="button" class="btn btn-danger delete-btn" data-event-id="{{ $event->id }}">
+
+    </button> --}}
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteExecutiveModal{{ $executive->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteExecutiveModalLabel{{ $executive->id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteExecutiveLabel{{ $executive->id }}">Confirm Deletion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this executive?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <!-- Delete Form -->
+                    <form id="deleteForm{{ $executive->id }}" action="{{ route('executive.delete', ['executive' => $executive->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button> <!-- Change button type to submit -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endforeach
+
+<!-- JavaScript for handling delete via AJAX -->
+<script>
+    function deleteExecutive(executive) {
+        $.ajax({
+            url: "{{ route('executive.delete', ['executive' => $executive->id]) }}",
+
+            method: 'POST',
+            data: {
+                _token: "{{ csrf_token() }}"
+            },
+            success: function(response) {
+                console.log('event deleted successfully');
+                $('#deleteModal' + executiveId).modal('hide'); // Close modal after successful delete
+                location.reload(); // Reload the page
+            },
+            error: function(xhr, status, error) {
+                console.error('Error deleting mission:', error);
+            }
+        });
+    }
+</script>
+<script>
+    function updateExecutive(executiveId) {
+        console.log('Update button clicked for event ID:', executiveId);
+        var formData = new FormData($('#updateEventForm' + executiveId)[0]);
+
+        $.ajax({
+            url: "{{ route('executive.update', ':id') }}".replace(':id', executiveId), // Corrected URL
+            method: 'Post',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // Handle success response (e.g., show success message)
+                console.log('promo updated successfully');
+                $('#updateExecutiveModal' + executiveId).modal('hide'); // Close modal after successful update
+                location.reload(); // Reload the page
+            },
+            error: function(xhr, status, error) {
+                // Handle error response (e.g., show error message)
+                console.error('Error updating executive:', error);
+            }
+        });
+    }
+
+    // Submit form when Save changes button is clicked
+    $('.modal-footer .btn-primary').on('click', function() {
+        $(this).closest('.modal-content').find('form').submit();
+    });
+</script>
+
+{{--
+<script>
+    function updateEvent(eventId) {
+        var formData = new FormData($('#updateEventForm' + eventId)[0]);
+
+        $.ajax({
+            url: "{{ route('event.update', ['id' => $event->id]) }}",
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // Handle success response (e.g., show success message)
+                console.log('event updated successfully');
+                $('#updateEventModal' + eventId).modal('hide'); // Close modal after successful update
+                location.reload(); // Reload the page
+            },
+            error: function(xhr, status, error) {
+                // Handle error response (e.g., show error message)
+                console.error('Error updating event:', error);
+            }
+        });
+    }
+</script>
+
+ --}}
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+<!-- Initialize DataTable -->
+<script>
+    $(document).ready(function() {
+        $('#executiveTable').DataTable();
+    });
+</script>
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #0056b3;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #ced4da;
+        color: #6c757d;
+        cursor: default;
+    }
+    .card-body {
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+</style>
+
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #0056b3;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #ced4da;
+        color: #6c757d;
+        cursor: default;
+    }
+    .card-body {
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+</style>

@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+
+* { margin:0; padding:0;}
+body { margin:0; padding:0; font-family:proxima-nova-regular, Helvetica, sans-serif;}
+:focus { outline:none;}
+.clr { clear:both; overflow:hidden;}
+.fl { float:left;}
+.fr { float:right;}
+ul, li, ol { list-style:none;}
+a { text-decoration:none;}
+a img, img { border:none; vertical-align:middle;}
+
+
+.row {}
+.row:before, .row:after { display:table; content:"";}
+.row:after { clear:both;}
+
+
+#wrap {width: 700px;margin:0 auto;padding-top: 10px;}
+
+.sidebar {width: 245px;float:left;border-right:solid 4px #fff;}
+.sidebar .block_1 { height:400px; text-align:center;}
+.sidebar .block_1 .img_1 { margin:85px 0 0 0;}
+.sidebar .block_1 .img_2 { margin:95px 0 0 0;}
+.sidebar .autologo { height:94px;}
+
+.content {width: 446px;float: right;border-bottom:solid 3px #fff;background:url(../images/content_bg.jpg) repeat-x top;}
+.content .form { overflow:hidden;}
+.content .form ul { display:block; padding:25px 0 0 0;}
+.content .form ul li {display:block;overflow:hidden;padding: 5px 22px;}
+.content .form ul li label.error{color:red;float: right;clear: both;padding: 0;margin: 0;font-size: 11px;}
+.content .form ul li .label {width: 31%;float:left;text-align: left;font-size: 16px;color:#222;font-weight: normal;padding: 8px 0 0;}
+.content .form ul li .label .grey{display:block;color:#acacac;font-style: italic;padding-top: 2px;}
+.content .form ul li .selectbox,
+.content .form ul li input.number{
+    width: 56%;
+    padding: 7px;
+    float: right;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+}
+.content .form ul li .btn_1 {width:120px;height: 42px;text-align:center;font-size: 16px;color:#fff;border:none;background: #8d342c;cursor:pointer;font-weight: bold;}
+.content .form ul li .btn_2 {margin-left: 9px;}
+.content .box_1 {}
+.content .box_1 > h4 { font-size:16px; font-weight:bold; margin:0 50px 0 86px; padding:10px 0 5px 0; border-bottom:solid 1px #d1d0d0; color:#252525;}
+.content .box_1 > p { font-size:14px; margin:0 50px 0 86px; padding:5px 0 5px 0; color:#252525;}
+
+.content .note {font-size: 11px;color: #959595;margin:0;clear: both;font-style: italic;padding: 15px 0;}
+.content .applybox { overflow:hidden; padding:14px 0 0 0; float:right;}
+.content .applybox span {display:block;float:left;font-size:18px;line-height: 44px;color:#666;font-family: 'proxima-nova-bold';padding:0 10px 0 25px;}
+.content .applybox .btn_app {
+    width: 120px;
+    height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    background: #af2025;
+    cursor: pointer;
+    font-weight: bold;
+    }
+
+.content .form ul li .inputbox { width:252px; padding:5px 3px; float:left;}
+.content .form ul li .btn_3 { height:25px; text-align:center; font-size:18px; color:maroon; font-family: 'proxima-nova-bold'; border:none; float:left; margin:5px 0 0 167px;}
+
+.content .form .email-sent p { padding: 5px 20px 5px 20px; font-size:14px; color:#222; font-family: 'proxima-nova-bold'; }
+
+
+#box_content {
+    margin: 0;
+}
+
+#left {
+    margin-right: 130px;
+    color: #959595;
+}
+
+#right {
+    float: right;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+#left h4 {
+    font-size:16px;
+    font-weight:bold;
+    padding: 10px 0;
+    color: #959595;
+    margin: 0;
+}
+
+#left p {
+    font-size:14px; padding:5px 0 5px 0; color:#252525;
+}
+
+#right .btn_email {
+    text-align:center;
+    font-family: 'proxima-nova-bold';
+    border: 0;
+    cursor:pointer;
+    margin-top:-2px;
+    background: url(../images/send-result-btn.png) no-repeat 50% 50%;
+    width: 102px;
+    height: 102px;
+    color: transparent;
+    font-size: 0;
+}
+#right .btn_email_send {
+    text-align:center;
+    font-family: 'proxima-nova-bold';
+    border: 0;
+    cursor:pointer;
+    margin-top:-2px;
+    background: url(../images/submit-email-btn.png) no-repeat 50% 50%;
+    width: 102px;
+    height: 102px;
+    color: transparent;
+    font-size: 0;
+}
+
+.emailform {font-size:14px;margin:0;padding: 23px 0 0 0;color:#252525;}
+.emailform label {font-size:16px;padding:5px 0 5px 0;color: #959595;display:block;}
+.emailform label.error{color:red;font-size:12px;padding: 0;}
+.emailform input {
+    border-radius: 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: top;
+    border: 2px solid #9f9e9e;
+}
+
+.tbl {
+    width: 100%;
+    font-size: 13px;
+}
+
+.right {
+    text-align: right;
+}
+
+.agree-privacy label.error{color:red;font-size:12px;padding: 0;}

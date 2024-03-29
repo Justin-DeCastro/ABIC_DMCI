@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | DataTables</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
+</head>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -88,11 +106,31 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('alder.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-cocktail"></i>
+                    <p>
+                         FOR SALE
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('high.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-building"></i>
                     <p>
                          HIGH RISE CONDO
                         {{-- <i class="fas fa-angle-left right"></i> --}}
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('send') }}" class="nav-link">
+                    <i class="nav-icon fas fa-building"></i>
+                    <p>
+                         View sent Properties
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
@@ -122,6 +160,16 @@
                     <i class="nav-icon fas fa-bullseye"></i>
                     <p>
                          Mission
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('core.index') }}" class="nav-link">
+                    <i class="fas fa-bullseye"></i>
+                    <p>
+                        Core Values
                         {{-- <i class="fas fa-angle-left right"></i> --}}
                         <span class="badge badge-info right"></span>
                     </p>
@@ -158,6 +206,26 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('addleases.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-building"></i>
+                    <p>
+                       FOR LEASE
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li>
+            {{-- <li class="nav-item">
+                <a href="{{ route('promo.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-tags"></i>
+                    <p>
+                        Promo
+
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li> --}}
+            <li class="nav-item">
                 <a href="{{ route('promo.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tags"></i>
                     <p>
@@ -168,10 +236,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('kaakbay.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-hands-helping"></i>
+                <a href="{{ route('value.index') }}" class="nav-link">
+                    <i class="fas fa-lightbulb"></i>
+
                     <p>
-                        Kaakbay
+                       Brand Value
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('executive.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                       Executive
                         {{-- <i class="fas fa-angle-left right"></i> --}}
                         <span class="badge badge-info right"></span>
                     </p>
@@ -182,7 +261,7 @@
                     <i class="nav-icon fas fa-newspaper"></i>
                     <p>
                         NEWS and Updates
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
@@ -200,13 +279,23 @@
 
 
     <style>
-        .sidebar {
-            position: sticky;
-            top: 0;
-            width: 250px; /* Set the width as needed */
-            max-width: 100%; /* Ensure it doesn't overflow horizontally */
-            height: calc(250vh - 150px); /* Adjust height as needed */
-            overflow-y: auto;
-            padding-top: 20px; /* Adjust padding as needed */
-        }
+       .sidebar {
+
+    position: sticky;
+    top: 0;
+    width: 250px; /* Set the width as needed */
+    max-width: 100%; /* Ensure it doesn't overflow horizontally */
+    height: 100%; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-top: 20px; /* Adjust padding as needed */
+    padding-bottom: 20px; /* Adjust padding as needed */
+    margin-top: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+    .nav-item a {
+    font-size: 23px; /* Adjust font size as needed */
+}
+
+}
+
     </style>
+

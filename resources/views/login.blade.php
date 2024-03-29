@@ -816,7 +816,7 @@
 
 
 
-            @foreach($promo as $promo)
+
             <section class="sec-pad jq-section" id="promos" style="min-height: unset;">
                 <div class="container">
                     <div class="sec-head">
@@ -824,6 +824,7 @@
                         <p>Get the best deals from us! </p>
                     </div>
                     <div class="featured-news">
+                        @foreach($promo as $promo)
                         <div class="masonry-wrap">
                             <div class="grid" id="promo-wrapper">
                                 <div class="grid-item  grid-item--width2" data-animation="fadeInUp">
@@ -846,10 +847,12 @@
 
                                         </div>
                                     </article>
+
                                 </div>
+                                @endforeach
                             </div>
                         </div>
-                        @endforeach
+
 
 
                     </div>

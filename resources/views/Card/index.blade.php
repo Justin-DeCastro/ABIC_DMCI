@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -435,3 +439,24 @@
         $('#cardTable').DataTable();
     });
 </script>
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #0056b3;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #ced4da;
+        color: #6c757d;
+        cursor: default;
+    }
+</style>

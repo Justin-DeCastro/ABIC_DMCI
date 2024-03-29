@@ -1,0 +1,222 @@
+@font-face{
+    font-family:'proxima-nova-regular';
+    src:url('../fonts/1132159/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix');
+    src:url('../fonts/1132159/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix') format('eot'),
+        url('../fonts/1132159/64017d81-9430-4cba-8219-8f5cc28b923e.woff2') format('woff2'),
+        url('../fonts/1132159/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff') format('woff'),
+        url('../fonts/1132159/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'proxima-nova-bold';
+    src:url('../fonts/1132183/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix');
+    src:url('../fonts/1132183/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix') format('eot'),
+        url('../fonts/1132183/0d416408-95c6-4ad7-b08d-e60573d3b37d.woff2') format('woff2'),
+        url('../fonts/1132183/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff') format('woff'),
+        url('../fonts/1132183/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+#menu ul.secondary li {
+  display: inline-block;
+  padding: 5px 21px;
+}
+.content form#_form {
+  border: 3px solid #92342c;
+  border-radius: 5px;
+}
+#result-div #div-result {
+  background: #e2e2e2;
+  padding: 10px 30px;
+}
+.content .form ul li.btn-block {
+  text-align: center;
+  padding: 14px 22px 10px;
+}
+.sidebar .autoloan-link {
+  font-size: 13px;
+  padding: 10px 0;
+  margin-right: -110px;
+}
+.agree-privacy {
+  color: #959595;
+  font-size: 11px;
+  font-style: italic;
+  clear: both;
+}
+.agree-privacy a {
+  color: #003471;
+}
+.agree-privacy input.checkbox {
+  float: left;
+  margin: 0 2px 2px 0;
+}
+#banner .steps-wrap {
+  text-align: center;
+  width: 750px;
+  margin: auto;
+}
+#banner .steps-wrap img.step-desc {
+  float: left;
+}
+#banner .steps-wrap .step-3 {
+  width: 465px;
+  float: right;
+  overflow: hidden;
+}
+#banner .steps-wrap .step-3 img {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.img_mobile {
+  display: none;
+}
+@media (max-width: 991px) {
+  body > .container {
+    background-color: #fff;
+  }
+  #wrap {
+    max-width: 100%;
+    padding: 0;
+  }
+  #wrap .sidebar {
+    width: 100%;
+    border: 0;
+    padding: 0 0 10px 0;
+  }
+  #wrap .content {
+    margin: 10px auto;
+    float: none;
+    clear: both;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  #banner .steps-wrap {
+    width: 300px;
+  }
+  #banner .steps-wrap img.step-desc {
+    float: none;
+  }
+  #banner .steps-wrap .step-3 {
+    float: none;
+    margin: auto;
+  }
+  #banner .steps-wrap .step-3 img {
+  }
+  .img_desktop {
+    display: none;
+  }
+  .img_mobile {
+    display: block;
+    clear: both;
+  }
+  .autoloan-link.img_mobile {
+    padding: 15px 0;
+    text-align: center;
+  }
+  img.img_mobile {
+    width: 100%;
+  }
+  #footer {
+    padding-bottom: 0;
+  }
+  .t-left,
+  .t-right {
+    padding-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  #banner .steps-wrap .step-3 {
+    width: auto;
+  }
+  #banner .steps-wrap .step-3 img {
+    height: 78px;
+  }
+  #banner > .main > .col-md-12 {
+    padding: 0 !important;
+    margin: 0 -15px;
+  }
+  .content .form ul li,
+  .content .form ul li.btn-block {
+    padding: 5px 8px;
+  }
+  .content .form ul li .label {
+    font-size: 16px;
+    width: 40%;
+  }
+  #result-div #div-result {
+    padding: 10px;
+  }
+  .tbl {
+    /* font-size:11px;*/
+  }
+  #box_content {
+    position: relative;
+    padding-bottom: 110px;
+  }
+  #box_content #left {
+    width: 100%;
+    clear: both;
+  }
+  #box_content #right {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .autoloan-link {
+    font-size: 11px;
+  }
+  .content .applybox {
+    text-align: center;
+    float: none;
+  }
+  .content .applybox span {
+    float: none;
+  }
+}
+
+#_form {
+  font-family: "proxima-nova-regular", arial;
+}
+
+.content .form ul li .selectbox {
+  border: 2px solid #a7a9ac;
+  height: 40px;
+}
+
+.content .form ul li .btn_1 {
+  background-color: #af2024;
+  border-radius: 5px;
+  height: 50px;
+  width: 180px;
+}
+
+.content .form ul li .label {
+  color: #58595b;
+}
+
+.content form#_form {
+  border: 4px solid #af2024;
+  border-radius: 8px;
+}
+
+#_form .form-header {
+  background-color: #af2024;
+  height: 10px;
+}
+
+@media (max-width: 600px) {
+  .content .form ul li .btn_1 {
+    width: 150px;
+  }
+}
