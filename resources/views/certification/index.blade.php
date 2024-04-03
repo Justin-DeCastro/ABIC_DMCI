@@ -267,9 +267,16 @@
         </div>
     </section>
 </div>
-@foreach ($errors->all() as $error)
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
+        </ul>
+    </div>
+@endif
+
 
 
 <div class="modal fade" id="addCertificationModal" tabindex="-1" role="dialog" aria-labelledby="addCertificationModalLabel" aria-hidden="true">

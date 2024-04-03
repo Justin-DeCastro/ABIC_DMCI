@@ -530,30 +530,33 @@
                             </div>
                         </div>
                     </div> --}}
-                    <section class="sec-pad sec-default bg-grey jq-section" id="certification">
-                    <div class="container">
-                        <div class="sec-head">
-                            <h2 class="sec-title">Certification and Awards</h2>
-                            <p>Excellent quality has always been one of our strengths and it is recognized by various organizations inside and outside of the Philippines. </p>
+                    <section class="sec-pad sec-default executives jq-section" id="executives">
+                        <div class="container">
+                            <div class="sec-head">
+                                <h2 class="sec-title">Certification and Awards</h2>
+                                <p>Excellent quality has always been one of our strengths and it is recognized by various organizations inside and outside of the Philippines. </p>
+                            </div>
                         </div>
-                        <div class="about-cards">
-                            <ul class="flex card-list" id="certification">
-                                @foreach($certifications as $certification)
-                                <li class="box-card">
-                                    <figure class="property-img">
-                                        <img src="{{ asset('images/' . $certification->image) }}" alt="Certification Image">
-                                    </figure>
-                                    <div class="content">
-                                        <h3>{{ $certification->name }}</h3>
-                                        <p style="font-size:16px">{{ $certification->description }}</p>
-                                    </div>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </section>
 
+
+                        <div class="container">
+                            <div class="about-cards">
+                                <ul class="flex card-list" id="executives-wrapper">
+                                    @foreach($certifications as $certification)
+                                    <li class="box-card">
+                                        <figure class="property-img">
+                                            <img src="{{ asset('images/' . $certification->image) }}" alt="Certification Image" width="295" height="205">
+                                        </figure>
+                                        <div class="content">
+                                            <h3>{{ $certification->name }}</h3>
+                                            <p style="font-size:20px">{{ $certification->description }}</p>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
 
 
 <section class="sec-pad sec-default jq-section" id="partners">
@@ -603,18 +606,7 @@
         </div>
     </div>
 
-    <div class="corporate-governance slant-border slant-bot slant-right">
-        <div class="slant-border slant-bot slant-grey slant-right slant-ghost -reverse"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h4>DMCI Homes is guided by seasoned executives with vast knowledge and experience in property development</h4>
-                </div>
-                <div class="col-sm-8">
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="container">
         <div class="about-cards">

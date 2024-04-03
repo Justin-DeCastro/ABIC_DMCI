@@ -7527,12 +7527,8 @@
                                 </div>
                             </form>
                         </div>
-                        <a href="https://wa.me/+639483877158" target="_blank"> <!-- WhatsApp Link -->
-                            <img src="{{ asset('images/whats.png') }}" alt="WhatsApp" width="50" height="50"> <!-- WhatsApp Logo -->
-                        </a>
-                        <a href="https://t.me/jmdec21" target="_blank"> <!-- Telegram Link -->
-                            <img src="{{ asset('leasing/telegram-removebg-preview.png') }}" alt="Telegram" width="50" height="50"> <!-- Telegram Logo -->
-                        </a>
+
+
 
                     </div>
 
@@ -7546,13 +7542,18 @@
                 </div>
             </div>
         </div>
+
     </header>
+
     <div class="sidebar-menu" style="z-index: 1000;">
+
         <figure class="logo">
+
             <a href="/">
                 <img src="/images/dmci.png" alt="DMCI Homes Logo" width="170" height="37">
                 <img class="lazyload logo-exclusive" style="display: none;" data-src="/images/dmci-exclusive-logo.png" alt="DMCI Homes Exclusive Logo" width="400" height="105">
             </a>
+
         </figure>
         <nav class="main-nav">
             <ul>
@@ -7566,6 +7567,16 @@
                     <li><a href="{{ route('about') }}">About us</a></li>
                     <li><a href="{{ route('sendproperties.index') }}">Send a Property to us</a></li>
                     <li><a href="/contact">Contact us</a></li>
+
+                    {{-- <div style="text-align: right;"> --}}
+                        <a href="https://wa.me/+639483877158" target="_blank" style="margin-left: 48px;"> <!-- WhatsApp Link -->
+                            <img src="{{ asset('images/whats.png') }}" alt="WhatsApp" width="30" height="30"> <!-- WhatsApp Logo -->
+                        </a>
+                        <a href="https://t.me/jmdec21" target="_blank" style="margin-left: 10px;"> <!-- Telegram Link -->
+                            <img src="{{ asset('leasing/telegram-removebg-preview.png') }}" alt="Telegram" width="30" height="30"> <!-- Telegram Logo -->
+                        </a>
+                    {{-- </div> --}}
+
             </ul>
             <ul class="nav-other-site">
                 <li class="mn-green mn-btn"><a href="#contact-form" class="jq-section-form">Customer Care <span class="icon-home icon-costumer-care"></span></a></li>
