@@ -4,6 +4,25 @@
 <meta prop <link rel="preload" href="{{ asset('css/icon.min.css') }}" as="style">
 <link rel="preload" href="{{ asset('css/plugins.min.css') }}"as="style">
 
+<div class="d-flex flex-column align-items-center">
+
+    <h4 class="mb-4">Follow us</h4>
+
+
+
+
+
+    <ul>
+
+    <li><span class="social-icon social-facebook"><i class="fa fa-facebook"></i></span></li>
+    <li><span class="social-icon social-google"><i class="fa fa-google"></i></span></li>
+    <li><span class="social-icon social-linkedin"><i class="fa fa-linkedin"></i></span></li>
+    <li><span class="social-icon social-instagram"><i class="fa fa-instagram"></i></span></li>
+    <li><span class="social-icon social-twitter"><i class="fa fa-twitter"></i></span></li>
+
+  </ul>
+
+  </div>
 <style type="text/css">
     @font-face {
         font-family: Molengo;

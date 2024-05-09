@@ -24,15 +24,30 @@
                         <ul class="flex property-list-carousel owl-carousel" id="recommended-properties">
                             @foreach($alders as $alder)
                             <li class="" data-animation="fadeInUp" data-delay="100">
-                                <div class="property-item box-card">
+                                <div class="property-item box-card" style="position: relative;">
                                     <a href="{{ route('viewsale', ['id' => $alder->id]) }}">
                                         <figure class="property-img">
                                             <img src="{{ asset($alder->image) }}" alt="Reco Image">
-                                            <span class="name-badge">{{ $alder->name }}</span> <!-- Name badge -->
                                         </figure>
                                     </a>
+                                    <span class="status-badge" style="background-color:
+                                        @if ($alder->name === 'FOR SALE')
+                                            blue;
+                                        @elseif ($alder->name === 'Pre-Selling')
+                                            green;
+                                        @endif;
+                                        padding: 4px 8px; /* Adjust padding as needed */
+                                        border-radius: 4px; /* Optional: Add rounded corners for a nicer look */
+                                        color: white; /* Set the text color to white for better contrast */
+                                        position: absolute;
+                                        top: 10px; /* Adjust top position */
+                                        right: 10px; /* Adjust right position */
+                                        z-index: 1; /* Ensure badge is above image */
+                                    ">
+                                        {{ $alder->name }}
+                                    </span>
                                     <br>
-                                    <div class="content" style="display: flex; align-items: center; ">
+                                    <div class="content" style="display: flex; align-items: center;">
                                         <p class="content" style="margin-bottom: 5px;">
                                             <i class="fas fa-check-circle fa-2x" style="color: green;"></i>
                                             <span class="box-type">{{ $alder->status }}</span>
@@ -42,15 +57,13 @@
                                             <span class="box-type">{{ $alder->location }}</span>
                                         </p>
                                         <p class="content" style="margin-bottom: 5px;">
-                                            <i class="fa-solid fa-hand-holding-dollar fa-2x"></i>
+                                            <i class="fas fa-peso-sign fa-2x" style="color: orange;"></i>
                                             <span class="box-type">{{ $alder->price }}</span>
                                         </p>
                                         <p class="content" style="margin-bottom: 5px;">
-                                            <i class="fas fa-bed fa-2x" ></i>
-
+                                            <i class="fas fa-bed fa-2x"></i>
                                             <span class="box-type">{{ $alder->units }}</span>
                                         </p>
-                                    </br>
                                     </div>
                                 </div>
                             </li>
@@ -60,6 +73,7 @@
                 </div>
                 <div class="slant-border slant-bot slant-blue pos-a"></div>
             </section>
+
 <style>
     .property-item {
     position: relative;

@@ -9,10 +9,10 @@ class SendProperty extends Model
 {
     use HasFactory;
 
-
-    protected $fillable = ['image', 'name', 'email', 'description', 'status'];
+    protected $fillable = ['id_image', 'image', 'video', 'name', 'email', 'description', 'status'];
 
     protected $casts = [
         'image' => 'json',
+        'video' => 'json',
     ];
 }

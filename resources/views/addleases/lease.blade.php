@@ -46,7 +46,8 @@
                         <li><i class="fas fa-building fa-2x" style="color: green;"></i> {{ $addLeases->name }}</li><br>
                         <li><i class="fas fa-info-circle fa-2x" style="color: green;"></i> {{ $addLeases->status }}</li><br>
                         <li><i class="fas fa-map-marker-alt fa-2x" style="color: red;"></i> {{ $addLeases->location }}</li><br>
-                        <li><i class="fas fa-dollar-sign fa-2x" style="color: orange;"></i> {{ $addLeases->price }}</li><br>
+                        <li><i class="fas fa-peso-sign fa-2x" style="color: orange;"></i>
+                            {{ $addLeases->price }}</li><br>
                         <li><i class="fas fa-bed fa-2x" style="color: green;"></i> {{ $addLeases->units }}</li><br>
                         <li><i class="fas fa-align-left fa-2x" style="color: black;"></i> {{ $addLeases->description }}</li>
                     </ul>

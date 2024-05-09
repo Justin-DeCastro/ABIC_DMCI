@@ -1,0 +1,39 @@
+/* public/css/chatbot.css */
+
+#chatbot-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.user-message {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.bot-message {
+    background-color: #d3f7ff;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+#user-input {
+    width: calc(100% - 60px);
+    padding: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+}
+/* public/css/chatbot.css */
+
+/* Position chatbot container at bottom-right */
+.chatbot-bottom-right {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}

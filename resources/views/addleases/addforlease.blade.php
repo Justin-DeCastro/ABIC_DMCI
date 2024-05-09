@@ -27,10 +27,22 @@
                                     <a href="{{ route('viewleasing', ['id' => $lease->id]) }}">
                                         <figure class="property-img">
                                             <img src="{{ $lease->image }}" alt="Lease Image" style="max-width: 50%;">
-
-                                            <span class="status-badge">{{ $lease->name }}</span> <!-- Lease status -->
+                                        </a>
+                                        <span class="status-badge" style="background-color:
+                                        @if ($lease->name === 'Residential')
+                                            blue;
+                                        @elseif ($lease->name === 'Commercial')
+                                            green;
+                                        @endif;
+                                        padding: 4px 8px; /* Adjust padding as needed */
+                                        border-radius: 4px; /* Optional: Add rounded corners for a nicer look */
+                                        color: white; /* Set the text color to white for better contrast */
+                                    ">
+                                        {{ $lease->name }}
+                                    </span>
+                                     <!-- Lease status -->
                                         </figure>
-                                    </a>
+
                                     <br>
                                     <div class="content" style="display: flex; align-items: center;">
                                         <p class="content" style="margin-bottom: 5px;">
@@ -38,11 +50,13 @@
                                             <span class="box-type">{{ $lease->location }}</span>
                                         </p>
                                         <p class="content" style="margin-bottom: 5px;">
-                                            <i class="fa-solid fa-hand-holding-dollar fa-2x" style="color: gold;"></i>
+                                            <i class="fas fa-peso-sign fa-2x" style="color: orange;"></i>
+
                                             <span class="box-type">{{ $lease->price }}</span>
                                         </p>
                                         <p class="content" style="margin-bottom: 5px;">
-                                            <i class="fas fa-building fa-2x"></i>
+                                            <i class="fas fa-home fa-2x"></i>
+
                                             <span class="box-type">{{ $lease->status }}</span>
                                         </p>
                                         <p class="content" style="margin-bottom: 5px;">
@@ -63,7 +77,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: blue; /* Blue color for the badge */
+   /* Blue color for the badge */
     color: white; /* White color for the text */
     padding: 5px 10px;
     border-radius: 5px;

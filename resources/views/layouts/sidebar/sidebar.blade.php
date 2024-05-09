@@ -51,7 +51,8 @@
       <nav class="mt-2 sidebar">
         <!-- Your sidebar menu items here -->
 
-
+<!-- Your sidebar menu items here -->
+    <div style="max-height: 1000px; overflow-y: auto;">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
                 <a href="{{route('index')}}" class="nav-link">
@@ -64,157 +65,134 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('card.index') }}" class="nav-link">
 
                     <i class="nav-icon fas fa-images"></i>
                     <p>
                          Carousel Site Progress
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('mid.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-building"></i>
-                    <p>
-                         MID RISE CONDO
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('city.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>
-                    <p>
-                         Properties near your City
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('leisure.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-cocktail"></i>
-                    <p>
-                         Leisure
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('alder.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-cocktail"></i>
-                    <p>
-                         FOR SALE
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('high.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-building"></i>
-                    <p>
-                         HIGH RISE CONDO
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('send') }}" class="nav-link">
-                    <i class="nav-icon fas fa-building"></i>
-                    <p>
-                         View sent Properties
 
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+
+            {{-- <li class="nav-item">
+                <a href="{{ route('city.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                         Properties near your City
+
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li> --}}
+            {{-- <li class="nav-item">
+                <a href="{{ route('leisure.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-cocktail"></i>
+                    <p>
+                         Leisure
+
+                        <span class="badge badge-info right"></span>
+                    </p>
+                </a>
+            </li> --}}
+
+
+
+            {{-- <li class="nav-item">
                 <a href="{{ route('subdivision.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-building"></i>
                     <p>
                         Subdivision
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ route('certification.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-award"></i>
                     <p>
                         Certification and Awards
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('mission.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-bullseye"></i>
                     <p>
                          Mission
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a href="{{ route('core.index') }}" class="nav-link">
                     <i class="fas fa-bullseye"></i>
                     <p>
                         Core Values
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a href="{{ route('reco.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-thumbs-up"></i>
                     <p>
                         Recommended
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a href="{{ route('testimonial.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-comment"></i>
                     <p>
                         Testimonial
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
+            </li> --}}
+            <li class="nav-item">
+                <a href="{{ route('request.index') }}" class="nav-link">
+                    Request Viewing
+                </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('events.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-calendar-alt"></i>
-                    <p>
-                         Event
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
+                <a href="{{ route('alder.index') }}" class="nav-link">
+                    FOR SALE
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('addleases.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-building"></i>
-                    <p>
-                       FOR LEASE
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
-                        <span class="badge badge-info right"></span>
-                    </p>
+                    FOR LEASE
                 </a>
             </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Condominium
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('high.index') }}">HIGH RISE CONDO</a>
+                    <a class="dropdown-item" href="{{ route('mid.index') }}">MID RISE CONDO</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('send') }}" class="nav-link">
+                    View sent Properties
+                </a>
+            </li>
+
+
             {{-- <li class="nav-item">
                 <a href="{{ route('promo.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tags"></i>
@@ -225,12 +203,12 @@
                     </p>
                 </a>
             </li> --}}
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('promo.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tags"></i>
                     <p>
                         Promo
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
@@ -241,11 +219,11 @@
 
                     <p>
                        Brand Value
-                        {{-- <i class="fas fa-angle-left right"></i> --}}
+
                         <span class="badge badge-info right"></span>
                     </p>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ route('executive.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>

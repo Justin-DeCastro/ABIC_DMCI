@@ -25,7 +25,7 @@ class AlderController extends Controller
             'image' => 'required|image|max:100000',
             'name' => 'required|string|max:255',
             'price' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string|max:10000',
             'status' => 'required|string|max:255',
 
             'units' => 'required|string|max:255',

@@ -1,236 +1,251 @@
 @include('layouts.landing.sidebar')
 
+<section class="banner wavy">
 
-
-        <section class="banner wavy">
-
-            <picture class="coverimage-img">
-                <span id="dynamic-banner-souce-large"
-                    data-src="{{ asset('images/Mulberry Place-featured-1665479476736-large.jpg') }}')}}"></span>
-                <span id="dynamic-banner-souce-medium"
-                    data-src="{{ asset('images/Mulberry Place-featured-1665479476736-large.jpg') }}')}}"></span>
-                <img id="dynamic-banner-img"
-                    src="https://www.dmcihomes.com/uploads/media/generated/Mulberry Place-featured-1665479476736-large.jpg"
-                    alt="Visit Mulberry Place" width="1493" height="1000">
-            </picture>
-            <div class="table-wrap ">
-                <div class="table-cell">
-                    <div class="container">
-                        <div class="banner-left">
-                            <figure class="banner-logo animated" data-animation="fadeInUp" data-delay="100">
-                                <img id="dynamic-banner-logo" src="{{ asset('images/Mulberry Place Header Logo-small.png') }}" alt="">
-                            </figure>
-                            <div class="" data-animation="fadeInUp" data-delay="300" style="color: white;">
-                                <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City</h1>
-                                <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development found at the growing community of Acacia Estates in Taguig City. This exclusive residential retreat seamlessly blends exquisitely designed amenities with nature's grandeur.</p>
-                                <a href="{{route('mulberry')}}" class="btn btn-round" id="dynamic-banner-cta">Visit Mulberry Place</a>
-                            </div>
-
-                        </div>
-                    </div>
-                        <div class="banner-filter-bottom animated fadeInUp visible" data-animation="fadeInUp"
-                            data-delay="200">
-                            <div class="container">
-                                <div class="bf-bot-wrap">
-                                    <h2>What are you looking for?</h2>
-                                    <div class="bf-looking">
-                                        <div class="fl">
-                                            <ul class="filter-search-options">
-                                                <li>
-                                                    <div class="custom-checkbox radio-style">
-                                                        <input id="bfb-buy" type="radio" name="contact-inquiry"
-                                                            value="buy" checked="true">
-                                                        <label for="bfb-buy">Buy</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="custom-checkbox radio-style">
-                                                        <input id="bfb-rent" type="radio" name="contact-inquiry"
-                                                            value="lease">
-                                                        <label for="bfb-rent">Rent/Lease</label>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                        <div class="fr">
-                                            <a href="{{route('prop')}}" class="advance-filter-link"><span
-                                                    class="icon-home icon-advancefilter"></span>View all</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-
-
-
-
-                                    <form action="{{ route('search') }}" method="post">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-sm-4" data-search-option="both">
-                                                <label for="location">Location</label>
-                                                <div class="input-wrap map-pin-trigger">
-                                                    <input id="header-search-location-field" type="text" readonly name="location" value="{{ old('location') }}" placeholder="Any Location" data-fancybox-loc="" data-src="#map-pin">
-                                                    <button data-fancybox-loc="" data-src="#map-pin"></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4" data-search-option="both">
-                                                <label for="unitType">Unit Type</label>
-                                                <div class="custom-select">
-                                                    <select name="bed" id="header-search-unit-type">
-                                                        <option value="Any">Any</option>
-                                                        <option value="Studio">Studio</option>
-                                                        <option value="1BR">1BR</option>
-                                                        <option value="2BR">2BR</option>
-                                                        <option value="3BR">3BR</option>
-                                                        <option value="4BR">4BR</option>
-                                                        <option value="Loft">Loft</option>
-                                                        <option value="H&L">H&L</option>
-                                                        {{-- <option value="Lot">Lot</option> --}}
-                                                        <option value="N/A">N/A</option>
-                                                        <option value="1BR 2BR">1BR2BR</option>
-                                                        <option value="1BR 2BR STUDIO">1BR 2BR STUDIO</option>
-                                                        <option value="LOFT STUDIO">LOFT STUDIO</option>
-                                                        <option value="1BR 2BR 3BR">1BR 2BR 3BR</option>
-                                                        <option value="2BR 3BR STUDIO">2BR 3BR STUDIO</option>
-                                                        <option value="1BR 2BR 3BR STUDIO">1BR 2BR 3BR STUDIO</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4" data-search-option="buy">
-                                                <label for="price">Price range
-                                                    <span class="fr">
-                                                        <span id="first-mil-label" data-value="1" class="currency-convert">PHP 1</span> Million -
-                                                        <span id="second-mil-label" class="currency-convert" data-value="20">PHP 20</span> Million
-                                                    </span>
-                                                </label>
-                                                <span id="first-mil" style="display:none;">1</span>
-                                                <span id="second-mil" style="display:none;">20</span>
-                                                <div class="bf-price-range">
-                                                    <div class="price-range">
-                                                        <div class="noUiSlider" id="noUiSlider"></div>
-                                                        <!-- Corrected input names for price range -->
-                                                        <input type="hidden" id="header-min-price" name="price_fm" class="price_fm">
-                                                        <input type="hidden" id="header-max-price" name="price_to" class="price_to">
-                                                        <p class="pricing-label">
-                                                            <label class="pl-1" for=""><span data-value="1M" class="currency-convert-no-symbol">1</span><span>M</span></label>
-                                                            <label class="pl-3" for=""><span data-value="3M" class="currency-convert-no-symbol">3</span><span>M</span></label>
-                                                            <label class="pl-5" for=""><span data-value="5M" class="currency-convert-no-symbol">5</span><span>M</span></label>
-                                                            <label class="pl-7" for=""><span data-value="7M" class="currency-convert-no-symbol">7</span><span>M</span></label>
-                                                            <label class="pl-10" for=""><span data-value="1M" class="currency-convert-no-symbol">10</span><span>M</span></label>
-                                                            <label class="pl-15" for=""><span data-value="15M" class="currency-convert-no-symbol">15</span><span>M</span></label>
-                                                            <label class="pl-20" for=""><span data-value="20M" class="currency-convert-no-symbol">20</span><span>M</span></label>
-                                                        </p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <button type="submit" data-search-option="lease" class="btn btn-block search-button">Search</button>
-                                        </div>
-                                    </form>
-
-
-
-
-
-                                            <style>
-
-                                                .banner-filter-bottom {
-                                                    margin-left: auto;
-                                                    /* Adjust the left margin */
-                                                    margin-right: auto;
-                                                    /* Adjust the right margin */
-                                                    max-width: 1200px;
-                                                    /* Optionally, set a max-width to control the width of the container */
-                                                }
-                                            </style>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-        </section>
-        <style>
-
-            .banner-filter-bottom {
-                margin-left: auto;
-                /* Adjust the left margin */
-                margin-right: auto;
-                /* Adjust the right margin */
-                max-width: 1200px;
-                /* Optionally, set a max-width to control the width of the container */
-            }
-        </style>
-
-
-        <section class="sec-pad sec-default" id="recommended">
-            <div class="recommended-bg animated hiding" data-animation="fadeIn"></div>
+    <picture class="coverimage-img">
+        <span id="dynamic-banner-souce-large"
+            data-src="{{ asset('images/Mulberry Place-featured-1665479476736-large.jpg') }}')}}"></span>
+        <span id="dynamic-banner-souce-medium"
+            data-src="{{ asset('images/Mulberry Place-featured-1665479476736-large.jpg') }}')}}"></span>
+        <img id="dynamic-banner-img"
+            src="https://www.dmcihomes.com/uploads/media/generated/Mulberry Place-featured-1665479476736-large.jpg"
+            alt="Visit Mulberry Place" width="1493" height="1000">
+    </picture>
+    <div class="table-wrap ">
+        <div class="table-cell">
             <div class="container">
-                <div class="sec-head"
-                    style="background-image: url('{{ asset('images/reco.jpg') }}'); background-size: cover; background-position: center;">
-                    <h2 class="sec-title">Recommended For You</h2>
-                    <p>DMCI Homes believes in building world-class communities fit for your every need. Take a look at
-                        these other communities!</p>
-                    <div class="sec-head-action fr">
-                        <a href="{{route('prop')}}" class="btn btn-round btn-small">View all Properties</a>
+                <div class="banner-left">
+                    <figure class="banner-logo animated" data-animation="fadeInUp" data-delay="100">
+                        <img id="dynamic-banner-logo" src="{{ asset('images/Mulberry Place Header Logo-small.png') }}"
+                            alt="">
+                    </figure>
+                    <div class="" data-animation="fadeInUp" data-delay="300" style="color: white;">
+                        <h1 id="dynamic-banner-headline">The hallmark of a graceful lifestyle in Taguig City</h1>
+                        <p id="dynamic-banner-subHeadLine">Mulberry Place is an Asian-Tropical development found at the
+                            growing community of Acacia Estates in Taguig City. This exclusive residential retreat
+                            seamlessly blends exquisitely designed amenities with nature's grandeur.</p>
+                        <a href="{{ route('mulberry') }}" class="btn btn-round" id="dynamic-banner-cta">Visit Mulberry
+                            Place</a>
                     </div>
-                </div>
-                <div class="property-list">
-                    <ul class="flex property-list-carousel owl-carousel" id="recommended-properties">
-                        @foreach($recoItems as $reco)
-                        <li class="" data-animation="fadeInUp" data-delay="100">
-                            <a href="{{ $reco->link }}">
-                                <div class="property-item box-card">
-                                    <figure class="property-img">
-                                        <img class="lazyload" src="{{ asset($reco->image) }}" alt="Reco Image" width="380" height="215">
-                                        <span class="property-status circle-white">
-                                            <span class="icon-home rfo icon-RFO"></span>
-                                        </span>
-                                    </figure>
-                                    <div class="content">
-                                        <h3>{{ $reco->name }}</h3>
-                                        <p>{{ $reco->place }}</p>
-                                        <p class="property-type">
-                                            <span class="box-type">{{ $reco->bed }}</span>
-                                            <!-- You can add more details here if needed -->
-                                        </p>
-                                        <p class="price">{{ $reco->price }}</p>
-                                        <!-- Add more details here if needed -->
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
 
-
-                    </ul>
                 </div>
             </div>
-            <div class="slant-border slant-bot slant-blue pos-a"></div>
-        </section>
+            <div class="banner-filter-bottom animated fadeInUp visible" data-animation="fadeInUp" data-delay="200">
+                <div class="container">
+                    <div class="bf-bot-wrap">
+                        <h2>What are you looking for?</h2>
+                        <div class="bf-looking">
+                            <div class="fl">
+                                <ul class="filter-search-options">
+                                    <li>
+                                        <div class="custom-checkbox radio-style">
+                                            <input id="bfb-buy" type="radio" name="contact-inquiry" value="buy"
+                                                checked="true">
+                                            <label for="bfb-buy">Buy</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-checkbox radio-style">
+                                            <input id="bfb-rent" type="radio" name="contact-inquiry" value="lease">
+                                            <label for="bfb-rent">Rent/Lease</label>
+                                        </div>
+                                    </li>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-        <section class="sec-pad sec-default bg-blue">
-           <center> <h2>SITE PROGRESS</h2>
-            <div class="site-progress-wrap animated fadeInUp visible" data-animation="fadeInUp">
-                <ul class="site-progress-list" id="site-progress-list">
-                    <!-- Site progress items -->
-                    @foreach($cards as $card)
+                                </ul>
+                            </div>
+
+                            <div class="fr">
+                                <a href="{{ route('prop') }}" class="advance-filter-link"><span
+                                        class="icon-home icon-advancefilter"></span>View all</a>
+                            </div>
+                        </div>
+                        <hr>
+
+
+
+
+                        <form action="{{ route('search') }}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-sm-4" data-search-option="both">
+                                    <label for="location">Location</label>
+                                    <div class="input-wrap map-pin-trigger">
+                                        <input id="header-search-location-field" type="text" readonly name="location"
+                                            value="{{ old('location') }}" placeholder="Any Location"
+                                            data-fancybox-loc="" data-src="#map-pin">
+                                        <button data-fancybox-loc="" data-src="#map-pin"></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" data-search-option="both">
+                                    <label for="unitType">Unit Type</label>
+                                    <div class="custom-select">
+                                        <select name="bed" id="header-search-unit-type">
+                                            <option value="Any">Any</option>
+                                            <option value="Studio">Studio</option>
+                                            <option value="1BR">1BR</option>
+                                            <option value="2BR">2BR</option>
+                                            <option value="3BR">3BR</option>
+                                            <option value="4BR">4BR</option>
+                                            <option value="Loft">Loft</option>
+                                            <option value="H&L">H&L</option>
+                                            {{-- <option value="Lot">Lot</option> --}}
+                                            <option value="N/A">N/A</option>
+                                            <option value="1BR 2BR">1BR2BR</option>
+                                            <option value="1BR 2BR STUDIO">1BR 2BR STUDIO</option>
+                                            <option value="LOFT STUDIO">LOFT STUDIO</option>
+                                            <option value="1BR 2BR 3BR">1BR 2BR 3BR</option>
+                                            <option value="2BR 3BR STUDIO">2BR 3BR STUDIO</option>
+                                            <option value="1BR 2BR 3BR STUDIO">1BR 2BR 3BR STUDIO</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4" data-search-option="buy">
+                                    <label for="price">Price range
+                                        <span class="fr">
+                                            <span id="first-mil-label" data-value="1" class="currency-convert">PHP
+                                                1</span> Million -
+                                            <span id="second-mil-label" class="currency-convert" data-value="20">PHP
+                                                20</span> Million
+                                        </span>
+                                    </label>
+                                    <span id="first-mil" style="display:none;">1</span>
+                                    <span id="second-mil" style="display:none;">20</span>
+                                    <div class="bf-price-range">
+                                        <div class="price-range">
+                                            <div class="noUiSlider" id="noUiSlider"></div>
+                                            <!-- Corrected input names for price range -->
+                                            <input type="hidden" id="header-min-price" name="price_fm"
+                                                class="price_fm">
+                                            <input type="hidden" id="header-max-price" name="price_to"
+                                                class="price_to">
+                                            <p class="pricing-label">
+                                                <label class="pl-1" for=""><span data-value="1M"
+                                                        class="currency-convert-no-symbol">1</span><span>M</span></label>
+                                                <label class="pl-3" for=""><span data-value="3M"
+                                                        class="currency-convert-no-symbol">3</span><span>M</span></label>
+                                                <label class="pl-5" for=""><span data-value="5M"
+                                                        class="currency-convert-no-symbol">5</span><span>M</span></label>
+                                                <label class="pl-7" for=""><span data-value="7M"
+                                                        class="currency-convert-no-symbol">7</span><span>M</span></label>
+                                                <label class="pl-10" for=""><span data-value="1M"
+                                                        class="currency-convert-no-symbol">10</span><span>M</span></label>
+                                                <label class="pl-15" for=""><span data-value="15M"
+                                                        class="currency-convert-no-symbol">15</span><span>M</span></label>
+                                                <label class="pl-20" for=""><span data-value="20M"
+                                                        class="currency-convert-no-symbol">20</span><span>M</span></label>
+                                            </p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" data-search-option="lease"
+                                    class="btn btn-block search-button">Search</button>
+                            </div>
+                        </form>
+
+
+
+
+
+                        <style>
+                            .banner-filter-bottom {
+                                margin-left: auto;
+                                /* Adjust the left margin */
+                                margin-right: auto;
+                                /* Adjust the right margin */
+                                max-width: 1200px;
+                                /* Optionally, set a max-width to control the width of the container */
+                            }
+                        </style>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>
+<style>
+    .banner-filter-bottom {
+        margin-left: auto;
+        /* Adjust the left margin */
+        margin-right: auto;
+        /* Adjust the right margin */
+        max-width: 1200px;
+        /* Optionally, set a max-width to control the width of the container */
+    }
+</style>
+
+
+<section class="sec-pad sec-default" id="recommended">
+    <div class="recommended-bg animated hiding" data-animation="fadeIn"></div>
+    <div class="container">
+        <div class="sec-head"
+            style="background-image: url('{{ asset('images/reco.jpg') }}'); background-size: cover; background-position: center;">
+            <h2 class="sec-title">Recommended For You</h2>
+            <p>DMCI Homes believes in building world-class communities fit for your every need. Take a look at
+                these other communities!</p>
+            <div class="sec-head-action fr">
+                <a href="{{ route('prop') }}" class="btn btn-round btn-small">View all Properties</a>
+            </div>
+        </div>
+        <div class="property-list">
+            <ul class="flex property-list-carousel owl-carousel" id="recommended-properties">
+                @foreach ($recoItems as $reco)
+                    <li class="" data-animation="fadeInUp" data-delay="100">
+                        <a href="{{ $reco->link }}">
+                            <div class="property-item box-card">
+                                <figure class="property-img">
+                                    <img class="lazyload" src="{{ asset($reco->image) }}" alt="Reco Image"
+                                        width="380" height="215">
+                                    <span class="property-status circle-white">
+                                        <span class="icon-home rfo icon-RFO"></span>
+                                    </span>
+                                </figure>
+                                <div class="content">
+                                    <h3>{{ $reco->name }}</h3>
+                                    <p>{{ $reco->place }}</p>
+                                    <p class="property-type">
+                                        <span class="box-type">{{ $reco->bed }}</span>
+                                        <!-- You can add more details here if needed -->
+                                    </p>
+                                    <p class="price">{{ $reco->price }}</p>
+                                    <!-- Add more details here if needed -->
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+
+        </ul>
+    </div>
+    </div>
+    <div class="slant-border slant-bot slant-blue pos-a"></div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<section class="sec-pad sec-default bg-blue">
+    <center>
+        <h2>SITE PROGRESS</h2>
+        <div class="site-progress-wrap animated fadeInUp visible" data-animation="fadeInUp">
+            <ul class="site-progress-list" id="site-progress-list">
+                <!-- Site progress items -->
+                @foreach ($cards as $card)
                     <li data-id="{{ $card->id }}">
                         <a href="/{{ $card->name }}#site-progress" class="site-progress-item">
                             <div class="box-card">
                                 <figure class="site-progress-bg">
-                                    <span class="sp-percent-value" style="height:{{ $card->progress }}; display: block; background-color: rgba(0, 255, 0, 0.5);"></span>
+                                    <span class="sp-percent-value"
+                                        style="height:{{ $card->progress }}; display: block; background-color: rgba(0, 255, 0, 0.5);"></span>
 
-                                <span class="sp-percentage">{{ $card->progress }}</span>
+                                    <span class="sp-percentage">{{ $card->progress }}</span>
 
                                     <img src="{{ asset($card->image) }}" alt="Card Image" width="100">
                                 </figure>
@@ -239,47 +254,66 @@
                             </div>
                         </a>
                     </li>
-                    @endforeach
-                    <!-- End of Site progress items -->
-                </ul>
-            </div>
-        </section>
+                @endforeach
+                <!-- End of Site progress items -->
+            </ul>
+        </div>
+</section>
 
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#site-progress-list').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                    arrows: true,
-                    dots: true,
-                    infinite: true,
-                    variableWidth: true, // Set variable width
-                    responsive: [{
-                            breakpoint: 0,
-                            settings: {
-                                slidesToShow: 1
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1
-                            }
-                        }
-                    ]
-                });
-            });
-        </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#site-progress-list').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            dots: true,
+            infinite: true,
+            variableWidth: true, // Set variable width
+            responsive: [{
+                    breakpoint: 0,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
 
+{{--
+<iframe
+src="https://www.chatbase.co/chatbot-iframe/nXmwcEXzKyqeMyJ_153uV"
+title="JUSTIN THE REAL STATE BOT"
+width="100%"
+style="height: 100%; min-height: 700px"
+frameborder="0"
+></iframe>
+<script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "nXmwcEXzKyqeMyJ_153uV",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="nXmwcEXzKyqeMyJ_153uV"
+    domain="www.chatbase.co"
+    defer>
+    </script>
 
-
-
+ --}}
 
 
 </body>
@@ -298,24 +332,25 @@
 
         <div class="property-list">
             <ul class="flex property-list-carousel owl-carousel" id="recommended-properties">
-                @foreach($newsUpdates as $news)
-                <li class="" data-animation="fadeInUp" data-delay="100">
-                    <a href="{{ $news->link }}">
-                        <div class="property-item box-card">
-                            <figure class="property-img">
-                                <img class="lazyload" src="{{ asset($news->image) }}" alt="{{ $news->name }}" width="380" height="215">
-                                <span class="property-status circle-white">
-                                    <span class="icon-home rfo icon-RFO"></span>
-                                </span>
-                            </figure>
-                            <div class="content">
-                                <h3>{{ $news->name }}</h3>
-                                <p>Date: {{ $news->date }}</p>
-                                <p style="font-size:16px">{{ $news->description }}</p>
+                @foreach ($newsUpdates as $news)
+                    <li class="" data-animation="fadeInUp" data-delay="100">
+                        <a href="{{ $news->link }}">
+                            <div class="property-item box-card">
+                                <figure class="property-img">
+                                    <img class="lazyload" src="{{ asset($news->image) }}" alt="{{ $news->name }}"
+                                        width="380" height="215">
+                                    <span class="property-status circle-white">
+                                        <span class="icon-home rfo icon-RFO"></span>
+                                    </span>
+                                </figure>
+                                <div class="content">
+                                    <h3>{{ $news->name }}</h3>
+                                    <p>Date: {{ $news->date }}</p>
+                                    <p style="font-size:16px">{{ $news->description }}</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -324,7 +359,7 @@
 
 
 
-                    {{-- <div class="grid-item " data-animation="fadeInUp">
+        {{-- <div class="grid-item " data-animation="fadeInUp">
 
 
                         <style>
@@ -359,7 +394,7 @@
                                 display: none;
                             }
                         </style>
-                        @foreach($allUpdates as $update)
+                        @foreach ($allUpdates as $update)
                         <article class="article-item article-min">
                             <a href="{{ $update->link }}" class="">
                             <figure class="article-img ">
@@ -379,7 +414,7 @@
                     </div> --}}
 
 
-    <div class="slant-border slant-bot slant-grey pos-a"></div>
+        <div class="slant-border slant-bot slant-grey pos-a"></div>
 </section>
 
 
@@ -435,283 +470,274 @@
 
 
 
-    <section class="sec-pad contact-us" id="contact-us">
+<section class="sec-pad contact-us" id="contact-us">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="contact-form-wrap" id="contact-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-form-wrap" id="contact-form">
 
-                        <form action="{{ route('contact.send') }}" method="POST">
+                    <form action="{{ route('contact.send') }}" method="POST">
 
-                            @csrf
+                        @csrf
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-wrap">
-                                        <label for="first_name">First Name <span
-                                                class="required-field">*</span></label>
-                                        <input id="first_name" name="first_name" type="text">
-                                        <p class="error-message">This field is required.</p>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-wrap">
+                                    <label for="first_name">First Name <span class="required-field">*</span></label>
+                                    <input id="first_name" name="first_name" type="text">
+                                    <p class="error-message">This field is required.</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="input-wrap">
-                                        <label for="last_name">Last Name <span
-                                                class="required-field">*</span></label>
-                                        <input id="last_name" name="last_name" type="text">
-                                        <p class="error-message">This field is required.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-wrap">
+                                    <label for="last_name">Last Name <span class="required-field">*</span></label>
+                                    <input id="last_name" name="last_name" type="text">
+                                    <p class="error-message">This field is required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-wrap">
+                                    <label for="email">Email <span class="required-field">*</span></label>
+                                    <input id="email" name="email" type="email">
+                                    <p class="error-message">Input a valid email address (eg.
+                                        juan@gmail.com)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-wrap">
+                                    <label for="contact">Contact Number <span class="required-field">*</span></label>
+                                    <input id="contact" name="contact"
+                                        onkeypress="return event.charCode === 0 || /[\d-+=,()]/.test(String.fromCharCode(event.charCode));"
+                                        type="tel" maxlength="15">
+                                    <p class="error-message">Input a valid mobile or landline number.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="input-wrap">
+                                    <label for="country">Country <span class="required-field">*</span></label>
+                                    <div class="custom-select">
+                                        <select id="country" name="country" title="Country">
+                                            <option value="Philippines" selected="">Philippines
+                                            </option>
+
+                                        </select>
                                     </div>
+
+                                    <p class="error-message">This field is required.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-wrap">
+                                    <label for="province">Province<span class="required-field">*</span></label>
+                                    <input id="province" name="province" type="text">
+
+                                    <p class="error-message">This field is required.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="input-wrap">
+                                    <label for="city">Town / City <span class="required-field">*</span></label>
+                                    <input id="city" name="city" type="text">
+                                    <p class="error-message">This field is required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 inquiry-condition">
+                                <div class="input-wrap">
+                                    <label for="property" class="inquiry-label" data-inquiry="customer-care"
+                                        style="display: none;">Property
+                                        Owned: <span class="required-field">*</span></label>
+                                    <label for="property" class="inquiry-label" data-inquiry="sales">Property
+                                        Inquired: <span class="required-field">*</span></label>
+                                    <div class="custom-select">
+                                        <select id="property" name="property" title="Property Inquired">
+                                            <option value="Accolade Place">Accolade Place</option>
+                                            <option value="Alder Residences">Alder Residences</option>
+                                            <option value="Alea Residences">Alea Residences</option>
+                                            <option value="Allegra Garden Place">Allegra Garden Place
+                                            </option>
+                                            <option value="Alta Vista de Boracay">Alta Vista de Boracay
+                                            </option>
+                                            <option value="Arista Place">Arista Place</option>
+                                            <option value="Asteria Residences">Asteria Residences</option>
+                                            <option value="The Aston Place">The Aston Place</option>
+                                            <option value="Belleza Towers">Belleza Towers</option>
+                                            <option value="Bonifacio Heights Condominiums">Bonifacio
+                                                Heights Condominiums</option>
+                                            <option value="Brio Tower">Brio Tower</option>
+                                            <option value="Bristle Ridge">Bristle Ridge</option>
+                                            <option value="Brixton Place">Brixton Place</option>
+                                            <option value="Calathea Place">Calathea Place</option>
+                                            <option value="Cardea Terraces">Cardea Terraces</option>
+                                            <option value="Cedar Crest Condominiums">Cedar Crest
+                                                Condominiums</option>
+                                            <option value="Cameron Residences">Cameron Residences</option>
+                                            <option value="Cypress Towers">Cypress Towers</option>
+                                            <option value="Dansalan Gardens Condominiums">Dansalan Gardens
+                                                Condominiums</option>
+                                            <option value="East Ortigas Mansions">East Ortigas Mansions
+                                            </option>
+                                            <option value="East Raya Gardens">East Raya Gardens</option>
+                                            <option value="Fairlane Residences">Fairlane Residences
+                                            </option>
+                                            <option value="Flair Towers">Flair Towers</option>
+                                            <option value="Fortis Residences">Fortis Residences</option>
+                                            <option value="Fairway Terraces">Fairway Terraces</option>
+                                            <option value="Hampstead Garden Condominiums">Hampstead Garden
+                                                Condominiums</option>
+                                            <option value="Infina Towers">Infina Towers</option>
+                                            <option value="Illumina Residences Manila">Illumina Residences
+                                                Manila</option>
+                                            <option value="Ivory Wood">Ivory Wood</option>
+                                            <option value="Kai Garden Residences">Kai Garden Residences
+                                            </option>
+                                            <option value="Kalea Heights">Kalea Heights</option>
+                                            <option value="La Verti Residences">La Verti Residences
+                                            </option>
+                                            <option value="Lakeview Manors">Lakeview Manors</option>
+                                            <option value="Levina Place">Levina Place</option>
+                                            <option value="Lumiere Residences">Lumiere Residences</option>
+                                            <option value="Lyre Garden Residences">Lyre Garden Residences
+                                            </option>
+                                            <option value="Magnolia Place">Magnolia Place</option>
+                                            <option value="Mahogany Place">Mahogany Place</option>
+                                            <option value="Mahogany Place 2">Mahogany Place 2</option>
+                                            <option value="Mahogany Place 3">Mahogany Place 3</option>
+                                            <option value="Maple Place">Maple Place</option>
+                                            <option value="Maricielo Villas">Maricielo Villas</option>
+                                            <option value="Mayfield Park Residences">Mayfield Park
+                                                Residences</option>
+                                            <option value="Mirea Residences">Mirea Residences</option>
+                                            <option value="Moncello Crest">Moncello Crest</option>
+                                            <option value="Morning Sun Townhomes">Morning Sun Townhomes
+                                            </option>
+                                            <option value="Mulberry Place">Mulberry Place</option>
+                                            <option value="Oak Harbor Residences">Oak Harbor Residences
+                                            </option>
+                                            <option value="Ohana Place">Ohana Place</option>
+                                            <option value="Olea Estates">Olea Estates</option>
+                                            <option value="One Castilla Place">One Castilla Place</option>
+                                            <option value="Outlook Ridge Residences">Outlook Ridge
+                                                Residences</option>
+                                            <option value="Palm Grove">Palm Grove</option>
+                                            <option value="Parama Residences">Parama Residences</option>
+                                            <option value="Prisma Residences">Prisma Residences</option>
+                                            <option value="Rainbow Ridge Condominiums">Rainbow Ridge
+                                                Condominiums</option>
+                                            <option value="Raya Garden Condominiums">Raya Garden
+                                                Condominiums</option>
+                                            <option value="Rhapsody Residences">Rhapsody Residences
+                                            </option>
+                                            <option value="Riverfront Residences">Riverfront Residences
+                                            </option>
+                                            <option value="Rosewood Pointe">Rosewood Pointe</option>
+                                            <option value="Royal Palm Residences">Royal Palm Residences
+                                            </option>
+                                            <option value="Sage Residences">Sage Residences</option>
+                                            <option value="Satori Residences">Satori Residences</option>
+                                            <option value="Sheridan Towers">Sheridan Towers</option>
+                                            <option value="Siena Park Residences">Siena Park Residences
+                                            </option>
+                                            <option value="Solmera Coast">Solmera Coast</option>
+                                            <option value="Sonora Garden Residences">Sonora Garden
+                                                Residences</option>
+                                            <option value="Sorrel Residences">Sorrel Residences</option>
+                                            <option value="Sovanna Towers">Sovanna Towers</option>
+                                            <option value="Spring Lane Homes">Spring Lane Homes</option>
+                                            <option value="Stellar Place">Stellar Place</option>
+                                            <option value="The Amaryllis">The Amaryllis</option>
+                                            <option value="The Atherton">The Atherton</option>
+                                            <option value="The Avalon Heights">The Avalon Heights</option>
+                                            <option value="The Birchwood">The Birchwood</option>
+                                            <option value="The Camden Place">The Camden Place</option>
+                                            <option value="The Celandine">The Celandine</option>
+                                            <option value="The Crestmont">The Crestmont</option>
+                                            <option value="Lucine Estates">Lucine Estates</option>
+                                            <option value="The Manors at Celebrity Place">The Manors at
+                                                Celebrity Place</option>
+                                            <option value="The Orabella">The Orabella</option>
+                                            <option value="The Oriana">The Oriana</option>
+                                            <option value="The Redwoods">The Redwoods</option>
+                                            <option value="The Valeron Tower">The Valeron Tower</option>
+                                            <option value="Tivoli Garden Residences">Tivoli Garden
+                                                Residences</option>
+                                            <option value="Torre de Manila">Torre de Manila</option>
+                                            <option value="Verawood Residences">Verawood Residences
+                                            </option>
+                                            <option value="Verdon Parc">Verdon Parc</option>
+                                            <option value="Viera Residences">Viera Residences</option>
+                                            <option value="Villa Alegre Homes">Villa Alegre Homes</option>
+                                            <option value="Vista De Lago">Vista De Lago</option>
+                                            <option value="Willow Park Homes">Willow Park Homes</option>
+                                            <option value="Woodland Hills">Woodland Hills</option>
+                                            <option value="Zinnia Towers">Zinnia Towers</option>
+                                            <option value="The Erin Heights">The Erin Heights</option>
+                                        </select>
+                                    </div>
+                                    <p class="error-message">Please select a property.</p>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-wrap">
-                                        <label for="email">Email <span
-                                                class="required-field">*</span></label>
-                                        <input id="email" name="email" type="email">
-                                        <p class="error-message">Input a valid email address (eg.
-                                            juan@gmail.com)</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-wrap">
-                                        <label for="contact">Contact Number <span
-                                                class="required-field">*</span></label>
-                                        <input id="contact" name="contact"
-                                            onkeypress="return event.charCode === 0 || /[\d-+=,()]/.test(String.fromCharCode(event.charCode));"
-                                            type="tel" maxlength="15">
-                                        <p class="error-message">Input a valid mobile or landline number.</p>
-                                    </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="input-wrap">
+                                    <label for="message">Message <span class="required-field">*</span></label>
+                                    <textarea id="message" name="message" placeholder="Type your message here" wrap="soft"></textarea>
+                                    <p class="error-message">This field is required.</p>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="input-wrap">
-                                        <label for="country">Country <span
-                                                class="required-field">*</span></label>
-                                        <div class="custom-select">
-                                            <select id="country" name="country" title="Country">
-                                                <option value="Philippines" selected="">Philippines
-                                                </option>
-
-                                            </select>
-                                        </div>
-
-                                        <p class="error-message">This field is required.</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="input-wrap">
-                                        <label for="province">Province<span
-                                                class="required-field">*</span></label>
-                                        <input id="province" name="province" type="text">
-
-                                        <p class="error-message">This field is required.</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-
-                                    <div class="input-wrap">
-                                        <label for="city">Town / City <span
-                                                class="required-field">*</span></label>
-                                        <input id="city" name="city" type="text">
-                                        <p class="error-message">This field is required.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-12 inquiry-condition">
-                                    <div class="input-wrap">
-                                        <label for="property" class="inquiry-label"
-                                            data-inquiry="customer-care" style="display: none;">Property
-                                            Owned: <span class="required-field">*</span></label>
-                                        <label for="property" class="inquiry-label"
-                                            data-inquiry="sales">Property Inquired: <span
-                                                class="required-field">*</span></label>
-                                        <div class="custom-select">
-                                            <select id="property" name="property" title="Property Inquired">
-                                                <option value="Accolade Place">Accolade Place</option>
-                                                <option value="Alder Residences">Alder Residences</option>
-                                                <option value="Alea Residences">Alea Residences</option>
-                                                <option value="Allegra Garden Place">Allegra Garden Place
-                                                </option>
-                                                <option value="Alta Vista de Boracay">Alta Vista de Boracay
-                                                </option>
-                                                <option value="Arista Place">Arista Place</option>
-                                                <option value="Asteria Residences">Asteria Residences</option>
-                                                <option value="The Aston Place">The Aston Place</option>
-                                                <option value="Belleza Towers">Belleza Towers</option>
-                                                <option value="Bonifacio Heights Condominiums">Bonifacio
-                                                    Heights Condominiums</option>
-                                                <option value="Brio Tower">Brio Tower</option>
-                                                <option value="Bristle Ridge">Bristle Ridge</option>
-                                                <option value="Brixton Place">Brixton Place</option>
-                                                <option value="Calathea Place">Calathea Place</option>
-                                                <option value="Cardea Terraces">Cardea Terraces</option>
-                                                <option value="Cedar Crest Condominiums">Cedar Crest
-                                                    Condominiums</option>
-                                                <option value="Cameron Residences">Cameron Residences</option>
-                                                <option value="Cypress Towers">Cypress Towers</option>
-                                                <option value="Dansalan Gardens Condominiums">Dansalan Gardens
-                                                    Condominiums</option>
-                                                <option value="East Ortigas Mansions">East Ortigas Mansions
-                                                </option>
-                                                <option value="East Raya Gardens">East Raya Gardens</option>
-                                                <option value="Fairlane Residences">Fairlane Residences
-                                                </option>
-                                                <option value="Flair Towers">Flair Towers</option>
-                                                <option value="Fortis Residences">Fortis Residences</option>
-                                                <option value="Fairway Terraces">Fairway Terraces</option>
-                                                <option value="Hampstead Garden Condominiums">Hampstead Garden
-                                                    Condominiums</option>
-                                                <option value="Infina Towers">Infina Towers</option>
-                                                <option value="Illumina Residences Manila">Illumina Residences
-                                                    Manila</option>
-                                                <option value="Ivory Wood">Ivory Wood</option>
-                                                <option value="Kai Garden Residences">Kai Garden Residences
-                                                </option>
-                                                <option value="Kalea Heights">Kalea Heights</option>
-                                                <option value="La Verti Residences">La Verti Residences
-                                                </option>
-                                                <option value="Lakeview Manors">Lakeview Manors</option>
-                                                <option value="Levina Place">Levina Place</option>
-                                                <option value="Lumiere Residences">Lumiere Residences</option>
-                                                <option value="Lyre Garden Residences">Lyre Garden Residences
-                                                </option>
-                                                <option value="Magnolia Place">Magnolia Place</option>
-                                                <option value="Mahogany Place">Mahogany Place</option>
-                                                <option value="Mahogany Place 2">Mahogany Place 2</option>
-                                                <option value="Mahogany Place 3">Mahogany Place 3</option>
-                                                <option value="Maple Place">Maple Place</option>
-                                                <option value="Maricielo Villas">Maricielo Villas</option>
-                                                <option value="Mayfield Park Residences">Mayfield Park
-                                                    Residences</option>
-                                                <option value="Mirea Residences">Mirea Residences</option>
-                                                <option value="Moncello Crest">Moncello Crest</option>
-                                                <option value="Morning Sun Townhomes">Morning Sun Townhomes
-                                                </option>
-                                                <option value="Mulberry Place">Mulberry Place</option>
-                                                <option value="Oak Harbor Residences">Oak Harbor Residences
-                                                </option>
-                                                <option value="Ohana Place">Ohana Place</option>
-                                                <option value="Olea Estates">Olea Estates</option>
-                                                <option value="One Castilla Place">One Castilla Place</option>
-                                                <option value="Outlook Ridge Residences">Outlook Ridge
-                                                    Residences</option>
-                                                <option value="Palm Grove">Palm Grove</option>
-                                                <option value="Parama Residences">Parama Residences</option>
-                                                <option value="Prisma Residences">Prisma Residences</option>
-                                                <option value="Rainbow Ridge Condominiums">Rainbow Ridge
-                                                    Condominiums</option>
-                                                <option value="Raya Garden Condominiums">Raya Garden
-                                                    Condominiums</option>
-                                                <option value="Rhapsody Residences">Rhapsody Residences
-                                                </option>
-                                                <option value="Riverfront Residences">Riverfront Residences
-                                                </option>
-                                                <option value="Rosewood Pointe">Rosewood Pointe</option>
-                                                <option value="Royal Palm Residences">Royal Palm Residences
-                                                </option>
-                                                <option value="Sage Residences">Sage Residences</option>
-                                                <option value="Satori Residences">Satori Residences</option>
-                                                <option value="Sheridan Towers">Sheridan Towers</option>
-                                                <option value="Siena Park Residences">Siena Park Residences
-                                                </option>
-                                                <option value="Solmera Coast">Solmera Coast</option>
-                                                <option value="Sonora Garden Residences">Sonora Garden
-                                                    Residences</option>
-                                                <option value="Sorrel Residences">Sorrel Residences</option>
-                                                <option value="Sovanna Towers">Sovanna Towers</option>
-                                                <option value="Spring Lane Homes">Spring Lane Homes</option>
-                                                <option value="Stellar Place">Stellar Place</option>
-                                                <option value="The Amaryllis">The Amaryllis</option>
-                                                <option value="The Atherton">The Atherton</option>
-                                                <option value="The Avalon Heights">The Avalon Heights</option>
-                                                <option value="The Birchwood">The Birchwood</option>
-                                                <option value="The Camden Place">The Camden Place</option>
-                                                <option value="The Celandine">The Celandine</option>
-                                                <option value="The Crestmont">The Crestmont</option>
-                                                <option value="Lucine Estates">Lucine Estates</option>
-                                                <option value="The Manors at Celebrity Place">The Manors at
-                                                    Celebrity Place</option>
-                                                <option value="The Orabella">The Orabella</option>
-                                                <option value="The Oriana">The Oriana</option>
-                                                <option value="The Redwoods">The Redwoods</option>
-                                                <option value="The Valeron Tower">The Valeron Tower</option>
-                                                <option value="Tivoli Garden Residences">Tivoli Garden
-                                                    Residences</option>
-                                                <option value="Torre de Manila">Torre de Manila</option>
-                                                <option value="Verawood Residences">Verawood Residences
-                                                </option>
-                                                <option value="Verdon Parc">Verdon Parc</option>
-                                                <option value="Viera Residences">Viera Residences</option>
-                                                <option value="Villa Alegre Homes">Villa Alegre Homes</option>
-                                                <option value="Vista De Lago">Vista De Lago</option>
-                                                <option value="Willow Park Homes">Willow Park Homes</option>
-                                                <option value="Woodland Hills">Woodland Hills</option>
-                                                <option value="Zinnia Towers">Zinnia Towers</option>
-                                                <option value="The Erin Heights">The Erin Heights</option>
-                                            </select>
-                                        </div>
-                                        <p class="error-message">Please select a property.</p>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-wrap">
-                                        <label for="message">Message <span
-                                                class="required-field">*</span></label>
-                                        <textarea id="message" name="message" placeholder="Type your message here" wrap="soft"></textarea>
-                                        <p class="error-message">This field is required.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit">Submit</button>
-                    </div>
+                        </div>
+                        <button type="submit">Submit</button>
                 </div>
+            </div>
 
-                <style>
-                    button[type="submit"] {
-                        background-color: #4CAF50;
-                        /* Green background */
-                        border: none;
-                        /* Remove border */
-                        color: white;
-                        /* White text color */
-                        padding: 15px 32px;
-                        /* Padding */
-                        text-align: center;
-                        /* Center text */
-                        text-decoration: none;
-                        /* Remove underline */
-                        display: inline-block;
-                        /* Display as inline block */
-                        font-size: 16px;
-                        /* Font size */
-                        margin: 4px 2px;
-                        /* Margin */
-                        transition-duration: 0.4s;
-                        /* Transition duration */
-                        cursor: pointer;
-                        /* Cursor pointer */
-                        border-radius: 8px;
-                        /* Border radius */
-                    }
+            <style>
+                button[type="submit"] {
+                    background-color: #4CAF50;
+                    /* Green background */
+                    border: none;
+                    /* Remove border */
+                    color: white;
+                    /* White text color */
+                    padding: 15px 32px;
+                    /* Padding */
+                    text-align: center;
+                    /* Center text */
+                    text-decoration: none;
+                    /* Remove underline */
+                    display: inline-block;
+                    /* Display as inline block */
+                    font-size: 16px;
+                    /* Font size */
+                    margin: 4px 2px;
+                    /* Margin */
+                    transition-duration: 0.4s;
+                    /* Transition duration */
+                    cursor: pointer;
+                    /* Cursor pointer */
+                    border-radius: 8px;
+                    /* Border radius */
+                }
 
-                    button[type="submit"]:hover {
-                        background-color: #45a049;
-                        /* Darker green on hover */
-                    }
-                </style>
+                button[type="submit"]:hover {
+                    background-color: #45a049;
+                    /* Darker green on hover */
+                }
+            </style>
 
 
 
@@ -735,39 +761,42 @@
 
                             <div class="channel-tooltips">
                                 <!-- <h3>Phone Line list</h3> -->
-                                <p><a href="https://www.dmcihomes.com/+63253248888"><span>Sales:</span> +63 (2)
-                                        53248888</a></p>
+                                {{-- <p>
+                                    <a href="tel:+63945674591"><span>Sales:</span> 0945-675-4591</a>
+                                </p>
+
                                 <p><a href="+63284037368.htm"><span>Leasing:</span> +63 (2) 84037368</a></p>
                                 <p><a href="+63285557777.htm"><span>Employment Inquiry:</span> +63 (2) 85557777</a>
-                                </p>
-                                <p><a href="+639189183456.htm"><span>Customer Care (SMART):</span> (+63) 918 9183456
+                                </p> --}}
+                                <p><a href="+639483877158.htm"><span>Customer Care (SMART):</span> (+63) 483877158
                                     </a></p>
-                                <p><a href="+639178115268.htm"><span>Customer Care (GLOBE):</span> (+63) 917 8115268
+                                <p><a href="+639456754591.htm"><span>Customer Care (GLOBE):</span> (+63) 9456754591
                                     </a></p>
-                                <p><a href="https://www.dmcihomes.com/+6328s5557777"><span>Other Inquiries:</span> +63
-                                        (2) 85557777</a></p>
+                                {{-- <p><a href="https://www.dmcihomes.com/+6328s5557777"><span>Other Inquiries:</span> +63
+                                        (2) 85557777</a></p> --}}
                             </div>
 
                         </li>
                         <li class="animated hiding" data-animation="fadeInUp">
                             <figure><img class="lazyload" src="{{ asset('images/lazyload.png') }}"
-                                    data-src="{{ asset('images/icon-email.webp') }}" alt=""
-                                    width="40" height="40"></figure>
+                                    data-src="{{ asset('images/icon-email.webp') }}" alt="" width="40"
+                                    height="40"></figure>
                             <h4><strong>Email</strong></h4>
                             <p>You may reach us by email for all manner of information. Send an enquiry to the following
                                 designated email list.</p>
 
                             <div class="channel-tooltips">
-                                <p><a href="mailto:sales@dmcihomes.com"><span>Sales:</span> sales@dmcihomes.com</a>
+                                <p><a href="mailto:decastrojustin24@gmail.com"><span>Sales:</span>
+                                        decastrojustin24@gmail.com</a>
                                 </p>
                                 <!-- <p><a href="mailto:dmci.internationalwebsite@gmail.com"><span>International Sales Inquiries:</span> dmci.internationalwebsite@gmail.com</a></p> -->
-                                <p><a href="mailto:leasing@dmcihomes.com"><span>Leasing:</span>
+                                {{-- <p><a href="mailto:leasing@dmcihomes.com"><span>Leasing:</span>
                                         leasing@dmcihomes.com</a></p>
                                 <p><a href="mailto:customercare@dmcihomes.com"><span>Customer Care Concerns:</span>
                                         customercare@dmcihomes.com</a></p>
                                 <p><a href="mailto:careers@dmcihomes.com"><span>Employment Inquiry:</span>
                                         careers@dmcihomes.com</a>
-                                </p>
+                                </p> --}}
                             </div>
                         </li>
                         <li class="animated hiding" data-animation="fadeInUp">
@@ -872,24 +901,27 @@
                         <h4>Head Office</h4>
 
                         <p><a data-fancybox data-type="iframe"
-                                data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1930.9966604879698!2d121.0134147!3d14.5423746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x63ca380cdb6728d1!2sDMCI%20Homes%20Corporate%20Center!5e0!3m2!1sen!2sph!4v1570602301415!5m2!1sen!2sph"
-                                href="javascript:;" class="footer-map-link">CAMPUS RUEDA BUILDING MAKATI CITY</a></p>
+                                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.6866183310344!2d121.01092771078494!3d14.55990497801278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90b830e5f29%3A0x89fe307dfecd3c0d!2sCampos%20Rueda%20Building!5e0!3m2!1sen!2sph!4v1712902429630!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                href="javascript:;" class="footer-map-link">CAMPOS RUEDA BUILDING MAKATI CITY</a></p>
                         <ul>
                             <li>
-                                <a href="+63 (2) 53248888.htm">
-                                    <label for="">Sales</label> 09456754591</a>
+                                <a href="tel:09456754591">
+                                    <label for="">Sales</label> 09456754591
+                                </a>
                             </li>
                             <li>
-                                <a href="+63 (2) 84037368.htm">
-                                    <label for="">Leasing</label>09456754591</a>
+                                <a href="tel:09456754591">
+                                    <label for="">Leasing</label> 09456754591
+                                </a>
                             </li>
                             <li>
-                                <a href="+63 (2) 85557777.htm">
-                                    <label for="">Employment</label> 09456754591</a>
+                                <a href="tel:09456754591">
+                                    <label for="">Employment</label> 09456754591
+                                </a>
                             </li>
                             <li>
-                                <a href="+63 (2) 85557700.htm">
-                                    <label for="">Customer Care </label>09456754591
+                                <a href="tel:09456754591">
+                                    <label for="">Customer Care</label> 09456754591
                                 </a>
                             </li>
 
@@ -915,18 +947,39 @@
                     </div>
                     <div class="col-sm-3 footer-social">
                         <h4>Social Links</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/tine.tainy"><span
-                                        class="icon-home-2 icon-facebook"></span> <span
-                                        class="fs-text">Facebook<span></span></span></a></li>
-                            {{-- <li><a href="https://twitter.com/dmcihomes"><span
-                                        class="icon-home-2 icon-twitter"></span> <span class="fs-text">
-                                        Twitter</span></a></li> --}}
-
-                                    </ul>
-
-
+                        {{-- <ul>
+                            <li>
+                                <a href="https://www.facebook.com/tine.tainy">
+                                    <span class="fab fa-facebook"></i></span> <!-- Facebook icon -->
+                                    <span class="fs-text">Facebook</span>
+                                </a>
                             </li>
+                            <li>
+                                <a href="https://www.instagram.com/jmdec21/">
+                                    <span class="fab fa-instagram"></span> <!-- Instagram icon -->
+                                    <span class="fs-text">Instagram</span>
+                                </a>
+                            </li>
+                        </ul> --}}
+                        <ul>
+                            <a href="https://www.facebook.com/tine.tainy" target="_blank" style="margin-left: 10px;">
+                                <!-- WhatsApp Link -->
+                                <img src="{{ asset('images/fb.jpg') }}" alt="Facebook" width="30"
+                                    height="30"> <!-- WhatsApp Logo -->
+                            </a>
+                            <a href="https://www.instagram.com/jmdec21/" target="_blank" style="margin-left: 10px;">
+                                <!-- Telegram Link -->
+                                <img src="{{ asset('images/ig.jpg') }}" alt="Instagram" width="30"
+                                    height="30"> <!-- Telegram Logo -->
+                            </a>
+                            <a href="mailto:decastrojustin24@gmail.com" target="_blank" style="margin-left: 10px;">
+                                <!-- Gmail Link --> <!-- Telegram Link -->
+                                <img src="{{ asset('images/gmail.png') }}" alt="Instagram" width="30"
+                                    height="30"> <!-- Telegram Logo -->
+                            </a>
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -1690,7 +1743,7 @@
                 var b = $("#sidebar-property-modal-location-list");
                 b.append(
                     '<li><a href="#" class="btn btn-round btn-ghost sidebar-location-all active" data-location="all">View All</a></li>'
-                    ), Object.keys(activeProperties).forEach(function(a) {
+                ), Object.keys(activeProperties).forEach(function(a) {
                     propertyLocation.push(a)
                 }), propertyLocation.sort(), propertyLocation.forEach(function(a) {
                     var d = c[a];
@@ -1714,7 +1767,7 @@
         var b = activeProperties[a],
             c = $("#sidebar-property-list");
         c.empty(), $("#sidebar-property-header").text('Properties around "' + a + '".'), b.sort(), b.forEach(function(
-        a) {
+            a) {
             var b = "coming-soon",
                 d = "cs",
                 e = Number(a.price_range[0].min_price),
@@ -2013,7 +2066,7 @@
         }), !1 === geocodeDefault() && null !== e && (locationEnabled = !0, a = e.coords.latitude, b = e.coords
             .longitude, currentLocation.lat = a, currentLocation.lng = b, placeMarkerAndPanTo(new google.maps
                 .LatLng(a, b)), geocode(new google.maps.LatLng(a, b))), locationMap.addListener("click", function(
-        a) {
+            a) {
             placeMarkerAndPanTo(a.latLng, locationMap), geocode(a.latLng)
         }), positionMarker.setVisible(!0), google.maps.event.addListener(positionMarker, "dragend", function(a) {
             placeMarkerAndPanTo(a.latLng, locationMap), geocode(a.latLng)
@@ -2021,34 +2074,36 @@
         var g = document.getElementById("pop-up-location-select"),
             c = new google.maps.places.Autocomplete(g);
         c.bindTo("bounds", locationMap), c.setTypes([]), c.setFields(["address_components", "geometry", "icon",
-            "name"]), c.addListener("place_changed", function() {
-                var a = c.getPlace(),
-                    b = "";
-                a.address_components.forEach(function(a, c) {
-                    b = 0 === c ? a.long_name : b + "," + a.long_name
-                }), popUpLocationValue = {
-                    name: a.name,
-                    complete_address: b,
-                    lat: a.geometry.location.lat(),
-                    lng: a.geometry.location.lng()
-                }
-            });
+            "name"
+        ]), c.addListener("place_changed", function() {
+            var a = c.getPlace(),
+                b = "";
+            a.address_components.forEach(function(a, c) {
+                b = 0 === c ? a.long_name : b + "," + a.long_name
+            }), popUpLocationValue = {
+                name: a.name,
+                complete_address: b,
+                lat: a.geometry.location.lat(),
+                lng: a.geometry.location.lng()
+            }
+        });
         var h = document.getElementById("search-location-autocomplete"),
             d = new google.maps.places.Autocomplete(h);
         d.bindTo("bounds", locationMap), d.setTypes([]), d.setFields(["address_components", "geometry", "icon",
-            "name"]), d.addListener("place_changed", function() {
-                var a = d.getPlace(),
-                    b = "";
-                a.address_components.forEach(function(a, c) {
-                    b = 0 === c ? a.long_name : b + "," + a.long_name
-                }), autoCompleteLocationValue = {
-                    name: a.name,
-                    complete_address: b,
-                    lat: a.geometry.location.lat(),
-                    lng: a.geometry.location.lng()
-                }, a.geometry.location ? placeMarkerAndPanTo(a.geometry.location) : locationMap.setCenter(a
-                    .geometry.location)
-            })
+            "name"
+        ]), d.addListener("place_changed", function() {
+            var a = d.getPlace(),
+                b = "";
+            a.address_components.forEach(function(a, c) {
+                b = 0 === c ? a.long_name : b + "," + a.long_name
+            }), autoCompleteLocationValue = {
+                name: a.name,
+                complete_address: b,
+                lat: a.geometry.location.lat(),
+                lng: a.geometry.location.lng()
+            }, a.geometry.location ? placeMarkerAndPanTo(a.geometry.location) : locationMap.setCenter(a
+                .geometry.location)
+        })
     }
 
     function placeMarkerAndPanTo(a) {
@@ -2159,7 +2214,7 @@
                 })
             }), initializeDefaultButtons(), loadCookies(), getCookie("DMCI_advisory"), "-1" == document.cookie
             .indexOf("advisoryCookie=here") && ($(".advisory-wrap").addClass("active"), 1025 > $(window)
-            .width() && $("body").addClass("advisory"), $(".advisory-wrap .jq-close").click(function(b) {
+                .width() && $("body").addClass("advisory"), $(".advisory-wrap .jq-close").click(function(b) {
                     b.preventDefault();
                     var a = new Date;
                     a = new Date(a.getTime() + 864e5), document.cookie = "advisoryCookie=here; expires=" +
@@ -3595,18 +3650,21 @@
     }, 5000);
 
 
-    <link rel = "stylesheet"
+    <
+    link rel = "stylesheet"
     href = "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" >
 
-        <link rel = "stylesheet"
+        <
+        link rel = "stylesheet"
     href = "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" >
 
 
 
-        <style>
-            .hamburger-menu {
-            width: 50px;
-            height: 50px;
+        <
+        style >
+        .hamburger - menu {
+            width: 50 px;
+            height: 50 px;
             float: left;
             background: #01a71c;
             border-radius: 50%;
@@ -3627,54 +3685,55 @@
             display: block;
             height: 3px;
             width: 25px;
-            background: #fff;
-            margin: 5px auto;
-            border-radius: 5px;
-            -webkit-transition: all .4s ease;
-            -moz-transition: all .4s ease;
-            -ms-transition: all .4s ease;
-            -o-transition: all .4s ease;
-            transition: all .4s ease
+            background: # fff;
+            margin: 5 px auto;
+            border - radius: 5 px; -
+            webkit - transition: all .4 s ease; -
+            moz - transition: all .4 s ease; -
+            ms - transition: all .4 s ease; -
+            o - transition: all .4 s ease;
+            transition: all .4 s ease
         }
 
-        .hamburger-menu.active {
+        .hamburger - menu.active {
             background: 0 0;
-            left: 10px
+            left: 10 px
         }
 
-        @media (max-width:767px) {
-            .hamburger-menu.active {
+    @media(max - width: 767 px) {
+            .hamburger - menu.active {
                 left: 0
             }
         }
 
-        .hamburger-menu.active .arrow-top {
-            -webkit-transform: rotateZ(45deg) translateY(5px);
-            -moz-transform: rotateZ(45deg) translateY(5px);
-            -ms-transform: rotateZ(45deg) translateY(5px);
-            -o-transform: rotateZ(45deg) translateY(5px);
-            transform: rotateZ(45deg) translateY(5px);
-            width: 15px
+        .hamburger - menu.active.arrow - top {
+            -webkit - transform: rotateZ(45 deg) translateY(5 px); -
+            moz - transform: rotateZ(45 deg) translateY(5 px); -
+            ms - transform: rotateZ(45 deg) translateY(5 px); -
+            o - transform: rotateZ(45 deg) translateY(5 px);
+            transform: rotateZ(45 deg) translateY(5 px);
+            width: 15 px
         }
 
-        .hamburger-menu.active .arrow-middle {
-            -webkit-transform: translateX(-12px);
-            -moz-transform: translateX(-12px);
-            -ms-transform: translateX(-12px);
-            -o-transform: translateX(-12px);
-            transform: translateX(-12px)
+        .hamburger - menu.active.arrow - middle {
+            -webkit - transform: translateX(-12 px); -
+            moz - transform: translateX(-12 px); -
+            ms - transform: translateX(-12 px); -
+            o - transform: translateX(-12 px);
+            transform: translateX(-12 px)
         }
 
-        .hamburger-menu.active .arrow-bottom {
-            -webkit-transform: rotateZ(-45deg) translateY(-5px);
-            -moz-transform: rotateZ(-45deg) translateY(-5px);
-            -ms-transform: rotateZ(-45deg) translateY(-5px);
-            -o-transform: rotateZ(-45deg) translateY(-5px);
-            transform: rotateZ(-45deg) translateY(-5px);
-            width: 15px
+        .hamburger - menu.active.arrow - bottom {
+            -webkit - transform: rotateZ(-45 deg) translateY(-5 px); -
+            moz - transform: rotateZ(-45 deg) translateY(-5 px); -
+            ms - transform: rotateZ(-45 deg) translateY(-5 px); -
+            o - transform: rotateZ(-45 deg) translateY(-5 px);
+            transform: rotateZ(-45 deg) translateY(-5 px);
+            width: 15 px
         }
 
-        </style>
+        <
+        /style>
 </script>
 
 </body>

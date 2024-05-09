@@ -38,38 +38,49 @@
             </div>
         </div>
 
-        <div class="container-body mt-4">
-            <div class="row r3">
-                <div class="col-md-5 p-0 klo">
-                    <ul style="font-size: 24px;">
-                        <li><i class="fas fa-home fa-2x" style="color: blue;"></i> {{ $alders->name }}</li><br>
-                        <li><i class="fas fa-info-circle fa-2x" style="color: green;"></i> {{ $alders->status }}</li><br>
-                        <li><i class="fas fa-map-marker-alt fa-2x" style="color: red;"></i> {{ $alders->location }}</li><br>
-                        <li><i class="fas fa-coins fa-2x" style="color: orange;"></i> {{ $alders->price }}</li><br>
-                        <li><i class="fas fa-bed fa-2x" style="color: orange;"></i> {{ $alders->units }}</li><br>
-                        <li><i class="fas fa-align-left fa-2x" style="color: orange;"></i> {{ $alders->description }}</li>
-                    </ul>
-                </div>
+        <link rel="stylesheet" href="/css/single.product.css">
+        <!-- Text Block One -->
 
-                <div class="col-md-7">
-                    <img src="{{ $alders->image }}" alt="Lease Image" class="card-image"  style="max-width: 100%;">
-                </div>
-            </div>
-        </div>
-    </div>
+                <section class="single-product">
+                    <div class="container">
+                        <div class="row justify-content-center">
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="{{ $alders->image }}" alt="Sale Image" class="card-image"  style="max-width: 100%;">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="single-product-title">
+                                            <h3>{{ $alders->name }}</h3>
+                                        </div>
+                                        <div class="single-product-description">
+                                            <p class="details">{{ $alders->description }}</p>
+                                            <h6 class="price">&#8369;{{ $alders->price }}</h6>
+                                        </div>
+                                        <hr>
+                                        <div class="amenities">
+                                            <ul>
+                                                <li>{{ $alders->units }}</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="contact">
+                                            <i class="fas fa-location"></i> {{ $alders->location }}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </section>
 
 
 
-        <div class="footer d-flex flex-column mt-5">
-            <div class="row r4">
-                <div class="col-md-2 myt des">
-                    <a href="#">Description</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</section>
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>

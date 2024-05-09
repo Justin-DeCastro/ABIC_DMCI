@@ -224,7 +224,9 @@
                             <table id="propertiesTable" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
+                                        <th style="width: 100px;">ID Image</th>
                                         <th style="width: 100px;">Image</th>
+                                        <th style="width: 100px;">Video</th>
                                         <th style="width: 100px;">Name</th>
                                         <th style="width: 100px;">Email</th>
                                         <th style="width: 400px;">Description</th>
@@ -235,7 +237,15 @@
                                 <tbody>
                                     @foreach($sendproperties as $property)
                                     <tr>
+                                        <td>
+
+                                            <img src="{{ asset($property->id_image) }}" alt="subdivision Image" width="100">
+                                        </td>
+
+
+
                                         <td class="image-cell">
+
                                             @if($property->image)
                                                 @foreach(json_decode($property->image) as $key => $image)
                                                     <img src="{{ $image }}" alt="Property Image" style="width: 100px; @if($key > 0) display: none; @endif">
@@ -243,19 +253,79 @@
                                                 <button class="btn btn-primary next-image">Next</button>
                                             @endif
                                         </td>
+                                        <td class="video-cell">
+                                            <!-- Display videos -->
+                                            @if($property->video)
+                                                @foreach(json_decode($property->video) as $video)
+                                                    <!-- Add video player or link to video here -->
+                                                    <video controls style="max-width: 200px;">
+                                                        <source src="{{ $video }}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                @endforeach
+                                            @endif
+                                        </td>
                                         <td>{{ $property->name }}</td>
                                         <td>{{ $property->email }}</td>
                                         <td>{{ $property->description }}</td>
                                         <td>{{ $property->status }}</td>
                                         <td>
-                                            <form action="{{ route('accept.property', $property->id) }}" method="POST">
-                                                @csrf
-                                                <button type="submit" class="btn btn-success">Accept</button>
-                                            </form>
-                                            <form action="{{ route('decline.property', $property->id) }}" method="POST">
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger">Decline</button>
-                                            </form>
+                                            <div class="btn-group" role="group">
+                                                <!-- Accept button -->
+                                                <form action="{{ route('accept.property', $property->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-success">Accept</button>
+                                                </form>
+                                                <!-- Decline button -->
+                                                <form action="{{ route('decline.property', $property->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger">Decline</button>
+                                                </form>
+                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updatePropertyModal{{ $property->id }}">
+                                                    Edit
+                                                </button>
+                                            </div>
+                                            <!-- Edit button -->
+
+                                        </td>
+
+                                            <!-- Modal for updating property -->
+                                            <div class="modal fade" id="updatePropertyModal{{ $property->id }}" tabindex="-1" role="dialog" aria-labelledby="updatePropertyModalLabel{{ $property->id }}" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="updatePropertyModalLabel{{ $property->id }}">Update Property</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form action="{{ route('sendproperties.update', $property->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <div class="modal-body">
+                                                                <!-- Your form fields for updating property details -->
+                                                                <!-- For example: -->
+                                                                <div class="form-group">
+                                                                    <label for="name">Name</label>
+                                                                    <input type="text" class="form-control" id="name" name="name" value="{{ $property->name }}" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="email">Email</label>
+                                                                    <input type="email" class="form-control" id="email" name="email" value="{{ $property->email }}" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="description">Description</label>
+                                                                    <textarea class="form-control" id="description" name="description" rows="3" required>{{ $property->description }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -267,28 +337,26 @@
             </div>
         </div>
     </section>
-</div>
+    </div>
 
+    <script>
+        // JavaScript for switching between images
+        $(document).ready(function() {
+            $('.next-image').click(function() {
+                var $imageCell = $(this).closest('.image-cell');
+                var $currentImage = $imageCell.find('img:visible');
+                var $nextImage = $currentImage.next('img');
 
-<script>
-    // JavaScript for switching between images
-    $(document).ready(function() {
-        $('.next-image').click(function() {
-            var $imageCell = $(this).closest('.image-cell');
-            var $currentImage = $imageCell.find('img:visible');
-            var $nextImage = $currentImage.next('img');
-
-            if ($nextImage.length) {
-                $currentImage.hide();
-                $nextImage.show();
-            } else {
-                $currentImage.hide();
-                $imageCell.find('img').first().show();
-            }
+                if ($nextImage.length) {
+                    $currentImage.hide();
+                    $nextImage.show();
+                } else {
+                    $currentImage.hide();
+                    $imageCell.find('img').first().show();
+                }
+            });
         });
-    });
-</script>
-
+    </script>
 
     @foreach ($errors->all() as $error)
         <div>{{ $error }}</div>

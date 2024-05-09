@@ -34,13 +34,13 @@
                     email list.</p>
 
                 <div class="channel-tooltips">
-                    <p><a href="mailto:sales@dmcihomes.com"><span>Sales:</span> sales@dmcihomes.com</a></p>
+                    <p><a href="mailto:decastrojustin24@gmail.com"><span>Sales:</span> decastrojustin24@gmail.com</a></p>
                     <!-- <p><a href="mailto:dmci.internationalwebsite@gmail.com"><span>International Sales Inquiries:</span> dmci.internationalwebsite@gmail.com</a></p> -->
-                    <p><a href="mailto:leasing@dmcihomes.com"><span>Leasing:</span> leasing@dmcihomes.com</a></p>
-                    <p><a href="mailto:customercare@dmcihomes.com"><span>Customer Care Concerns:</span>
-                            customercare@dmcihomes.com</a></p>
-                    <p><a href="mailto:careers@dmcihomes.com"><span>Employment Inquiry:</span> careers@dmcihomes.com</a>
-                    </p>
+                    <p><a href="mailto:decastrojustin24@gmail.com"><span>Leasing:</span> decastrojustin24@gmail.com</a></p>
+                    {{-- <p><a href="mailto:customercare@dmcihomes.com"><span>Customer Care Concerns:</span>
+                            customercare@dmcihomes.com</a></p> --}}
+                    {{-- <p><a href="mailto:careers@dmcihomes.com"><span>Employment Inquiry:</span> careers@dmcihomes.com</a>
+                    </p> --}}
                 </div>
             </li>
             <li class="animated hiding" data-animation="fadeInUp" style="opacity: 1;">

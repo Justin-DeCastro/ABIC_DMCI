@@ -42,6 +42,8 @@ use App\Http\Controllers\CelandineController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AddLeaseController;
 use App\Http\Controllers\SendPropertyController;
+use App\Http\Controllers\BotManController;
+use App\Http\Controllers\RequestController;
 /*
 
 |--------------------------------------------------------------------------
@@ -327,3 +329,26 @@ Route::post('/sendproperties', [SendPropertyController::class, 'store'])->name('
 Route::get('/sendpropertys', [SendPropertyController::class, 'send'])->name('send');
 Route::post('/properties/{property}/accept', [SendPropertyController::class, 'accept'])->name('accept.property');
 Route::post('/properties/{property}/decline', [SendPropertyController::class, 'decline'])->name('decline.property');
+Route::put('/properties/{property}', [SendPropertyController::class, 'update'])->name('sendproperties.update');
+
+
+//chatbot
+Route::get('/chat-widget', function () {
+    return view('chat_widget');
+});
+// routes/web.php
+Route::get('/chatbot', function () {
+    return view('layouts.app');
+});
+
+// Route::match(['get', 'post'], '/botman', 'App\Http\Controllers\BotManController@handle');
+// Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle'])->name('botman');
+// Route::get('/botman', [BotManController::class, 'handle'])->name('botman');
+
+Route::post('/botman', [BotManController::class, 'handle']);
+
+//request
+Route::post('/submit-request', [RequestController::class, 'submit']);
+Route::get('/request', [RequestController::class, 'index'])->name('request.index');
+Route::post('/requests/{id}/approve', [RequestController::class, 'accept'])->name('requests.accept');
+Route::post('/requests/{id}/decline', [RequestController::class, 'decline'])->name('requests.decline');
